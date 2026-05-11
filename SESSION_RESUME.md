@@ -19,7 +19,7 @@ Take-home challenge: **Implementador de IA & Automações** for a Brazilian law 
 | 5.6 — Copilot | ⏭️ skipped (OpenAI-family proxy via ChatGPT; documented by spec) |
 | **5.7 — Azure DI Layout** | ✅ **done — page-2 layout-tolerant; NOT the source of PA hallucination bug** |
 | **5.8 — Tabula (OSS hands-on)** | ✅ **done — 16/16 page-1 cells, 0 page-2 (no OCR); class-level finding** |
-| 5.9 — Scoreboard synthesis | ⏳ pending (~30 min, all empirical data now in) |
+| **5.9 — Scoreboard synthesis** | ✅ **done — `04_experiments/SCOREBOARD.md` (source-of-truth for relatório §4)** |
 | 5.10 — Skipped: Make + n8n full hands-on (covered via dossiers + diagrams instead) | — |
 | 6 — Reference Python script | ⏳ pending (~3-4h) |
 | 7 — Architecture / LGPD / ROI | ⏳ pending (~2h) |
