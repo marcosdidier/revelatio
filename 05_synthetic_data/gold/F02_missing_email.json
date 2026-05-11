@@ -1,0 +1,51 @@
+{
+  "$meta": {
+    "fixture_id": "F02_missing_email",
+    "p1_variation": null,
+    "p2_variation": null,
+    "generator": "05_synthetic_data/generate_pdfs.py"
+  },
+  "page1": {
+    "client_name": "Maria Almeida Costa",
+    "cpf": "123.456.789-09",
+    "cpf_digits_only": "12345678909",
+    "birth_date": "1983-08-14",
+    "phone": "(81) 98888-1122",
+    "email": null,
+    "address": "Rua das Laranjeiras, 145, Apto 302 - Boa Vista - Recife/PE",
+    "postal_code": "50050-120",
+    "contract_number": "BX-2024-0004587",
+    "product": "Empréstimo pessoal",
+    "contract_date": "2024-02-12",
+    "original_amount": "18450.00",
+    "updated_balance": "22780.35",
+    "days_overdue": 147,
+    "status": "Em negociação",
+    "last_contact_attempt": "2026-04-25",
+    "internal_owner": "Equipe Cobrança - Núcleo 03"
+  },
+  "page2": {
+    "comprovante_endereco": {
+      "proof_address_holder": "Maria Almeida Costa",
+      "proof_address_line": "Rua das Laranjeiras, 145, Apto 302",
+      "proof_address_neighborhood": "Boa Vista - Recife/PE",
+      "proof_address_postal": "50050-120",
+      "proof_reference": "Conta de energia - Companhia Fictícia de Energia",
+      "proof_period": "2026-03",
+      "proof_value": "184.72",
+      "proof_barcode": "34191790010104351004791020150008199990000018472"
+    },
+    "comprovante_bancario": {
+      "bank_name": "Banco Exemplo S.A.",
+      "bank_branch": "1234",
+      "bank_account": "00098765-4",
+      "transaction_date": "2026-03-18",
+      "transaction_type": "Pagamento parcial de acordo",
+      "payer": "Maria Almeida Costa",
+      "payee": "Banco X - Carteira de Cobrança",
+      "amount_paid": "750.00",
+      "authentication_code": "BX26.03.18.00045.99871.FICT",
+      "paid_stamp_present": true
+    }
+  }
+}

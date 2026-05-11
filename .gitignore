@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build / packaging
+*.egg-info/
+build/
+dist/
+
+# Secrets — never commit API keys
+*api_key*
+*secret*
+credentials.json
+
+# Bundle artifacts (rebuild on demand)
+08_deliverables/*.zip
+09_video/raw_recording_*.mp4
+
+# But DO commit:
+# - 04_experiments/ raw outputs (they're evidence)
+# - 05_synthetic_data/pdfs/ (deliverable assets)
+# - 06_reference_script/ (the script itself)
+# - 09_video/script.md and slides.pdf

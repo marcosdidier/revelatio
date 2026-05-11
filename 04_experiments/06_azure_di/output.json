@@ -1,0 +1,10493 @@
+{
+	"status": "succeeded",
+	"createdDateTime": "2026-05-11T00:30:41Z",
+	"lastUpdatedDateTime": "2026-05-11T00:30:45Z",
+	"analyzeResult": {
+		"apiVersion": "2024-11-30",
+		"modelId": "prebuilt-layout",
+		"stringIndexType": "utf16CodeUnit",
+		"content": "BANCO X - DOSSIÊ DE CLIENTE DEVEDOR\nDocumento ficticio para desafio tecnico de extracao de dados\n1. Identificacao do Cliente\nCampo\nInformacao\nNome completo\nMaria Almeida Costa\nCPF\n123.456.789-09 (ficticio)\nData de nascimento\n14/08/1983\nTelefone\n(81) 98888-1122\nE-mail\nmaria.costa.exemplo@emailficticio.com\nEndereco\nRua das Laranjeiras, 145, Apto 302 - Boa Vista - Recife/PE\nCEP\n50050-120\n2. Informacoes da Divida\nCampo\nInformacao\nContrato\nBX-2024-0004587\nProduto\nEmprestimo pessoal\nData de contratacao\n12/02/2024\nValor original\nR$ 18.450,00\nSaldo atualizado\nR$ 22.780,35\nDias em atraso\n147 dias\nStatus interno\nEm negociacao\nUltima tentativa de contato\n25/04/2026\nResponsavel interno\nEquipe Cobranca - Nucleo 03\n3. Dados a serem extraidos para planilha\nCampos esperados: nome, CPF, telefone, e-mail, endereco, contrato, produto, valor original, saldo atualizado, dias em atraso, status, ultima tentativa de contato e responsavel interno.\n4. Observacoes\nEste documento foi gerado apenas para simular um PDF operacional com estrutura repetitiva. A segunda pagina contem imagem simulada de comprovantes anexados, exigindo que a solucao avalie tambem documentos com informacoes dentro de imagens.\nDocumento ficticio para teste tecnico - nao utilizar como documento real\nPagina 1\nAnexos do Cliente\nA pagina abaixo simula comprovantes inseridos como imagem dentro do PDF.\nCOMPROVANTES ANEXADOS - DOCUMENTO FICTICIO\nUso exclusivo para teste tecnico - dados simulados\nComprovante de Endereco\nTitular: Maria Almeida Costa\nEndereco: Rua das Laranjeiras, 145, Apto 302\nBairro: Boa Vista - Recife/PE\nCEP: 50050-120\nReferencia: Conta de energia - Companhia Ficticia de Energia\nMes/Ano: 03/2026\nValor: R$ 184,72\nCodigo de barras: 34191.79001 01043.510047 91020.150008 1 99990000018472\nComprovante Bancario\nBanco: Banco Exemplo S.A.\nAgencia: 1234 | Conta: 00098765-4\nData da transacao: 18/03/2026\nTipo: Pagamento parcial de acordo\nPagador: Maria Almeida Costa\nRecebedor: Banco X - Carteira de Cobranca\nValor pago: R$ 750,00 Autenticacao: BX26.03.18.00045.99871.FICT\nPAGO\nObservacoes do Anexo\nImagem simulada para parecer com comprovante digitalizado. Nao contem dados reais de pessoas, bancos ou operacoes. Finalidade: testar extracao de dados em PDF com texto + imagem.\nDocumento ficticio para teste tecnico - nao utilizar como documento real\nPagina 2",
+		"pages": [
+			{
+				"pageNumber": 1,
+				"angle": 0.016151370480656624,
+				"width": 8.2639,
+				"height": 11.6806,
+				"unit": "inch",
+				"words": [
+					{
+						"content": "BANCO",
+						"polygon": [
+							1.8183,
+							0.692,
+							2.6369,
+							0.6848,
+							2.6367,
+							0.934,
+							1.8177,
+							0.933
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 0,
+							"length": 5
+						}
+					},
+					{
+						"content": "X",
+						"polygon": [
+							2.7024,
+							0.684,
+							2.8292,
+							0.6827,
+							2.829,
+							0.9341,
+							2.7022,
+							0.9341
+						],
+						"confidence": 0.989,
+						"span": {
+							"offset": 6,
+							"length": 1
+						}
+					},
+					{
+						"content": "-",
+						"polygon": [
+							2.8825,
+							0.6826,
+							2.9889,
+							0.6824,
+							2.9886,
+							0.9337,
+							2.8822,
+							0.934
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 8,
+							"length": 1
+						}
+					},
+					{
+						"content": "DOSSIÊ",
+						"polygon": [
+							3.0626,
+							0.6823,
+							3.8812,
+							0.678,
+							3.8809,
+							0.9354,
+							3.0623,
+							0.9335
+						],
+						"confidence": 0.912,
+						"span": {
+							"offset": 10,
+							"length": 6
+						}
+					},
+					{
+						"content": "DE",
+						"polygon": [
+							3.9631,
+							0.6781,
+							4.2537,
+							0.6793,
+							4.2532,
+							0.9354,
+							3.9628,
+							0.9354
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 17,
+							"length": 2
+						}
+					},
+					{
+						"content": "CLIENTE",
+						"polygon": [
+							4.3315,
+							0.6801,
+							5.2647,
+							0.6851,
+							5.2642,
+							0.9315,
+							4.3309,
+							0.9354
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 20,
+							"length": 7
+						}
+					},
+					{
+						"content": "DEVEDOR",
+						"polygon": [
+							5.3466,
+							0.6851,
+							6.4433,
+							0.6854,
+							6.4433,
+							0.9326,
+							5.3461,
+							0.9315
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 28,
+							"length": 7
+						}
+					},
+					{
+						"content": "Documento",
+						"polygon": [
+							0.7398,
+							1.1199,
+							1.3166,
+							1.1202,
+							1.3166,
+							1.2569,
+							0.74,
+							1.2568
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 36,
+							"length": 9
+						}
+					},
+					{
+						"content": "ficticio",
+						"polygon": [
+							1.348,
+							1.1202,
+							1.6555,
+							1.1197,
+							1.6555,
+							1.2575,
+							1.348,
+							1.2569
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 46,
+							"length": 8
+						}
+					},
+					{
+						"content": "para",
+						"polygon": [
+							1.6914,
+							1.1197,
+							1.9068,
+							1.1198,
+							1.9069,
+							1.2576,
+							1.6914,
+							1.2576
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 55,
+							"length": 4
+						}
+					},
+					{
+						"content": "desafio",
+						"polygon": [
+							1.9428,
+							1.1198,
+							2.2839,
+							1.1202,
+							2.2839,
+							1.2573,
+							1.9428,
+							1.2576
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 60,
+							"length": 7
+						}
+					},
+					{
+						"content": "tecnico",
+						"polygon": [
+							2.3108,
+							1.1202,
+							2.6811,
+							1.1202,
+							2.6811,
+							1.2566,
+							2.3108,
+							1.2573
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 68,
+							"length": 7
+						}
+					},
+					{
+						"content": "de",
+						"polygon": [
+							2.7148,
+							1.1202,
+							2.8337,
+							1.1201,
+							2.8336,
+							1.2568,
+							2.7147,
+							1.2566
+						],
+						"confidence": 0.999,
+						"span": {
+							"offset": 76,
+							"length": 2
+						}
+					},
+					{
+						"content": "extracao",
+						"polygon": [
+							2.8674,
+							1.12,
+							3.2915,
+							1.1204,
+							3.2913,
+							1.2559,
+							2.8672,
+							1.2568
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 79,
+							"length": 8
+						}
+					},
+					{
+						"content": "de",
+						"polygon": [
+							3.3252,
+							1.1205,
+							3.4464,
+							1.1199,
+							3.4461,
+							1.256,
+							3.3249,
+							1.2558
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 88,
+							"length": 2
+						}
+					},
+					{
+						"content": "dados",
+						"polygon": [
+							3.4778,
+							1.1198,
+							3.7895,
+							1.1187,
+							3.7895,
+							1.2552,
+							3.4775,
+							1.256
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 91,
+							"length": 5
+						}
+					},
+					{
+						"content": "1.",
+						"polygon": [
+							0.7446,
+							1.5541,
+							0.8696,
+							1.5535,
+							0.8701,
+							1.7167,
+							0.7452,
+							1.7167
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 97,
+							"length": 2
+						}
+					},
+					{
+						"content": "Identificacao",
+						"polygon": [
+							0.9266,
+							1.5534,
+							1.8504,
+							1.5525,
+							1.8507,
+							1.7167,
+							0.9272,
+							1.7167
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 100,
+							"length": 13
+						}
+					},
+					{
+						"content": "do",
+						"polygon": [
+							1.8994,
+							1.5524,
+							2.0787,
+							1.5519,
+							2.0789,
+							1.7167,
+							1.8996,
+							1.7167
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 114,
+							"length": 2
+						}
+					},
+					{
+						"content": "Cliente",
+						"polygon": [
+							2.1303,
+							1.5519,
+							2.6424,
+							1.551,
+							2.6424,
+							1.7162,
+							2.1305,
+							1.7167
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 117,
+							"length": 7
+						}
+					},
+					{
+						"content": "Campo",
+						"polygon": [
+							1.0555,
+							1.8529,
+							1.4724,
+							1.8552,
+							1.4724,
+							1.9898,
+							1.0552,
+							1.9878
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 125,
+							"length": 5
+						}
+					},
+					{
+						"content": "Informacao",
+						"polygon": [
+							3.0192,
+							1.8487,
+							3.6741,
+							1.8516,
+							3.6742,
+							1.977,
+							3.0196,
+							1.9765
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 131,
+							"length": 10
+						}
+					},
+					{
+						"content": "Nome",
+						"polygon": [
+							1.0521,
+							2.0981,
+							1.3902,
+							2.1008,
+							1.3902,
+							2.241,
+							1.0525,
+							2.2412
+						],
+						"confidence": 0.988,
+						"span": {
+							"offset": 142,
+							"length": 4
+						}
+					},
+					{
+						"content": "completo",
+						"polygon": [
+							1.4273,
+							2.1011,
+							1.9575,
+							2.0999,
+							1.9575,
+							2.2414,
+							1.4273,
+							2.2411
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 147,
+							"length": 8
+						}
+					},
+					{
+						"content": "Maria",
+						"polygon": [
+							3.0206,
+							2.0975,
+							3.3222,
+							2.0989,
+							3.3225,
+							2.23,
+							3.021,
+							2.23
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 156,
+							"length": 5
+						}
+					},
+					{
+						"content": "Almeida",
+						"polygon": [
+							3.357,
+							2.099,
+							3.7845,
+							2.0996,
+							3.7846,
+							2.23,
+							3.3572,
+							2.23
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 162,
+							"length": 7
+						}
+					},
+					{
+						"content": "Costa",
+						"polygon": [
+							3.8214,
+							2.0994,
+							4.1377,
+							2.0994,
+							4.1377,
+							2.23,
+							3.8214,
+							2.23
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 170,
+							"length": 5
+						}
+					},
+					{
+						"content": "CPF",
+						"polygon": [
+							1.0579,
+							2.3484,
+							1.3069,
+							2.3482,
+							1.3069,
+							2.4743,
+							1.0581,
+							2.4743
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 176,
+							"length": 3
+						}
+					},
+					{
+						"content": "123.456.789-09",
+						"polygon": [
+							3.0298,
+							2.3437,
+							3.8565,
+							2.3461,
+							3.8563,
+							2.4908,
+							3.0302,
+							2.4866
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 180,
+							"length": 14
+						}
+					},
+					{
+						"content": "(ficticio)",
+						"polygon": [
+							3.8944,
+							2.3464,
+							4.3032,
+							2.3469,
+							4.3032,
+							2.4924,
+							3.8942,
+							2.491
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 195,
+							"length": 10
+						}
+					},
+					{
+						"content": "Data",
+						"polygon": [
+							1.0533,
+							2.5959,
+							1.3172,
+							2.5967,
+							1.3174,
+							2.7285,
+							1.0536,
+							2.728
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 206,
+							"length": 4
+						}
+					},
+					{
+						"content": "de",
+						"polygon": [
+							1.3562,
+							2.597,
+							1.4881,
+							2.5976,
+							1.4882,
+							2.7296,
+							1.3563,
+							2.729
+						],
+						"confidence": 0.999,
+						"span": {
+							"offset": 211,
+							"length": 2
+						}
+					},
+					{
+						"content": "nascimento",
+						"polygon": [
+							1.5292,
+							2.5976,
+							2.1858,
+							2.5982,
+							2.1858,
+							2.7308,
+							1.5293,
+							2.7296
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 214,
+							"length": 10
+						}
+					},
+					{
+						"content": "14/08/1983",
+						"polygon": [
+							3.0322,
+							2.5932,
+							3.6297,
+							2.5929,
+							3.6297,
+							2.7238,
+							3.0326,
+							2.7236
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 225,
+							"length": 10
+						}
+					},
+					{
+						"content": "Telefone",
+						"polygon": [
+							1.0553,
+							2.8466,
+							1.558,
+							2.8481,
+							1.558,
+							2.9793,
+							1.0553,
+							2.9776
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 236,
+							"length": 8
+						}
+					},
+					{
+						"content": "(81)",
+						"polygon": [
+							3.0236,
+							2.8435,
+							3.2403,
+							2.843,
+							3.241,
+							2.9868,
+							3.0249,
+							2.9877
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 245,
+							"length": 4
+						}
+					},
+					{
+						"content": "98888-1122",
+						"polygon": [
+							3.2753,
+							2.8423,
+							3.9151,
+							2.842,
+							3.9151,
+							2.982,
+							3.2759,
+							2.9864
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 250,
+							"length": 10
+						}
+					},
+					{
+						"content": "E-mail",
+						"polygon": [
+							1.0523,
+							3.097,
+							1.4268,
+							3.0972,
+							1.4268,
+							3.2269,
+							1.0522,
+							3.2267
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 261,
+							"length": 6
+						}
+					},
+					{
+						"content": "maria.costa.exemplo@emailficticio.com",
+						"polygon": [
+							3.0193,
+							3.0979,
+							5.1136,
+							3.0977,
+							5.1136,
+							3.2359,
+							3.0195,
+							3.2371
+						],
+						"confidence": 0.924,
+						"span": {
+							"offset": 268,
+							"length": 37
+						}
+					},
+					{
+						"content": "Endereco",
+						"polygon": [
+							1.0524,
+							3.3494,
+							1.6094,
+							3.3523,
+							1.6094,
+							3.4836,
+							1.0523,
+							3.4819
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 306,
+							"length": 8
+						}
+					},
+					{
+						"content": "Rua",
+						"polygon": [
+							3.0196,
+							3.3435,
+							3.2453,
+							3.3421,
+							3.2454,
+							3.4928,
+							3.0197,
+							3.492
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 315,
+							"length": 3
+						}
+					},
+					{
+						"content": "das",
+						"polygon": [
+							3.2842,
+							3.3424,
+							3.4566,
+							3.3437,
+							3.4564,
+							3.492,
+							3.2842,
+							3.4927
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 319,
+							"length": 3
+						}
+					},
+					{
+						"content": "Laranjeiras,",
+						"polygon": [
+							3.4857,
+							3.3437,
+							4.1145,
+							3.3431,
+							4.1145,
+							3.4929,
+							3.4855,
+							3.4919
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 323,
+							"length": 12
+						}
+					},
+					{
+						"content": "145,",
+						"polygon": [
+							4.1631,
+							3.343,
+							4.3767,
+							3.3423,
+							4.3767,
+							3.4929,
+							4.1631,
+							3.493
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 336,
+							"length": 4
+						}
+					},
+					{
+						"content": "Apto",
+						"polygon": [
+							4.4131,
+							3.3424,
+							4.6584,
+							3.3424,
+							4.6583,
+							3.4919,
+							4.4131,
+							3.4927
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 341,
+							"length": 4
+						}
+					},
+					{
+						"content": "302",
+						"polygon": [
+							4.6948,
+							3.3423,
+							4.8866,
+							3.3418,
+							4.8865,
+							3.4908,
+							4.6946,
+							3.4919
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 346,
+							"length": 3
+						}
+					},
+					{
+						"content": "-",
+						"polygon": [
+							4.9206,
+							3.3417,
+							4.9594,
+							3.3416,
+							4.9594,
+							3.49,
+							4.9205,
+							3.4905
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 350,
+							"length": 1
+						}
+					},
+					{
+						"content": "Boa",
+						"polygon": [
+							4.9983,
+							3.3414,
+							5.1998,
+							3.3417,
+							5.1998,
+							3.4895,
+							4.9983,
+							3.4896
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 352,
+							"length": 3
+						}
+					},
+					{
+						"content": "Vista",
+						"polygon": [
+							5.2338,
+							3.3418,
+							5.496,
+							3.3413,
+							5.496,
+							3.4877,
+							5.2338,
+							3.4895
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 356,
+							"length": 5
+						}
+					},
+					{
+						"content": "-",
+						"polygon": [
+							5.53,
+							3.3415,
+							5.5713,
+							3.3417,
+							5.5713,
+							3.4876,
+							5.53,
+							3.4877
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 362,
+							"length": 1
+						}
+					},
+					{
+						"content": "Recife/PE",
+						"polygon": [
+							5.6077,
+							3.3418,
+							6.1408,
+							3.3411,
+							6.1408,
+							3.486,
+							5.6077,
+							3.4876
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 364,
+							"length": 9
+						}
+					},
+					{
+						"content": "CEP",
+						"polygon": [
+							1.0578,
+							3.5988,
+							1.3126,
+							3.5991,
+							1.3126,
+							3.7242,
+							1.0574,
+							3.7233
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 374,
+							"length": 3
+						}
+					},
+					{
+						"content": "50050-120",
+						"polygon": [
+							3.0227,
+							3.5947,
+							3.6012,
+							3.5957,
+							3.6012,
+							3.7288,
+							3.0229,
+							3.73
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 378,
+							"length": 9
+						}
+					},
+					{
+						"content": "2.",
+						"polygon": [
+							0.736,
+							3.9471,
+							0.8705,
+							3.9465,
+							0.8705,
+							4.115,
+							0.736,
+							4.1138
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 388,
+							"length": 2
+						}
+					},
+					{
+						"content": "Informacoes",
+						"polygon": [
+							0.9254,
+							3.9472,
+							1.8227,
+							3.9486,
+							1.8227,
+							4.1149,
+							0.9254,
+							4.1149
+						],
+						"confidence": 0.99,
+						"span": {
+							"offset": 391,
+							"length": 11
+						}
+					},
+					{
+						"content": "da",
+						"polygon": [
+							1.8749,
+							3.9488,
+							2.045,
+							3.9479,
+							2.045,
+							4.115,
+							1.8748,
+							4.1151
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 403,
+							"length": 2
+						}
+					},
+					{
+						"content": "Divida",
+						"polygon": [
+							2.0999,
+							3.9481,
+							2.5568,
+							3.9465,
+							2.5568,
+							4.1142,
+							2.0998,
+							4.1147
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 406,
+							"length": 6
+						}
+					},
+					{
+						"content": "Campo",
+						"polygon": [
+							1.0552,
+							4.2515,
+							1.4724,
+							4.2559,
+							1.4724,
+							4.3916,
+							1.0546,
+							4.3897
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 413,
+							"length": 5
+						}
+					},
+					{
+						"content": "Informacao",
+						"polygon": [
+							3.0191,
+							4.2513,
+							3.6754,
+							4.2527,
+							3.6754,
+							4.3802,
+							3.0195,
+							4.3802
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 419,
+							"length": 10
+						}
+					},
+					{
+						"content": "Contrato",
+						"polygon": [
+							1.0555,
+							4.5,
+							1.5637,
+							4.5024,
+							1.5637,
+							4.6341,
+							1.0555,
+							4.6319
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 430,
+							"length": 8
+						}
+					},
+					{
+						"content": "BX-2024-0004587",
+						"polygon": [
+							3.0213,
+							4.4939,
+							3.995,
+							4.4939,
+							3.995,
+							4.631,
+							3.0216,
+							4.6312
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 439,
+							"length": 15
+						}
+					},
+					{
+						"content": "Produto",
+						"polygon": [
+							1.0519,
+							4.7451,
+							1.5224,
+							4.7485,
+							1.5221,
+							4.8795,
+							1.0518,
+							4.877
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 455,
+							"length": 7
+						}
+					},
+					{
+						"content": "Emprestimo",
+						"polygon": [
+							3.0236,
+							4.7459,
+							3.6594,
+							4.7481,
+							3.6594,
+							4.8878,
+							3.0237,
+							4.8878
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 463,
+							"length": 10
+						}
+					},
+					{
+						"content": "pessoal",
+						"polygon": [
+							3.6988,
+							4.7486,
+							4.1091,
+							4.7482,
+							4.1091,
+							4.8878,
+							3.6989,
+							4.8878
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 474,
+							"length": 7
+						}
+					},
+					{
+						"content": "Data",
+						"polygon": [
+							1.0534,
+							4.9961,
+							1.3165,
+							4.9966,
+							1.3165,
+							5.132,
+							1.0538,
+							5.1317
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 482,
+							"length": 4
+						}
+					},
+					{
+						"content": "de",
+						"polygon": [
+							1.3564,
+							4.9972,
+							1.4891,
+							4.9975,
+							1.4887,
+							5.1323,
+							1.3562,
+							5.1321
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 487,
+							"length": 2
+						}
+					},
+					{
+						"content": "contratacao",
+						"polygon": [
+							1.5266,
+							4.9975,
+							2.1972,
+							4.9995,
+							2.1972,
+							5.1331,
+							1.5264,
+							5.1323
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 490,
+							"length": 11
+						}
+					},
+					{
+						"content": "12/02/2024",
+						"polygon": [
+							3.0305,
+							4.9932,
+							3.6297,
+							4.9936,
+							3.6297,
+							5.1256,
+							3.0308,
+							5.1269
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 502,
+							"length": 10
+						}
+					},
+					{
+						"content": "Valor",
+						"polygon": [
+							1.0521,
+							5.243,
+							1.3632,
+							5.2443,
+							1.3634,
+							5.3909,
+							1.053,
+							5.3899
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 513,
+							"length": 5
+						}
+					},
+					{
+						"content": "original",
+						"polygon": [
+							1.3946,
+							5.2444,
+							1.8263,
+							5.244,
+							1.8263,
+							5.3923,
+							1.3947,
+							5.3907
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 519,
+							"length": 8
+						}
+					},
+					{
+						"content": "R$",
+						"polygon": [
+							3.023,
+							5.2427,
+							3.1795,
+							5.2434,
+							3.1799,
+							5.3834,
+							3.0235,
+							5.384
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 528,
+							"length": 2
+						}
+					},
+					{
+						"content": "18.450,00",
+						"polygon": [
+							3.2256,
+							5.2427,
+							3.7496,
+							5.2434,
+							3.7496,
+							5.384,
+							3.2258,
+							5.3831
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 531,
+							"length": 9
+						}
+					},
+					{
+						"content": "Saldo",
+						"polygon": [
+							1.0521,
+							5.4957,
+							1.3846,
+							5.4965,
+							1.3846,
+							5.6333,
+							1.0527,
+							5.6348
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 541,
+							"length": 5
+						}
+					},
+					{
+						"content": "atualizado",
+						"polygon": [
+							1.4208,
+							5.4962,
+							2.0032,
+							5.4961,
+							2.0032,
+							5.6346,
+							1.4208,
+							5.6334
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 547,
+							"length": 10
+						}
+					},
+					{
+						"content": "R$",
+						"polygon": [
+							3.0216,
+							5.4937,
+							3.1797,
+							5.4938,
+							3.1798,
+							5.6335,
+							3.022,
+							5.6349
+						],
+						"confidence": 0.977,
+						"span": {
+							"offset": 558,
+							"length": 2
+						}
+					},
+					{
+						"content": "22.780,35",
+						"polygon": [
+							3.2163,
+							5.4936,
+							3.7496,
+							5.4934,
+							3.7496,
+							5.6338,
+							3.2164,
+							5.633
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 561,
+							"length": 9
+						}
+					},
+					{
+						"content": "Dias",
+						"polygon": [
+							1.055,
+							5.7495,
+							1.3107,
+							5.7506,
+							1.3103,
+							5.883,
+							1.0551,
+							5.8831
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 571,
+							"length": 4
+						}
+					},
+					{
+						"content": "em",
+						"polygon": [
+							1.3497,
+							5.7514,
+							1.5122,
+							5.7523,
+							1.5117,
+							5.8836,
+							1.3493,
+							5.8832
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 576,
+							"length": 2
+						}
+					},
+					{
+						"content": "atraso",
+						"polygon": [
+							1.5533,
+							5.7525,
+							1.9119,
+							5.7535,
+							1.9119,
+							5.8852,
+							1.5528,
+							5.8841
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 579,
+							"length": 6
+						}
+					},
+					{
+						"content": "147",
+						"polygon": [
+							3.0324,
+							5.7511,
+							3.2289,
+							5.7512,
+							3.2287,
+							5.8793,
+							3.0323,
+							5.8788
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 586,
+							"length": 3
+						}
+					},
+					{
+						"content": "dias",
+						"polygon": [
+							3.2624,
+							5.7512,
+							3.487,
+							5.753,
+							3.487,
+							5.8802,
+							3.2621,
+							5.8794
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 590,
+							"length": 4
+						}
+					},
+					{
+						"content": "Status",
+						"polygon": [
+							1.0534,
+							5.9943,
+							1.4201,
+							5.9962,
+							1.4198,
+							6.1302,
+							1.0536,
+							6.1303
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 595,
+							"length": 6
+						}
+					},
+					{
+						"content": "interno",
+						"polygon": [
+							1.4621,
+							5.9969,
+							1.8662,
+							5.9975,
+							1.8662,
+							6.1312,
+							1.4619,
+							6.1304
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 602,
+							"length": 7
+						}
+					},
+					{
+						"content": "Em",
+						"polygon": [
+							3.0215,
+							5.9976,
+							3.1657,
+							5.997,
+							3.1655,
+							6.1374,
+							3.0216,
+							6.1374
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 610,
+							"length": 2
+						}
+					},
+					{
+						"content": "negociacao",
+						"polygon": [
+							3.223,
+							5.9971,
+							3.8523,
+							5.9992,
+							3.8523,
+							6.1384,
+							3.2227,
+							6.1375
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 613,
+							"length": 10
+						}
+					},
+					{
+						"content": "Ultima",
+						"polygon": [
+							1.0524,
+							6.2414,
+							1.4221,
+							6.2427,
+							1.4221,
+							6.3821,
+							1.0526,
+							6.3821
+						],
+						"confidence": 0.985,
+						"span": {
+							"offset": 624,
+							"length": 6
+						}
+					},
+					{
+						"content": "tentativa",
+						"polygon": [
+							1.4564,
+							6.2428,
+							1.9402,
+							6.244,
+							1.9399,
+							6.3821,
+							1.4564,
+							6.3821
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 631,
+							"length": 9
+						}
+					},
+					{
+						"content": "de",
+						"polygon": [
+							1.979,
+							6.2443,
+							2.1114,
+							6.2446,
+							2.1113,
+							6.3821,
+							1.9787,
+							6.3821
+						],
+						"confidence": 0.999,
+						"span": {
+							"offset": 641,
+							"length": 2
+						}
+					},
+					{
+						"content": "contato",
+						"polygon": [
+							2.1479,
+							6.2446,
+							2.5796,
+							6.2463,
+							2.5796,
+							6.3821,
+							2.1478,
+							6.3821
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 644,
+							"length": 7
+						}
+					},
+					{
+						"content": "25/04/2026",
+						"polygon": [
+							3.0208,
+							6.2422,
+							3.6297,
+							6.2428,
+							3.6297,
+							6.3752,
+							3.0209,
+							6.3764
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 652,
+							"length": 10
+						}
+					},
+					{
+						"content": "Responsavel",
+						"polygon": [
+							1.0512,
+							6.4986,
+							1.7721,
+							6.4994,
+							1.7718,
+							6.6388,
+							1.0514,
+							6.6388
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 663,
+							"length": 11
+						}
+					},
+					{
+						"content": "interno",
+						"polygon": [
+							1.7998,
+							6.4991,
+							2.2342,
+							6.4992,
+							2.2339,
+							6.6388,
+							1.7995,
+							6.6386
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 675,
+							"length": 7
+						}
+					},
+					{
+						"content": "Equipe",
+						"polygon": [
+							3.0189,
+							6.4925,
+							3.3968,
+							6.4927,
+							3.3968,
+							6.6417,
+							3.0191,
+							6.6417
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 683,
+							"length": 6
+						}
+					},
+					{
+						"content": "Cobranca",
+						"polygon": [
+							3.4331,
+							6.4928,
+							3.9394,
+							6.493,
+							3.9393,
+							6.6397,
+							3.4331,
+							6.6416
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 690,
+							"length": 8
+						}
+					},
+					{
+						"content": "-",
+						"polygon": [
+							3.9757,
+							6.4929,
+							4.0169,
+							6.4928,
+							4.0169,
+							6.6397,
+							3.9757,
+							6.6397
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 699,
+							"length": 1
+						}
+					},
+					{
+						"content": "Nucleo",
+						"polygon": [
+							4.0532,
+							6.4924,
+							4.4166,
+							6.4913,
+							4.4167,
+							6.6377,
+							4.0533,
+							6.6397
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 701,
+							"length": 6
+						}
+					},
+					{
+						"content": "03",
+						"polygon": [
+							4.4481,
+							6.4915,
+							4.5885,
+							6.4912,
+							4.5885,
+							6.6363,
+							4.4483,
+							6.6372
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 708,
+							"length": 2
+						}
+					},
+					{
+						"content": "3.",
+						"polygon": [
+							0.7381,
+							6.848,
+							0.8698,
+							6.8481,
+							0.8697,
+							7.0215,
+							0.7381,
+							7.0213
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 711,
+							"length": 2
+						}
+					},
+					{
+						"content": "Dados",
+						"polygon": [
+							0.927,
+							6.8481,
+							1.382,
+							6.8491,
+							1.3815,
+							7.0221,
+							0.9269,
+							7.0215
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 714,
+							"length": 5
+						}
+					},
+					{
+						"content": "a",
+						"polygon": [
+							1.4335,
+							6.8494,
+							1.5108,
+							6.8498,
+							1.5103,
+							7.0222,
+							1.433,
+							7.0221
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 720,
+							"length": 1
+						}
+					},
+					{
+						"content": "serem",
+						"polygon": [
+							1.5594,
+							6.85,
+							2.0001,
+							6.8521,
+							1.9996,
+							7.0256,
+							1.5589,
+							7.0223
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 722,
+							"length": 5
+						}
+					},
+					{
+						"content": "extraidos",
+						"polygon": [
+							2.0516,
+							6.8524,
+							2.7241,
+							6.8527,
+							2.7235,
+							7.0282,
+							2.0511,
+							7.0258
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 728,
+							"length": 9
+						}
+					},
+					{
+						"content": "para",
+						"polygon": [
+							2.7785,
+							6.8528,
+							3.0904,
+							6.8515,
+							3.0897,
+							7.0284,
+							2.7778,
+							7.0282
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 738,
+							"length": 4
+						}
+					},
+					{
+						"content": "planilha",
+						"polygon": [
+							3.1419,
+							6.8515,
+							3.721,
+							6.8517,
+							3.721,
+							7.029,
+							3.1412,
+							7.0286
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 743,
+							"length": 8
+						}
+					},
+					{
+						"content": "Campos",
+						"polygon": [
+							0.7432,
+							7.1002,
+							1.2149,
+							7.1009,
+							1.215,
+							7.262,
+							0.7429,
+							7.2617
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 752,
+							"length": 6
+						}
+					},
+					{
+						"content": "esperados:",
+						"polygon": [
+							1.252,
+							7.1009,
+							1.8457,
+							7.1016,
+							1.8455,
+							7.2631,
+							1.2521,
+							7.262
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 759,
+							"length": 10
+						}
+					},
+					{
+						"content": "nome,",
+						"polygon": [
+							1.8775,
+							7.1016,
+							2.2432,
+							7.1019,
+							2.2431,
+							7.2643,
+							1.8773,
+							7.2632
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 770,
+							"length": 5
+						}
+					},
+					{
+						"content": "CPF,",
+						"polygon": [
+							2.2856,
+							7.1018,
+							2.5612,
+							7.1009,
+							2.5612,
+							7.2638,
+							2.2855,
+							7.2642
+						],
+						"confidence": 0.989,
+						"span": {
+							"offset": 776,
+							"length": 4
+						}
+					},
+					{
+						"content": "telefone,",
+						"polygon": [
+							2.6036,
+							7.1008,
+							3.0753,
+							7.1033,
+							3.0752,
+							7.2646,
+							2.6036,
+							7.2637
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 781,
+							"length": 9
+						}
+					},
+					{
+						"content": "e-mail,",
+						"polygon": [
+							3.1177,
+							7.1034,
+							3.4834,
+							7.1031,
+							3.4833,
+							7.2641,
+							3.1176,
+							7.2646
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 791,
+							"length": 7
+						}
+					},
+					{
+						"content": "endereco,",
+						"polygon": [
+							3.5285,
+							7.1031,
+							4.0744,
+							7.1026,
+							4.0743,
+							7.2629,
+							3.5284,
+							7.264
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 799,
+							"length": 9
+						}
+					},
+					{
+						"content": "contrato,",
+						"polygon": [
+							4.1168,
+							7.1025,
+							4.5965,
+							7.1014,
+							4.5965,
+							7.2632,
+							4.1168,
+							7.263
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 809,
+							"length": 9
+						}
+					},
+					{
+						"content": "produto,",
+						"polygon": [
+							4.6415,
+							7.1014,
+							5.0894,
+							7.1011,
+							5.0894,
+							7.2628,
+							4.6415,
+							7.2631
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 819,
+							"length": 8
+						}
+					},
+					{
+						"content": "valor",
+						"polygon": [
+							5.1292,
+							7.1011,
+							5.4048,
+							7.1011,
+							5.4046,
+							7.2626,
+							5.1291,
+							7.2628
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 828,
+							"length": 5
+						}
+					},
+					{
+						"content": "original,",
+						"polygon": [
+							5.4366,
+							7.1011,
+							5.8659,
+							7.1016,
+							5.8658,
+							7.2633,
+							5.4364,
+							7.2626
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 834,
+							"length": 9
+						}
+					},
+					{
+						"content": "saldo",
+						"polygon": [
+							5.911,
+							7.1016,
+							6.2078,
+							7.1,
+							6.2077,
+							7.262,
+							5.9109,
+							7.2634
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 844,
+							"length": 5
+						}
+					},
+					{
+						"content": "atualizado,",
+						"polygon": [
+							6.2422,
+							7.0998,
+							6.8411,
+							7.0991,
+							6.8411,
+							7.2607,
+							6.2421,
+							7.2619
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 850,
+							"length": 11
+						}
+					},
+					{
+						"content": "dias",
+						"polygon": [
+							6.8809,
+							7.0992,
+							7.1088,
+							7.0995,
+							7.1087,
+							7.2615,
+							6.8808,
+							7.2608
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 862,
+							"length": 4
+						}
+					},
+					{
+						"content": "em",
+						"polygon": [
+							7.1486,
+							7.0996,
+							7.3279,
+							7.0999,
+							7.3279,
+							7.2621,
+							7.1485,
+							7.2616
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 867,
+							"length": 2
+						}
+					},
+					{
+						"content": "atraso,",
+						"polygon": [
+							0.7386,
+							7.2713,
+							1.1247,
+							7.2725,
+							1.1248,
+							7.4232,
+							0.7387,
+							7.423
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 870,
+							"length": 7
+						}
+					},
+					{
+						"content": "status,",
+						"polygon": [
+							1.1665,
+							7.2725,
+							1.528,
+							7.2731,
+							1.5283,
+							7.4231,
+							1.1666,
+							7.4231
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 878,
+							"length": 7
+						}
+					},
+					{
+						"content": "ultima",
+						"polygon": [
+							1.5723,
+							7.2731,
+							1.8994,
+							7.2727,
+							1.8995,
+							7.4221,
+							1.5725,
+							7.4229
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 886,
+							"length": 6
+						}
+					},
+					{
+						"content": "tentativa",
+						"polygon": [
+							1.9363,
+							7.2726,
+							2.406,
+							7.2727,
+							2.406,
+							7.4233,
+							1.9364,
+							7.4222
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 893,
+							"length": 9
+						}
+					},
+					{
+						"content": "de",
+						"polygon": [
+							2.4454,
+							7.2726,
+							2.5806,
+							7.2725,
+							2.5806,
+							7.4233,
+							2.4454,
+							7.4232
+						],
+						"confidence": 0.999,
+						"span": {
+							"offset": 903,
+							"length": 2
+						}
+					},
+					{
+						"content": "contato",
+						"polygon": [
+							2.62,
+							7.2725,
+							3.0258,
+							7.2734,
+							3.0257,
+							7.4231,
+							2.62,
+							7.4235
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 906,
+							"length": 7
+						}
+					},
+					{
+						"content": "e",
+						"polygon": [
+							3.0651,
+							7.2733,
+							3.1192,
+							7.2731,
+							3.1191,
+							7.4231,
+							3.065,
+							7.4231
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 914,
+							"length": 1
+						}
+					},
+					{
+						"content": "responsavel",
+						"polygon": [
+							3.1487,
+							7.273,
+							3.8349,
+							7.2739,
+							3.8348,
+							7.4219,
+							3.1486,
+							7.4231
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 916,
+							"length": 11
+						}
+					},
+					{
+						"content": "interno.",
+						"polygon": [
+							3.8792,
+							7.274,
+							4.2975,
+							7.2731,
+							4.2975,
+							7.4219,
+							3.8791,
+							7.4219
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 928,
+							"length": 8
+						}
+					},
+					{
+						"content": "4.",
+						"polygon": [
+							0.7383,
+							7.7005,
+							0.8703,
+							7.7015,
+							0.8702,
+							7.8554,
+							0.7382,
+							7.8555
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 937,
+							"length": 2
+						}
+					},
+					{
+						"content": "Observacoes",
+						"polygon": [
+							0.9236,
+							7.7018,
+							1.8833,
+							7.7048,
+							1.8833,
+							7.8578,
+							0.9234,
+							7.8557
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 940,
+							"length": 11
+						}
+					},
+					{
+						"content": "Este",
+						"polygon": [
+							0.7401,
+							7.952,
+							0.9972,
+							7.9523,
+							0.9971,
+							8.1065,
+							0.74,
+							8.1058
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 952,
+							"length": 4
+						}
+					},
+					{
+						"content": "documento",
+						"polygon": [
+							1.0361,
+							7.9524,
+							1.6333,
+							7.9511,
+							1.6332,
+							8.1102,
+							1.036,
+							8.1066
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 957,
+							"length": 9
+						}
+					},
+					{
+						"content": "foi",
+						"polygon": [
+							1.6644,
+							7.951,
+							1.815,
+							7.9506,
+							1.8149,
+							8.1102,
+							1.6644,
+							8.1102
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 967,
+							"length": 3
+						}
+					},
+					{
+						"content": "gerado",
+						"polygon": [
+							1.854,
+							7.9506,
+							2.2408,
+							7.9501,
+							2.2406,
+							8.1102,
+							1.8538,
+							8.1102
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 971,
+							"length": 6
+						}
+					},
+					{
+						"content": "apenas",
+						"polygon": [
+							2.2798,
+							7.9503,
+							2.6718,
+							7.9517,
+							2.6716,
+							8.1102,
+							2.2795,
+							8.1102
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 978,
+							"length": 6
+						}
+					},
+					{
+						"content": "para",
+						"polygon": [
+							2.703,
+							7.9517,
+							2.9678,
+							7.9521,
+							2.9677,
+							8.1102,
+							2.7027,
+							8.1102
+						],
+						"confidence": 0.988,
+						"span": {
+							"offset": 985,
+							"length": 4
+						}
+					},
+					{
+						"content": "simular",
+						"polygon": [
+							3.0094,
+							7.9522,
+							3.4118,
+							7.9528,
+							3.4117,
+							8.1102,
+							3.0093,
+							8.1102
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 990,
+							"length": 7
+						}
+					},
+					{
+						"content": "um",
+						"polygon": [
+							3.4482,
+							7.9528,
+							3.6143,
+							7.9531,
+							3.6142,
+							8.1102,
+							3.4481,
+							8.1102
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 998,
+							"length": 2
+						}
+					},
+					{
+						"content": "PDF",
+						"polygon": [
+							3.6585,
+							7.953,
+							3.8999,
+							7.9522,
+							3.8998,
+							8.1102,
+							3.6584,
+							8.1102
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 1001,
+							"length": 3
+						}
+					},
+					{
+						"content": "operacional",
+						"polygon": [
+							3.9363,
+							7.9521,
+							4.5776,
+							7.9521,
+							4.5776,
+							8.1102,
+							3.9362,
+							8.1102
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 1005,
+							"length": 11
+						}
+					},
+					{
+						"content": "com",
+						"polygon": [
+							4.6191,
+							7.9521,
+							4.8502,
+							7.9525,
+							4.8501,
+							8.1102,
+							4.6191,
+							8.1102
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 1017,
+							"length": 3
+						}
+					},
+					{
+						"content": "estrutura",
+						"polygon": [
+							4.8892,
+							7.9525,
+							5.3617,
+							7.9527,
+							5.3615,
+							8.1102,
+							4.889,
+							8.1102
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 1021,
+							"length": 9
+						}
+					},
+					{
+						"content": "repetitiva.",
+						"polygon": [
+							5.3929,
+							7.9527,
+							5.9511,
+							7.9528,
+							5.9509,
+							8.1102,
+							5.3927,
+							8.1102
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 1031,
+							"length": 11
+						}
+					},
+					{
+						"content": "A",
+						"polygon": [
+							5.99,
+							7.9528,
+							6.0783,
+							7.9526,
+							6.0781,
+							8.1102,
+							5.9898,
+							8.1102
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 1043,
+							"length": 1
+						}
+					},
+					{
+						"content": "segunda",
+						"polygon": [
+							6.1121,
+							7.9525,
+							6.5846,
+							7.9517,
+							6.5843,
+							8.1102,
+							6.1119,
+							8.1102
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 1045,
+							"length": 7
+						}
+					},
+					{
+						"content": "pagina",
+						"polygon": [
+							6.6287,
+							7.9518,
+							6.9974,
+							7.9528,
+							6.9973,
+							8.1102,
+							6.6285,
+							8.1102
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 1053,
+							"length": 6
+						}
+					},
+					{
+						"content": "contem",
+						"polygon": [
+							7.0364,
+							7.9528,
+							7.4535,
+							7.9524,
+							7.4535,
+							8.1086,
+							7.0363,
+							8.1102
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 1060,
+							"length": 6
+						}
+					},
+					{
+						"content": "imagem",
+						"polygon": [
+							0.7367,
+							8.118,
+							1.1907,
+							8.1186,
+							1.1907,
+							8.2741,
+							0.7363,
+							8.2732
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 1067,
+							"length": 6
+						}
+					},
+					{
+						"content": "simulada",
+						"polygon": [
+							1.232,
+							8.1186,
+							1.7247,
+							8.1177,
+							1.7246,
+							8.2767,
+							1.232,
+							8.2744
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 1074,
+							"length": 8
+						}
+					},
+					{
+						"content": "de",
+						"polygon": [
+							1.7659,
+							8.1178,
+							1.9001,
+							8.1181,
+							1.9,
+							8.2767,
+							1.7658,
+							8.2767
+						],
+						"confidence": 0.999,
+						"span": {
+							"offset": 1083,
+							"length": 2
+						}
+					},
+					{
+						"content": "comprovantes",
+						"polygon": [
+							1.9388,
+							8.1182,
+							2.7204,
+							8.1191,
+							2.7203,
+							8.2768,
+							1.9387,
+							8.2766
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 1086,
+							"length": 12
+						}
+					},
+					{
+						"content": "anexados,",
+						"polygon": [
+							2.7591,
+							8.1192,
+							3.3266,
+							8.1195,
+							3.3266,
+							8.2785,
+							2.759,
+							8.2769
+						],
+						"confidence": 0.986,
+						"span": {
+							"offset": 1099,
+							"length": 9
+						}
+					},
+					{
+						"content": "exigindo",
+						"polygon": [
+							3.3679,
+							8.1195,
+							3.8296,
+							8.1185,
+							3.8298,
+							8.2781,
+							3.3679,
+							8.2787
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 1109,
+							"length": 8
+						}
+					},
+					{
+						"content": "que",
+						"polygon": [
+							3.8683,
+							8.1183,
+							4.0747,
+							8.118,
+							4.0748,
+							8.2774,
+							3.8685,
+							8.278
+						],
+						"confidence": 0.999,
+						"span": {
+							"offset": 1118,
+							"length": 3
+						}
+					},
+					{
+						"content": "a",
+						"polygon": [
+							4.1134,
+							8.1181,
+							4.1779,
+							8.1181,
+							4.178,
+							8.2771,
+							4.1135,
+							8.2773
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 1122,
+							"length": 1
+						}
+					},
+					{
+						"content": "solucao",
+						"polygon": [
+							4.2166,
+							8.1182,
+							4.6448,
+							8.1186,
+							4.6449,
+							8.2764,
+							4.2167,
+							8.277
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 1124,
+							"length": 7
+						}
+					},
+					{
+						"content": "avalie",
+						"polygon": [
+							4.6809,
+							8.1186,
+							4.9879,
+							8.1188,
+							4.9879,
+							8.2761,
+							4.681,
+							8.2764
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 1132,
+							"length": 6
+						}
+					},
+					{
+						"content": "tambem",
+						"polygon": [
+							5.0188,
+							8.1187,
+							5.4883,
+							8.1184,
+							5.4883,
+							8.2751,
+							5.0188,
+							8.276
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 1139,
+							"length": 6
+						}
+					},
+					{
+						"content": "documentos",
+						"polygon": [
+							5.527,
+							8.1184,
+							6.2054,
+							8.1176,
+							6.2053,
+							8.2744,
+							5.527,
+							8.2751
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 1146,
+							"length": 10
+						}
+					},
+					{
+						"content": "com",
+						"polygon": [
+							6.2441,
+							8.1176,
+							6.4402,
+							8.1172,
+							6.4401,
+							8.2736,
+							6.244,
+							8.2743
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 1157,
+							"length": 3
+						}
+					},
+					{
+						"content": "informacoes",
+						"polygon": [
+							6.484,
+							8.1171,
+							7.2063,
+							8.1177,
+							7.2064,
+							8.2727,
+							6.4839,
+							8.2734
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 1161,
+							"length": 11
+						}
+					},
+					{
+						"content": "dentro",
+						"polygon": [
+							0.7404,
+							8.2862,
+							1.1025,
+							8.289,
+							1.1023,
+							8.4342,
+							0.7409,
+							8.4328
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 1173,
+							"length": 6
+						}
+					},
+					{
+						"content": "de",
+						"polygon": [
+							1.1385,
+							8.2891,
+							1.2584,
+							8.2885,
+							1.2582,
+							8.4353,
+							1.1383,
+							8.4346
+						],
+						"confidence": 0.999,
+						"span": {
+							"offset": 1180,
+							"length": 2
+						}
+					},
+					{
+						"content": "imagens.",
+						"polygon": [
+							1.2872,
+							8.2885,
+							1.8206,
+							8.2904,
+							1.8206,
+							8.4353,
+							1.287,
+							8.4353
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 1183,
+							"length": 8
+						}
+					},
+					{
+						"content": "Documento",
+						"polygon": [
+							0.6593,
+							11.1844,
+							1.2324,
+							11.1849,
+							1.2321,
+							11.3114,
+							0.6589,
+							11.3097
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 1192,
+							"length": 9
+						}
+					},
+					{
+						"content": "ficticio",
+						"polygon": [
+							1.263,
+							11.1849,
+							1.5731,
+							11.1853,
+							1.5727,
+							11.3119,
+							1.2627,
+							11.3114
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 1202,
+							"length": 8
+						}
+					},
+					{
+						"content": "para",
+						"polygon": [
+							1.6077,
+							11.1853,
+							1.8239,
+							11.1861,
+							1.8235,
+							11.3123,
+							1.6074,
+							11.312
+						],
+						"confidence": 0.991,
+						"span": {
+							"offset": 1211,
+							"length": 4
+						}
+					},
+					{
+						"content": "teste",
+						"polygon": [
+							1.8566,
+							11.1862,
+							2.0952,
+							11.1871,
+							2.0944,
+							11.3121,
+							1.8561,
+							11.3124
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 1216,
+							"length": 5
+						}
+					},
+					{
+						"content": "tecnico",
+						"polygon": [
+							2.1279,
+							11.1872,
+							2.4705,
+							11.1886,
+							2.4699,
+							11.3109,
+							2.127,
+							11.312
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 1222,
+							"length": 7
+						}
+					},
+					{
+						"content": "-",
+						"polygon": [
+							2.495,
+							11.1885,
+							2.5501,
+							11.1884,
+							2.5495,
+							11.3109,
+							2.4944,
+							11.3109
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 1230,
+							"length": 1
+						}
+					},
+					{
+						"content": "nao",
+						"polygon": [
+							2.5827,
+							11.1884,
+							2.7642,
+							11.1883,
+							2.7638,
+							11.3107,
+							2.5822,
+							11.3109
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 1232,
+							"length": 3
+						}
+					},
+					{
+						"content": "utilizar",
+						"polygon": [
+							2.801,
+							11.1884,
+							3.1212,
+							11.1876,
+							3.1207,
+							11.3102,
+							2.8005,
+							11.3106
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 1236,
+							"length": 8
+						}
+					},
+					{
+						"content": "como",
+						"polygon": [
+							3.1477,
+							11.1874,
+							3.419,
+							11.1866,
+							3.4184,
+							11.3106,
+							3.1472,
+							11.3102
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 1245,
+							"length": 4
+						}
+					},
+					{
+						"content": "documento",
+						"polygon": [
+							3.4496,
+							11.1865,
+							3.988,
+							11.1864,
+							3.9878,
+							11.3111,
+							3.449,
+							11.3106
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 1250,
+							"length": 9
+						}
+					},
+					{
+						"content": "real",
+						"polygon": [
+							4.0125,
+							11.1864,
+							4.229,
+							11.1867,
+							4.229,
+							11.3101,
+							4.0123,
+							11.311
+						],
+						"confidence": 0.991,
+						"span": {
+							"offset": 1260,
+							"length": 4
+						}
+					},
+					{
+						"content": "Pagina",
+						"polygon": [
+							7.1445,
+							11.1875,
+							7.4985,
+							11.1879,
+							7.4986,
+							11.3094,
+							7.1444,
+							11.3098
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 1265,
+							"length": 6
+						}
+					},
+					{
+						"content": "1",
+						"polygon": [
+							7.5385,
+							11.1877,
+							7.5962,
+							11.1861,
+							7.5962,
+							11.3082,
+							7.5386,
+							11.3086
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 1272,
+							"length": 1
+						}
+					}
+				],
+				"lines": [
+					{
+						"content": "BANCO X - DOSSIÊ DE CLIENTE DEVEDOR",
+						"polygon": [
+							1.8178,
+							0.677,
+							6.4413,
+							0.6793,
+							6.4412,
+							0.9332,
+							1.8177,
+							0.9309
+						],
+						"spans": [
+							{
+								"offset": 0,
+								"length": 35
+							}
+						]
+					},
+					{
+						"content": "Documento ficticio para desafio tecnico de extracao de dados",
+						"polygon": [
+							0.7398,
+							1.1199,
+							3.7873,
+							1.1187,
+							3.7873,
+							1.2547,
+							0.7399,
+							1.2559
+						],
+						"spans": [
+							{
+								"offset": 36,
+								"length": 60
+							}
+						]
+					},
+					{
+						"content": "1. Identificacao do Cliente",
+						"polygon": [
+							0.7446,
+							1.5528,
+							2.6394,
+							1.5504,
+							2.6396,
+							1.7147,
+							0.7448,
+							1.7167
+						],
+						"spans": [
+							{
+								"offset": 97,
+								"length": 27
+							}
+						]
+					},
+					{
+						"content": "Campo",
+						"polygon": [
+							1.0555,
+							1.8522,
+							1.4688,
+							1.8543,
+							1.4681,
+							1.9879,
+							1.0549,
+							1.9858
+						],
+						"spans": [
+							{
+								"offset": 125,
+								"length": 5
+							}
+						]
+					},
+					{
+						"content": "Informacao",
+						"polygon": [
+							3.0192,
+							1.8482,
+							3.6715,
+							1.8495,
+							3.6712,
+							1.9758,
+							3.0191,
+							1.9744
+						],
+						"spans": [
+							{
+								"offset": 131,
+								"length": 10
+							}
+						]
+					},
+					{
+						"content": "Nome completo",
+						"polygon": [
+							1.0521,
+							2.0981,
+							1.9553,
+							2.0998,
+							1.9551,
+							2.2409,
+							1.0518,
+							2.2392
+						],
+						"spans": [
+							{
+								"offset": 142,
+								"length": 13
+							}
+						]
+					},
+					{
+						"content": "Maria Almeida Costa",
+						"polygon": [
+							3.0206,
+							2.0975,
+							4.1334,
+							2.0975,
+							4.1334,
+							2.2298,
+							3.0206,
+							2.2298
+						],
+						"spans": [
+							{
+								"offset": 156,
+								"length": 19
+							}
+						]
+					},
+					{
+						"content": "CPF",
+						"polygon": [
+							1.0579,
+							2.3484,
+							1.3051,
+							2.3481,
+							1.3052,
+							2.4725,
+							1.0581,
+							2.4728
+						],
+						"spans": [
+							{
+								"offset": 176,
+								"length": 3
+							}
+						]
+					},
+					{
+						"content": "123.456.789-09 (ficticio)",
+						"polygon": [
+							3.0298,
+							2.3414,
+							4.3024,
+							2.3469,
+							4.3018,
+							2.4909,
+							3.0292,
+							2.4854
+						],
+						"spans": [
+							{
+								"offset": 180,
+								"length": 25
+							}
+						]
+					},
+					{
+						"content": "Data de nascimento",
+						"polygon": [
+							1.0533,
+							2.5959,
+							2.1845,
+							2.598,
+							2.1843,
+							2.7292,
+							1.0531,
+							2.727
+						],
+						"spans": [
+							{
+								"offset": 206,
+								"length": 18
+							}
+						]
+					},
+					{
+						"content": "14/08/1983",
+						"polygon": [
+							3.0322,
+							2.5926,
+							3.6289,
+							2.5926,
+							3.6289,
+							2.7223,
+							3.0322,
+							2.7222
+						],
+						"spans": [
+							{
+								"offset": 225,
+								"length": 10
+							}
+						]
+					},
+					{
+						"content": "Telefone",
+						"polygon": [
+							1.0553,
+							2.8466,
+							1.5547,
+							2.8477,
+							1.5544,
+							2.9774,
+							1.055,
+							2.9762
+						],
+						"spans": [
+							{
+								"offset": 236,
+								"length": 8
+							}
+						]
+					},
+					{
+						"content": "(81) 98888-1122",
+						"polygon": [
+							3.0236,
+							2.8435,
+							3.9107,
+							2.8403,
+							3.9114,
+							2.9812,
+							3.0243,
+							2.9856
+						],
+						"spans": [
+							{
+								"offset": 245,
+								"length": 15
+							}
+						]
+					},
+					{
+						"content": "E-mail",
+						"polygon": [
+							1.0521,
+							3.0968,
+							1.4264,
+							3.0965,
+							1.4265,
+							3.2248,
+							1.0522,
+							3.2251
+						],
+						"spans": [
+							{
+								"offset": 261,
+								"length": 6
+							}
+						]
+					},
+					{
+						"content": "maria.costa.exemplo@emailficticio.com",
+						"polygon": [
+							3.0193,
+							3.0973,
+							5.1126,
+							3.0966,
+							5.1126,
+							3.2375,
+							3.0193,
+							3.2382
+						],
+						"spans": [
+							{
+								"offset": 268,
+								"length": 37
+							}
+						]
+					},
+					{
+						"content": "Endereco",
+						"polygon": [
+							1.0524,
+							3.3494,
+							1.6076,
+							3.3514,
+							1.6071,
+							3.4818,
+							1.0519,
+							3.4797
+						],
+						"spans": [
+							{
+								"offset": 306,
+								"length": 8
+							}
+						]
+					},
+					{
+						"content": "Rua das Laranjeiras, 145, Apto 302 - Boa Vista - Recife/PE",
+						"polygon": [
+							3.0196,
+							3.3421,
+							6.1355,
+							3.3409,
+							6.1355,
+							3.4897,
+							3.0196,
+							3.491
+						],
+						"spans": [
+							{
+								"offset": 315,
+								"length": 58
+							}
+						]
+					},
+					{
+						"content": "CEP",
+						"polygon": [
+							1.0574,
+							3.5988,
+							1.3109,
+							3.5988,
+							1.3109,
+							3.7222,
+							1.0575,
+							3.7222
+						],
+						"spans": [
+							{
+								"offset": 374,
+								"length": 3
+							}
+						]
+					},
+					{
+						"content": "50050-120",
+						"polygon": [
+							3.0227,
+							3.5947,
+							3.5996,
+							3.5939,
+							3.5998,
+							3.7272,
+							3.0229,
+							3.728
+						],
+						"spans": [
+							{
+								"offset": 378,
+								"length": 9
+							}
+						]
+					},
+					{
+						"content": "2. Informacoes da Divida",
+						"polygon": [
+							0.736,
+							3.9465,
+							2.556,
+							3.9462,
+							2.556,
+							4.113,
+							0.736,
+							4.1132
+						],
+						"spans": [
+							{
+								"offset": 388,
+								"length": 24
+							}
+						]
+					},
+					{
+						"content": "Campo",
+						"polygon": [
+							1.0552,
+							4.2515,
+							1.4688,
+							4.2544,
+							1.4679,
+							4.3902,
+							1.0543,
+							4.3874
+						],
+						"spans": [
+							{
+								"offset": 413,
+								"length": 5
+							}
+						]
+					},
+					{
+						"content": "Informacao",
+						"polygon": [
+							3.0191,
+							4.2513,
+							3.6704,
+							4.2508,
+							3.6705,
+							4.3794,
+							3.0192,
+							4.38
+						],
+						"spans": [
+							{
+								"offset": 419,
+								"length": 10
+							}
+						]
+					},
+					{
+						"content": "Contrato",
+						"polygon": [
+							1.0555,
+							4.4994,
+							1.562,
+							4.5018,
+							1.5614,
+							4.632,
+							1.0549,
+							4.6297
+						],
+						"spans": [
+							{
+								"offset": 430,
+								"length": 8
+							}
+						]
+					},
+					{
+						"content": "BX-2024-0004587",
+						"polygon": [
+							3.0213,
+							4.4939,
+							3.9942,
+							4.4932,
+							3.9943,
+							4.6293,
+							3.0214,
+							4.63
+						],
+						"spans": [
+							{
+								"offset": 439,
+								"length": 15
+							}
+						]
+					},
+					{
+						"content": "Produto",
+						"polygon": [
+							1.0519,
+							4.7451,
+							1.52,
+							4.7476,
+							1.5194,
+							4.8773,
+							1.0512,
+							4.8748
+						],
+						"spans": [
+							{
+								"offset": 455,
+								"length": 7
+							}
+						]
+					},
+					{
+						"content": "Emprestimo pessoal",
+						"polygon": [
+							3.0236,
+							4.7456,
+							4.1076,
+							4.7473,
+							4.1074,
+							4.8878,
+							3.0233,
+							4.8864
+						],
+						"spans": [
+							{
+								"offset": 463,
+								"length": 18
+							}
+						]
+					},
+					{
+						"content": "Data de contratacao",
+						"polygon": [
+							1.0534,
+							4.996,
+							2.1955,
+							4.9979,
+							2.1952,
+							5.1322,
+							1.0531,
+							5.1302
+						],
+						"spans": [
+							{
+								"offset": 482,
+								"length": 19
+							}
+						]
+					},
+					{
+						"content": "12/02/2024",
+						"polygon": [
+							3.0305,
+							4.9932,
+							3.6289,
+							4.993,
+							3.629,
+							5.1244,
+							3.0305,
+							5.1247
+						],
+						"spans": [
+							{
+								"offset": 502,
+								"length": 10
+							}
+						]
+					},
+					{
+						"content": "Valor original",
+						"polygon": [
+							1.0521,
+							5.243,
+							1.8249,
+							5.2434,
+							1.8248,
+							5.3902,
+							1.0521,
+							5.3899
+						],
+						"spans": [
+							{
+								"offset": 513,
+								"length": 14
+							}
+						]
+					},
+					{
+						"content": "R$ 18.450,00",
+						"polygon": [
+							3.023,
+							5.2426,
+							3.7442,
+							5.2425,
+							3.7442,
+							5.3823,
+							3.023,
+							5.3824
+						],
+						"spans": [
+							{
+								"offset": 528,
+								"length": 12
+							}
+						]
+					},
+					{
+						"content": "Saldo atualizado",
+						"polygon": [
+							1.0521,
+							5.4956,
+							2.0017,
+							5.4954,
+							2.0017,
+							5.6323,
+							1.0522,
+							5.6325
+						],
+						"spans": [
+							{
+								"offset": 541,
+								"length": 16
+							}
+						]
+					},
+					{
+						"content": "R$ 22.780,35",
+						"polygon": [
+							3.0216,
+							5.4937,
+							3.7473,
+							5.4929,
+							3.7475,
+							5.6318,
+							3.0218,
+							5.6325
+						],
+						"spans": [
+							{
+								"offset": 558,
+								"length": 12
+							}
+						]
+					},
+					{
+						"content": "Dias em atraso",
+						"polygon": [
+							1.055,
+							5.7495,
+							1.9097,
+							5.7524,
+							1.9093,
+							5.8838,
+							1.0545,
+							5.8809
+						],
+						"spans": [
+							{
+								"offset": 571,
+								"length": 14
+							}
+						]
+					},
+					{
+						"content": "147 dias",
+						"polygon": [
+							3.0324,
+							5.7504,
+							3.4835,
+							5.752,
+							3.4831,
+							5.8785,
+							3.0319,
+							5.8769
+						],
+						"spans": [
+							{
+								"offset": 586,
+								"length": 8
+							}
+						]
+					},
+					{
+						"content": "Status interno",
+						"polygon": [
+							1.0534,
+							5.9943,
+							1.8656,
+							5.996,
+							1.8654,
+							6.1302,
+							1.0531,
+							6.1285
+						],
+						"spans": [
+							{
+								"offset": 595,
+								"length": 14
+							}
+						]
+					},
+					{
+						"content": "Em negociacao",
+						"polygon": [
+							3.0215,
+							5.9965,
+							3.8511,
+							5.9988,
+							3.8507,
+							6.1374,
+							3.0211,
+							6.1351
+						],
+						"spans": [
+							{
+								"offset": 610,
+								"length": 13
+							}
+						]
+					},
+					{
+						"content": "Ultima tentativa de contato",
+						"polygon": [
+							1.0524,
+							6.2414,
+							2.5778,
+							6.2446,
+							2.5775,
+							6.3821,
+							1.0521,
+							6.3803
+						],
+						"spans": [
+							{
+								"offset": 624,
+								"length": 27
+							}
+						]
+					},
+					{
+						"content": "25/04/2026",
+						"polygon": [
+							3.0208,
+							6.2422,
+							3.6281,
+							6.2419,
+							3.6281,
+							6.374,
+							3.0209,
+							6.3743
+						],
+						"spans": [
+							{
+								"offset": 652,
+								"length": 10
+							}
+						]
+					},
+					{
+						"content": "Responsavel interno",
+						"polygon": [
+							1.0512,
+							6.4977,
+							2.2317,
+							6.4973,
+							2.2317,
+							6.6379,
+							1.0512,
+							6.6382
+						],
+						"spans": [
+							{
+								"offset": 663,
+								"length": 19
+							}
+						]
+					},
+					{
+						"content": "Equipe Cobranca - Nucleo 03",
+						"polygon": [
+							3.0189,
+							6.4925,
+							4.5866,
+							6.4907,
+							4.5868,
+							6.6383,
+							3.0191,
+							6.6401
+						],
+						"spans": [
+							{
+								"offset": 683,
+								"length": 27
+							}
+						]
+					},
+					{
+						"content": "3. Dados a serem extraidos para planilha",
+						"polygon": [
+							0.7381,
+							6.8478,
+							3.7181,
+							6.8518,
+							3.7178,
+							7.0271,
+							0.7379,
+							7.0231
+						],
+						"spans": [
+							{
+								"offset": 711,
+								"length": 40
+							}
+						]
+					},
+					{
+						"content": "Campos esperados: nome, CPF, telefone, e-mail, endereco, contrato, produto, valor original, saldo atualizado, dias em",
+						"polygon": [
+							0.7429,
+							7.1002,
+							7.3268,
+							7.0988,
+							7.3268,
+							7.2611,
+							0.7429,
+							7.2625
+						],
+						"spans": [
+							{
+								"offset": 752,
+								"length": 117
+							}
+						]
+					},
+					{
+						"content": "atraso, status, ultima tentativa de contato e responsavel interno.",
+						"polygon": [
+							0.7386,
+							7.2713,
+							4.2946,
+							7.2727,
+							4.2946,
+							7.4223,
+							0.7385,
+							7.421
+						],
+						"spans": [
+							{
+								"offset": 870,
+								"length": 66
+							}
+						]
+					},
+					{
+						"content": "4. Observacoes",
+						"polygon": [
+							0.7383,
+							7.7002,
+							1.8818,
+							7.7035,
+							1.8813,
+							7.8571,
+							0.7379,
+							7.8538
+						],
+						"spans": [
+							{
+								"offset": 937,
+								"length": 14
+							}
+						]
+					},
+					{
+						"content": "Este documento foi gerado apenas para simular um PDF operacional com estrutura repetitiva. A segunda pagina contem",
+						"polygon": [
+							0.74,
+							7.9494,
+							7.4523,
+							7.9517,
+							7.4522,
+							8.1102,
+							0.74,
+							8.1088
+						],
+						"spans": [
+							{
+								"offset": 952,
+								"length": 114
+							}
+						]
+					},
+					{
+						"content": "imagem simulada de comprovantes anexados, exigindo que a solucao avalie tambem documentos com informacoes",
+						"polygon": [
+							0.7363,
+							8.1178,
+							7.2035,
+							8.1163,
+							7.2036,
+							8.2758,
+							0.7363,
+							8.2773
+						],
+						"spans": [
+							{
+								"offset": 1067,
+								"length": 105
+							}
+						]
+					},
+					{
+						"content": "dentro de imagens.",
+						"polygon": [
+							0.7404,
+							8.2862,
+							1.8191,
+							8.2894,
+							1.8186,
+							8.4353,
+							0.74,
+							8.4329
+						],
+						"spans": [
+							{
+								"offset": 1173,
+								"length": 18
+							}
+						]
+					},
+					{
+						"content": "Documento ficticio para teste tecnico - nao utilizar como documento real",
+						"polygon": [
+							0.659,
+							11.1844,
+							4.2271,
+							11.1865,
+							4.227,
+							11.3117,
+							0.6589,
+							11.3096
+						],
+						"spans": [
+							{
+								"offset": 1192,
+								"length": 72
+							}
+						]
+					},
+					{
+						"content": "Pagina 1",
+						"polygon": [
+							7.1441,
+							11.1875,
+							7.5906,
+							11.1862,
+							7.591,
+							11.3085,
+							7.1444,
+							11.3098
+						],
+						"spans": [
+							{
+								"offset": 1265,
+								"length": 8
+							}
+						]
+					}
+				],
+				"spans": [
+					{
+						"offset": 0,
+						"length": 1273
+					}
+				]
+			},
+			{
+				"pageNumber": 2,
+				"angle": 0.24104750156402588,
+				"width": 8.2639,
+				"height": 11.6806,
+				"unit": "inch",
+				"words": [
+					{
+						"content": "Anexos",
+						"polygon": [
+							3.1484,
+							0.7053,
+							3.9571,
+							0.7035,
+							3.9564,
+							0.9297,
+							3.1472,
+							0.9295
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 1274,
+							"length": 6
+						}
+					},
+					{
+						"content": "do",
+						"polygon": [
+							4.0316,
+							0.7036,
+							4.2925,
+							0.702,
+							4.2918,
+							0.9297,
+							4.0309,
+							0.9297
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 1281,
+							"length": 2
+						}
+					},
+					{
+						"content": "Cliente",
+						"polygon": [
+							4.367,
+							0.7021,
+							5.1079,
+							0.701,
+							5.1079,
+							0.9297,
+							4.3663,
+							0.9297
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 1284,
+							"length": 7
+						}
+					},
+					{
+						"content": "A",
+						"polygon": [
+							0.7346,
+							1.1152,
+							0.8035,
+							1.1153,
+							0.8038,
+							1.2662,
+							0.7348,
+							1.2662
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 1292,
+							"length": 1
+						}
+					},
+					{
+						"content": "pagina",
+						"polygon": [
+							0.8331,
+							1.1154,
+							1.1851,
+							1.1163,
+							1.1854,
+							1.2662,
+							0.8333,
+							1.2662
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 1294,
+							"length": 6
+						}
+					},
+					{
+						"content": "abaixo",
+						"polygon": [
+							1.2195,
+							1.1164,
+							1.5444,
+							1.1158,
+							1.5446,
+							1.2662,
+							1.2198,
+							1.2662
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 1301,
+							"length": 6
+						}
+					},
+					{
+						"content": "simula",
+						"polygon": [
+							1.5789,
+							1.1158,
+							1.8939,
+							1.1164,
+							1.894,
+							1.2662,
+							1.579,
+							1.2662
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 1308,
+							"length": 6
+						}
+					},
+					{
+						"content": "comprovantes",
+						"polygon": [
+							1.9309,
+							1.1162,
+							2.6053,
+							1.1158,
+							2.6054,
+							1.2653,
+							1.9309,
+							1.2662
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 1315,
+							"length": 12
+						}
+					},
+					{
+						"content": "inseridos",
+						"polygon": [
+							2.6348,
+							1.1158,
+							3.1,
+							1.1155,
+							3.1002,
+							1.2645,
+							2.635,
+							1.2651
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 1328,
+							"length": 9
+						}
+					},
+					{
+						"content": "como",
+						"polygon": [
+							3.132,
+							1.1155,
+							3.3831,
+							1.1149,
+							3.3831,
+							1.2644,
+							3.1321,
+							1.2644
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 1338,
+							"length": 4
+						}
+					},
+					{
+						"content": "imagem",
+						"polygon": [
+							3.4126,
+							1.1148,
+							3.8237,
+							1.1144,
+							3.8236,
+							1.2647,
+							3.4127,
+							1.2645
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 1343,
+							"length": 6
+						}
+					},
+					{
+						"content": "dentro",
+						"polygon": [
+							3.8606,
+							1.1144,
+							4.1732,
+							1.114,
+							4.1732,
+							1.2638,
+							3.8606,
+							1.2646
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 1350,
+							"length": 6
+						}
+					},
+					{
+						"content": "do",
+						"polygon": [
+							4.2077,
+							1.1139,
+							4.3283,
+							1.1137,
+							4.3282,
+							1.2633,
+							4.2076,
+							1.2637
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 1357,
+							"length": 2
+						}
+					},
+					{
+						"content": "PDF.",
+						"polygon": [
+							4.3652,
+							1.1137,
+							4.6228,
+							1.1143,
+							4.6228,
+							1.2612,
+							4.3652,
+							1.263
+						],
+						"confidence": 0.989,
+						"span": {
+							"offset": 1360,
+							"length": 4
+						}
+					},
+					{
+						"content": "COMPROVANTES",
+						"polygon": [
+							1.5022,
+							1.8658,
+							2.8536,
+							1.8702,
+							2.853,
+							2.0376,
+							1.5019,
+							2.0322
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 1365,
+							"length": 12
+						}
+					},
+					{
+						"content": "ANEXADOS",
+						"polygon": [
+							2.9118,
+							1.8705,
+							3.8118,
+							1.8746,
+							3.8113,
+							2.043,
+							2.9111,
+							2.0379
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 1378,
+							"length": 8
+						}
+					},
+					{
+						"content": "-",
+						"polygon": [
+							3.8727,
+							1.8749,
+							3.9281,
+							1.8751,
+							3.9277,
+							2.0436,
+							3.8723,
+							2.0433
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 1387,
+							"length": 1
+						}
+					},
+					{
+						"content": "DOCUMENTO",
+						"polygon": [
+							3.9918,
+							1.8753,
+							5.0303,
+							1.8797,
+							5.0296,
+							2.0509,
+							3.9914,
+							2.0441
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 1389,
+							"length": 9
+						}
+					},
+					{
+						"content": "FICTICIO",
+						"polygon": [
+							5.0996,
+							1.8798,
+							5.7927,
+							1.8832,
+							5.7927,
+							2.0532,
+							5.0988,
+							2.0511
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 1399,
+							"length": 8
+						}
+					},
+					{
+						"content": "Uso",
+						"polygon": [
+							1.5036,
+							2.0923,
+							1.7257,
+							2.0932,
+							1.7253,
+							2.2518,
+							1.5033,
+							2.2493
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 1408,
+							"length": 3
+						}
+					},
+					{
+						"content": "exclusivo",
+						"polygon": [
+							1.767,
+							2.0934,
+							2.2782,
+							2.0949,
+							2.2777,
+							2.2525,
+							1.7666,
+							2.2518
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 1412,
+							"length": 9
+						}
+					},
+					{
+						"content": "para",
+						"polygon": [
+							2.3092,
+							2.0951,
+							2.5777,
+							2.0955,
+							2.5773,
+							2.2549,
+							2.3087,
+							2.2525
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 1422,
+							"length": 4
+						}
+					},
+					{
+						"content": "teste",
+						"polygon": [
+							2.6242,
+							2.0958,
+							2.9082,
+							2.0981,
+							2.9079,
+							2.2559,
+							2.6238,
+							2.2552
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 1427,
+							"length": 5
+						}
+					},
+					{
+						"content": "tecnico",
+						"polygon": [
+							2.9495,
+							2.0986,
+							3.3574,
+							2.1005,
+							3.3571,
+							2.2579,
+							2.9492,
+							2.2558
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 1433,
+							"length": 7
+						}
+					},
+					{
+						"content": "-",
+						"polygon": [
+							3.4039,
+							2.1007,
+							3.44,
+							2.1008,
+							3.4397,
+							2.2584,
+							3.4035,
+							2.2582
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 1441,
+							"length": 1
+						}
+					},
+					{
+						"content": "dados",
+						"polygon": [
+							3.4787,
+							2.1009,
+							3.8144,
+							2.1036,
+							3.8139,
+							2.2585,
+							3.4784,
+							2.2586
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 1443,
+							"length": 5
+						}
+					},
+					{
+						"content": "simulados",
+						"polygon": [
+							3.8609,
+							2.1036,
+							4.4458,
+							2.1053,
+							4.4458,
+							2.2615,
+							3.8604,
+							2.2589
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 1449,
+							"length": 9
+						}
+					},
+					{
+						"content": "Comprovante",
+						"polygon": [
+							1.4723,
+							2.6986,
+							2.5782,
+							2.7014,
+							2.5776,
+							2.8714,
+							1.4715,
+							2.8685
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 1459,
+							"length": 11
+						}
+					},
+					{
+						"content": "de",
+						"polygon": [
+							2.6339,
+							2.7015,
+							2.8261,
+							2.7015,
+							2.8251,
+							2.8722,
+							2.6332,
+							2.8715
+						],
+						"confidence": 0.999,
+						"span": {
+							"offset": 1471,
+							"length": 2
+						}
+					},
+					{
+						"content": "Endereco",
+						"polygon": [
+							2.8929,
+							2.7016,
+							3.6525,
+							2.7058,
+							3.6525,
+							2.8729,
+							2.8919,
+							2.8723
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 1474,
+							"length": 8
+						}
+					},
+					{
+						"content": "Titular:",
+						"polygon": [
+							1.4968,
+							3.0605,
+							1.9696,
+							3.0621,
+							1.9691,
+							3.2276,
+							1.4964,
+							3.2262
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 1483,
+							"length": 8
+						}
+					},
+					{
+						"content": "Maria",
+						"polygon": [
+							2.0317,
+							3.0627,
+							2.391,
+							3.0647,
+							2.3905,
+							3.2301,
+							2.0313,
+							3.228
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 1492,
+							"length": 5
+						}
+					},
+					{
+						"content": "Almeida",
+						"polygon": [
+							2.4424,
+							3.0652,
+							2.9827,
+							3.069,
+							2.982,
+							3.2328,
+							2.4417,
+							3.2302
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 1498,
+							"length": 7
+						}
+					},
+					{
+						"content": "Costa",
+						"polygon": [
+							3.0368,
+							3.0693,
+							3.4243,
+							3.0716,
+							3.4243,
+							3.2334,
+							3.036,
+							3.2332
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 1506,
+							"length": 5
+						}
+					},
+					{
+						"content": "Endereco:",
+						"polygon": [
+							1.497,
+							3.2851,
+							2.171,
+							3.2874,
+							2.1705,
+							3.4581,
+							1.4965,
+							3.4551
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 1512,
+							"length": 9
+						}
+					},
+					{
+						"content": "Rua",
+						"polygon": [
+							2.2331,
+							3.2878,
+							2.47,
+							3.289,
+							2.4695,
+							3.4606,
+							2.2326,
+							3.4587
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 1522,
+							"length": 3
+						}
+					},
+					{
+						"content": "das",
+						"polygon": [
+							2.5235,
+							3.2892,
+							2.7576,
+							3.2908,
+							2.757,
+							3.4628,
+							2.523,
+							3.4608
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 1526,
+							"length": 3
+						}
+					},
+					{
+						"content": "Laranjeiras,",
+						"polygon": [
+							2.814,
+							3.2913,
+							3.5839,
+							3.2951,
+							3.5833,
+							3.4687,
+							2.8133,
+							3.4635
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 1530,
+							"length": 12
+						}
+					},
+					{
+						"content": "145,",
+						"polygon": [
+							3.6459,
+							3.2957,
+							3.9279,
+							3.297,
+							3.9271,
+							3.4699,
+							3.6452,
+							3.4688
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 1543,
+							"length": 4
+						}
+					},
+					{
+						"content": "Apto",
+						"polygon": [
+							3.9759,
+							3.2975,
+							4.2889,
+							3.2994,
+							4.2881,
+							3.4714,
+							3.975,
+							3.47
+						],
+						"confidence": 0.991,
+						"span": {
+							"offset": 1548,
+							"length": 4
+						}
+					},
+					{
+						"content": "302",
+						"polygon": [
+							4.3396,
+							3.2993,
+							4.5942,
+							3.3004,
+							4.5942,
+							3.4734,
+							4.3388,
+							3.4718
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 1553,
+							"length": 3
+						}
+					},
+					{
+						"content": "Bairro:",
+						"polygon": [
+							1.4968,
+							3.5097,
+							1.9388,
+							3.511,
+							1.9384,
+							3.6737,
+							1.4965,
+							3.6721
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 1557,
+							"length": 7
+						}
+					},
+					{
+						"content": "Boa",
+						"polygon": [
+							2.0004,
+							3.511,
+							2.2414,
+							3.5116,
+							2.2411,
+							3.6756,
+							2,
+							3.6741
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 1565,
+							"length": 3
+						}
+					},
+					{
+						"content": "Vista",
+						"polygon": [
+							2.2896,
+							3.5119,
+							2.6137,
+							3.5131,
+							2.6132,
+							3.6764,
+							2.2893,
+							3.6761
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 1569,
+							"length": 5
+						}
+					},
+					{
+						"content": "-",
+						"polygon": [
+							2.6726,
+							3.5133,
+							2.7182,
+							3.5134,
+							2.7176,
+							3.6766,
+							2.6721,
+							3.6765
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 1575,
+							"length": 1
+						}
+					},
+					{
+						"content": "Recife/PE",
+						"polygon": [
+							2.7664,
+							3.5136,
+							3.39,
+							3.5158,
+							3.39,
+							3.6787,
+							2.7658,
+							3.6766
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 1577,
+							"length": 9
+						}
+					},
+					{
+						"content": "CEP:",
+						"polygon": [
+							1.4964,
+							3.7334,
+							1.7978,
+							3.735,
+							1.7976,
+							3.8914,
+							1.4963,
+							3.8906
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 1587,
+							"length": 4
+						}
+					},
+					{
+						"content": "50050-120",
+						"polygon": [
+							1.8571,
+							3.7354,
+							2.591,
+							3.7366,
+							2.591,
+							3.8951,
+							1.8568,
+							3.8918
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 1592,
+							"length": 9
+						}
+					},
+					{
+						"content": "Referencia:",
+						"polygon": [
+							1.4919,
+							3.9495,
+							2.2526,
+							3.9568,
+							2.2521,
+							4.1295,
+							1.4914,
+							4.1232
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 1602,
+							"length": 11
+						}
+					},
+					{
+						"content": "Conta",
+						"polygon": [
+							2.3105,
+							3.957,
+							2.6981,
+							3.9584,
+							2.6972,
+							4.1329,
+							2.3099,
+							4.1297
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 1614,
+							"length": 5
+						}
+					},
+					{
+						"content": "de",
+						"polygon": [
+							2.7501,
+							3.959,
+							2.915,
+							3.9606,
+							2.9141,
+							4.1347,
+							2.7492,
+							4.1334
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 1620,
+							"length": 2
+						}
+					},
+					{
+						"content": "energia",
+						"polygon": [
+							2.9642,
+							3.9611,
+							3.4588,
+							3.9632,
+							3.4581,
+							4.1406,
+							2.9632,
+							4.1351
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 1623,
+							"length": 7
+						}
+					},
+					{
+						"content": "-",
+						"polygon": [
+							3.5109,
+							3.9635,
+							3.5571,
+							3.9637,
+							3.5564,
+							4.1415,
+							3.5102,
+							4.1411
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 1631,
+							"length": 1
+						}
+					},
+					{
+						"content": "Companhia",
+						"polygon": [
+							3.6063,
+							3.9641,
+							4.3613,
+							3.9693,
+							4.3603,
+							4.1477,
+							3.6056,
+							4.1419
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 1633,
+							"length": 9
+						}
+					},
+					{
+						"content": "Ficticia",
+						"polygon": [
+							4.4162,
+							3.9695,
+							4.8674,
+							3.9722,
+							4.8662,
+							4.1515,
+							4.4152,
+							4.1479
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 1643,
+							"length": 8
+						}
+					},
+					{
+						"content": "de",
+						"polygon": [
+							4.9224,
+							3.9724,
+							5.0844,
+							3.9732,
+							5.0832,
+							4.1529,
+							4.9212,
+							4.1519
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 1652,
+							"length": 2
+						}
+					},
+					{
+						"content": "Energia",
+						"polygon": [
+							5.1364,
+							3.9741,
+							5.65,
+							3.9768,
+							5.65,
+							4.1566,
+							5.1352,
+							4.1532
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 1655,
+							"length": 7
+						}
+					},
+					{
+						"content": "Mes/Ano:",
+						"polygon": [
+							1.4905,
+							4.1801,
+							2.1077,
+							4.183,
+							2.1072,
+							4.3436,
+							1.4903,
+							4.3415
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 1663,
+							"length": 8
+						}
+					},
+					{
+						"content": "03/2026",
+						"polygon": [
+							2.1684,
+							4.1847,
+							2.728,
+							4.1846,
+							2.728,
+							4.346,
+							2.1677,
+							4.3443
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 1672,
+							"length": 7
+						}
+					},
+					{
+						"content": "Valor:",
+						"polygon": [
+							1.4845,
+							4.4023,
+							1.8699,
+							4.4044,
+							1.8695,
+							4.567,
+							1.4843,
+							4.5657
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 1680,
+							"length": 6
+						}
+					},
+					{
+						"content": "R$",
+						"polygon": [
+							1.9341,
+							4.4049,
+							2.0947,
+							4.406,
+							2.0943,
+							4.569,
+							1.9338,
+							4.5678
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 1687,
+							"length": 2
+						}
+					},
+					{
+						"content": "184,72",
+						"polygon": [
+							2.159,
+							4.4067,
+							2.6196,
+							4.4082,
+							2.6196,
+							4.5717,
+							2.1585,
+							4.57
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 1690,
+							"length": 6
+						}
+					},
+					{
+						"content": "Codigo",
+						"polygon": [
+							1.4912,
+							4.6166,
+							1.9422,
+							4.6211,
+							1.9421,
+							4.7903,
+							1.491,
+							4.7879
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 1697,
+							"length": 6
+						}
+					},
+					{
+						"content": "de",
+						"polygon": [
+							2.0237,
+							4.6216,
+							2.1704,
+							4.6226,
+							2.1702,
+							4.7897,
+							2.0236,
+							4.7901
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 1704,
+							"length": 2
+						}
+					},
+					{
+						"content": "barras:",
+						"polygon": [
+							2.2573,
+							4.6233,
+							2.7464,
+							4.6249,
+							2.7461,
+							4.7904,
+							2.2572,
+							4.7895
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 1707,
+							"length": 7
+						}
+					},
+					{
+						"content": "34191.79001",
+						"polygon": [
+							2.8496,
+							4.6257,
+							3.6701,
+							4.6304,
+							3.6697,
+							4.7934,
+							2.8493,
+							4.7904
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 1715,
+							"length": 11
+						}
+					},
+					{
+						"content": "01043.510047",
+						"polygon": [
+							3.7516,
+							4.6308,
+							4.64,
+							4.6353,
+							4.6397,
+							4.7998,
+							3.7512,
+							4.7937
+						],
+						"confidence": 0.989,
+						"span": {
+							"offset": 1727,
+							"length": 12
+						}
+					},
+					{
+						"content": "91020.150008",
+						"polygon": [
+							4.7188,
+							4.6359,
+							5.6099,
+							4.6397,
+							5.6094,
+							4.8049,
+							4.7184,
+							4.8004
+						],
+						"confidence": 0.99,
+						"span": {
+							"offset": 1740,
+							"length": 12
+						}
+					},
+					{
+						"content": "1",
+						"polygon": [
+							5.6996,
+							4.6404,
+							5.7594,
+							4.6408,
+							5.7588,
+							4.8053,
+							5.6991,
+							4.8051
+						],
+						"confidence": 0.896,
+						"span": {
+							"offset": 1753,
+							"length": 1
+						}
+					},
+					{
+						"content": "99990000018472",
+						"polygon": [
+							5.8436,
+							4.6412,
+							6.8999,
+							4.648,
+							6.8999,
+							4.8167,
+							5.8431,
+							4.806
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 1755,
+							"length": 14
+						}
+					},
+					{
+						"content": "Comprovante",
+						"polygon": [
+							1.4504,
+							5.7089,
+							2.5568,
+							5.7149,
+							2.5562,
+							5.8892,
+							1.4498,
+							5.8863
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 1770,
+							"length": 11
+						}
+					},
+					{
+						"content": "Bancario",
+						"polygon": [
+							2.62,
+							5.7153,
+							3.3329,
+							5.7174,
+							3.3329,
+							5.8913,
+							2.6195,
+							5.8892
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 1782,
+							"length": 8
+						}
+					},
+					{
+						"content": "Banco:",
+						"polygon": [
+							1.4786,
+							6.0757,
+							1.9375,
+							6.0777,
+							1.9369,
+							6.2462,
+							1.4784,
+							6.2448
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 1791,
+							"length": 6
+						}
+					},
+					{
+						"content": "Banco",
+						"polygon": [
+							2.0066,
+							6.0783,
+							2.4075,
+							6.0804,
+							2.4069,
+							6.248,
+							2.0061,
+							6.2465
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 1798,
+							"length": 5
+						}
+					},
+					{
+						"content": "Exemplo",
+						"polygon": [
+							2.4628,
+							6.0811,
+							3.0295,
+							6.0828,
+							3.0289,
+							6.2509,
+							2.4622,
+							6.2482
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 1804,
+							"length": 7
+						}
+					},
+					{
+						"content": "S.A.",
+						"polygon": [
+							3.0793,
+							6.0829,
+							3.3387,
+							6.085,
+							3.3387,
+							6.2509,
+							3.0787,
+							6.2509
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 1812,
+							"length": 4
+						}
+					},
+					{
+						"content": "Agencia:",
+						"polygon": [
+							1.4676,
+							6.2992,
+							2.0551,
+							6.302,
+							2.0547,
+							6.4734,
+							1.4673,
+							6.4734
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 1817,
+							"length": 8
+						}
+					},
+					{
+						"content": "1234",
+						"polygon": [
+							2.1197,
+							6.3026,
+							2.4486,
+							6.3032,
+							2.4484,
+							6.4734,
+							2.1194,
+							6.4734
+						],
+						"confidence": 0.991,
+						"span": {
+							"offset": 1826,
+							"length": 4
+						}
+					},
+					{
+						"content": "|",
+						"polygon": [
+							2.5105,
+							6.3037,
+							2.533,
+							6.3039,
+							2.5328,
+							6.4734,
+							2.5103,
+							6.4734
+						],
+						"confidence": 0.934,
+						"span": {
+							"offset": 1831,
+							"length": 1
+						}
+					},
+					{
+						"content": "Conta:",
+						"polygon": [
+							2.5892,
+							6.3042,
+							3.0136,
+							6.3048,
+							3.0133,
+							6.4734,
+							2.589,
+							6.4734
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 1833,
+							"length": 6
+						}
+					},
+					{
+						"content": "00098765-4",
+						"polygon": [
+							3.0727,
+							6.3049,
+							3.898,
+							6.3069,
+							3.898,
+							6.4734,
+							3.0723,
+							6.4734
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 1840,
+							"length": 10
+						}
+					},
+					{
+						"content": "Data",
+						"polygon": [
+							1.4745,
+							6.5244,
+							1.7964,
+							6.5253,
+							1.796,
+							6.6896,
+							1.4743,
+							6.6884
+						],
+						"confidence": 0.991,
+						"span": {
+							"offset": 1851,
+							"length": 4
+						}
+					},
+					{
+						"content": "da",
+						"polygon": [
+							1.8522,
+							6.5252,
+							2.0092,
+							6.5255,
+							2.0087,
+							6.6896,
+							1.8518,
+							6.6896
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 1856,
+							"length": 2
+						}
+					},
+					{
+						"content": "transacao:",
+						"polygon": [
+							2.0597,
+							6.5258,
+							2.762,
+							6.5305,
+							2.7616,
+							6.6909,
+							2.0593,
+							6.6897
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 1859,
+							"length": 10
+						}
+					},
+					{
+						"content": "18/03/2026",
+						"polygon": [
+							2.8259,
+							6.5305,
+							3.5955,
+							6.5331,
+							3.5955,
+							6.6945,
+							2.8253,
+							6.691
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 1870,
+							"length": 10
+						}
+					},
+					{
+						"content": "Tipo:",
+						"polygon": [
+							1.4715,
+							6.7485,
+							1.8034,
+							6.7501,
+							1.8031,
+							6.9258,
+							1.4715,
+							6.9257
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 1881,
+							"length": 5
+						}
+					},
+					{
+						"content": "Pagamento",
+						"polygon": [
+							1.8658,
+							6.7498,
+							2.6147,
+							6.7545,
+							2.6145,
+							6.9272,
+							1.8655,
+							6.9259
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 1887,
+							"length": 9
+						}
+					},
+					{
+						"content": "parcial",
+						"polygon": [
+							2.6686,
+							6.7549,
+							3.1027,
+							6.7565,
+							3.1022,
+							6.928,
+							2.6683,
+							6.9273
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 1897,
+							"length": 7
+						}
+					},
+					{
+						"content": "de",
+						"polygon": [
+							3.1537,
+							6.7566,
+							3.3211,
+							6.7578,
+							3.3206,
+							6.9286,
+							3.1533,
+							6.928
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 1905,
+							"length": 2
+						}
+					},
+					{
+						"content": "acordo",
+						"polygon": [
+							3.3693,
+							6.7581,
+							3.8295,
+							6.761,
+							3.8295,
+							6.9289,
+							3.3688,
+							6.9288
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 1908,
+							"length": 6
+						}
+					},
+					{
+						"content": "Pagador:",
+						"polygon": [
+							1.4687,
+							6.9725,
+							2.0655,
+							6.9737,
+							2.0653,
+							7.1433,
+							1.4685,
+							7.1411
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 1915,
+							"length": 8
+						}
+					},
+					{
+						"content": "Maria",
+						"polygon": [
+							2.1257,
+							6.9744,
+							2.4816,
+							6.9765,
+							2.4813,
+							7.1438,
+							2.1255,
+							7.143
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 1924,
+							"length": 5
+						}
+					},
+					{
+						"content": "Almeida",
+						"polygon": [
+							2.5308,
+							6.9769,
+							3.0702,
+							6.9795,
+							3.0696,
+							7.1451,
+							2.5306,
+							7.144
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 1930,
+							"length": 7
+						}
+					},
+					{
+						"content": "Costa",
+						"polygon": [
+							3.1249,
+							6.9799,
+							3.5099,
+							6.982,
+							3.5099,
+							7.1446,
+							3.1244,
+							7.1451
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 1938,
+							"length": 5
+						}
+					},
+					{
+						"content": "Recebedor:",
+						"polygon": [
+							1.4682,
+							7.1952,
+							2.2258,
+							7.1981,
+							2.2251,
+							7.364,
+							1.468,
+							7.3611
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 1944,
+							"length": 10
+						}
+					},
+					{
+						"content": "Banco",
+						"polygon": [
+							2.2912,
+							7.1985,
+							2.6972,
+							7.2008,
+							2.6967,
+							7.3672,
+							2.2905,
+							7.364
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 1955,
+							"length": 5
+						}
+					},
+					{
+						"content": "X",
+						"polygon": [
+							2.7463,
+							7.2011,
+							2.8308,
+							7.2015,
+							2.8302,
+							7.3679,
+							2.7457,
+							7.3674
+						],
+						"confidence": 0.977,
+						"span": {
+							"offset": 1961,
+							"length": 1
+						}
+					},
+					{
+						"content": "-",
+						"polygon": [
+							2.8798,
+							7.2017,
+							2.9234,
+							7.202,
+							2.9228,
+							7.3683,
+							2.8792,
+							7.3681
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 1963,
+							"length": 1
+						}
+					},
+					{
+						"content": "Carteira",
+						"polygon": [
+							2.9725,
+							7.2023,
+							3.5066,
+							7.2046,
+							3.506,
+							7.3715,
+							2.9718,
+							7.3685
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 1965,
+							"length": 8
+						}
+					},
+					{
+						"content": "de",
+						"polygon": [
+							3.5584,
+							7.2048,
+							3.7192,
+							7.206,
+							3.7184,
+							7.3724,
+							3.5578,
+							7.3717
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 1974,
+							"length": 2
+						}
+					},
+					{
+						"content": "Cobranca",
+						"polygon": [
+							3.7709,
+							7.2064,
+							4.4173,
+							7.2102,
+							4.4173,
+							7.3745,
+							3.7701,
+							7.3726
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 1977,
+							"length": 8
+						}
+					},
+					{
+						"content": "Valor",
+						"polygon": [
+							1.4651,
+							7.4203,
+							1.8225,
+							7.421,
+							1.8224,
+							7.5934,
+							1.4649,
+							7.592
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 1986,
+							"length": 5
+						}
+					},
+					{
+						"content": "pago:",
+						"polygon": [
+							1.8703,
+							7.421,
+							2.2306,
+							7.4233,
+							2.2304,
+							7.5942,
+							1.8702,
+							7.5935
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 1992,
+							"length": 5
+						}
+					},
+					{
+						"content": "R$",
+						"polygon": [
+							2.2953,
+							7.424,
+							2.4585,
+							7.4236,
+							2.4582,
+							7.5947,
+							2.295,
+							7.5945
+						],
+						"confidence": 0.984,
+						"span": {
+							"offset": 1998,
+							"length": 2
+						}
+					},
+					{
+						"content": "750,00",
+						"polygon": [
+							2.5176,
+							7.4234,
+							2.9847,
+							7.4237,
+							2.9848,
+							7.5949,
+							2.5174,
+							7.5947
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 2001,
+							"length": 6
+						}
+					},
+					{
+						"content": "Autenticacao:",
+						"polygon": [
+							1.4624,
+							7.6362,
+							2.4255,
+							7.6404,
+							2.4247,
+							7.7977,
+							1.4618,
+							7.7946
+						],
+						"confidence": 0.991,
+						"span": {
+							"offset": 2008,
+							"length": 13
+						}
+					},
+					{
+						"content": "BX26.03.18.00045.99871.FICT",
+						"polygon": [
+							2.5314,
+							7.6409,
+							4.5543,
+							7.6487,
+							4.5543,
+							7.8078,
+							2.5307,
+							7.7975
+						],
+						"confidence": 0.983,
+						"span": {
+							"offset": 2022,
+							"length": 27
+						}
+					},
+					{
+						"content": "PAGO",
+						"polygon": [
+							5.5463,
+							7.4692,
+							6.215,
+							7.4739,
+							6.215,
+							7.6825,
+							5.5464,
+							7.6786
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 2050,
+							"length": 4
+						}
+					},
+					{
+						"content": "Observacoes",
+						"polygon": [
+							1.4387,
+							8.4102,
+							2.4883,
+							8.4195,
+							2.4875,
+							8.5824,
+							1.4382,
+							8.5734
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 2055,
+							"length": 11
+						}
+					},
+					{
+						"content": "do",
+						"polygon": [
+							2.5497,
+							8.4197,
+							2.7447,
+							8.4215,
+							2.7439,
+							8.5839,
+							2.5489,
+							8.5829
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 2067,
+							"length": 2
+						}
+					},
+					{
+						"content": "Anexo",
+						"polygon": [
+							2.7954,
+							8.422,
+							3.3101,
+							8.4244,
+							3.3101,
+							8.5868,
+							2.7947,
+							8.5844
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 2070,
+							"length": 5
+						}
+					},
+					{
+						"content": "Imagem",
+						"polygon": [
+							1.4571,
+							8.7833,
+							2.0118,
+							8.7868,
+							2.0113,
+							8.9581,
+							1.4565,
+							8.9548
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 2076,
+							"length": 6
+						}
+					},
+					{
+						"content": "simulada",
+						"polygon": [
+							2.0682,
+							8.7872,
+							2.6679,
+							8.79,
+							2.6671,
+							8.9633,
+							2.0676,
+							8.9583
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 2083,
+							"length": 8
+						}
+					},
+					{
+						"content": "para",
+						"polygon": [
+							2.7242,
+							8.7902,
+							3.0199,
+							8.7914,
+							3.019,
+							8.9638,
+							2.7234,
+							8.9633
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 2092,
+							"length": 4
+						}
+					},
+					{
+						"content": "parecer",
+						"polygon": [
+							3.079,
+							8.7919,
+							3.5887,
+							8.7953,
+							3.5879,
+							8.9674,
+							3.0781,
+							8.9643
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 2097,
+							"length": 7
+						}
+					},
+					{
+						"content": "com",
+						"polygon": [
+							3.6309,
+							8.7958,
+							3.9069,
+							8.7985,
+							3.9062,
+							8.9688,
+							3.6302,
+							8.9676
+						],
+						"confidence": 0.999,
+						"span": {
+							"offset": 2105,
+							"length": 3
+						}
+					},
+					{
+						"content": "comprovante",
+						"polygon": [
+							3.9576,
+							8.7986,
+							4.8417,
+							8.8028,
+							4.8411,
+							8.9744,
+							3.9569,
+							8.969
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 2109,
+							"length": 11
+						}
+					},
+					{
+						"content": "digitalizado.",
+						"polygon": [
+							4.8952,
+							8.803,
+							5.7071,
+							8.8062,
+							5.7071,
+							8.9771,
+							4.8946,
+							8.9748
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 2121,
+							"length": 13
+						}
+					},
+					{
+						"content": "Nao",
+						"polygon": [
+							1.4596,
+							9.0053,
+							1.7282,
+							9.0076,
+							1.7278,
+							9.1697,
+							1.4591,
+							9.1669
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 2135,
+							"length": 3
+						}
+					},
+					{
+						"content": "contem",
+						"polygon": [
+							1.7819,
+							9.0079,
+							2.2762,
+							9.011,
+							2.2754,
+							9.1742,
+							1.7815,
+							9.1702
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 2139,
+							"length": 6
+						}
+					},
+					{
+						"content": "dados",
+						"polygon": [
+							2.3326,
+							9.0114,
+							2.7328,
+							9.0142,
+							2.7318,
+							9.1781,
+							2.3318,
+							9.1747
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 2146,
+							"length": 5
+						}
+					},
+					{
+						"content": "reais",
+						"polygon": [
+							2.7866,
+							9.0144,
+							3.1008,
+							9.0164,
+							3.0995,
+							9.1815,
+							2.7855,
+							9.1786
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 2152,
+							"length": 5
+						}
+					},
+					{
+						"content": "de",
+						"polygon": [
+							3.1492,
+							9.0168,
+							3.3104,
+							9.0179,
+							3.3091,
+							9.1837,
+							3.1478,
+							9.182
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 2158,
+							"length": 2
+						}
+					},
+					{
+						"content": "pessoas,",
+						"polygon": [
+							3.3668,
+							9.0183,
+							3.9389,
+							9.0238,
+							3.9381,
+							9.1882,
+							3.3655,
+							9.1842
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 2161,
+							"length": 8
+						}
+					},
+					{
+						"content": "bancos",
+						"polygon": [
+							3.9926,
+							9.0245,
+							4.4627,
+							9.0287,
+							4.4614,
+							9.193,
+							3.9918,
+							9.1885
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 2170,
+							"length": 6
+						}
+					},
+					{
+						"content": "ou",
+						"polygon": [
+							4.5138,
+							9.0294,
+							4.6696,
+							9.0311,
+							4.6682,
+							9.1944,
+							4.5124,
+							9.1933
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 2177,
+							"length": 2
+						}
+					},
+					{
+						"content": "operacoes.",
+						"polygon": [
+							4.7233,
+							9.0315,
+							5.4617,
+							9.0382,
+							5.4617,
+							9.1996,
+							4.722,
+							9.1949
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 2180,
+							"length": 10
+						}
+					},
+					{
+						"content": "Finalidade:",
+						"polygon": [
+							1.4528,
+							9.2244,
+							2.1812,
+							9.2307,
+							2.1804,
+							9.3971,
+							1.4524,
+							9.3921
+						],
+						"confidence": 0.991,
+						"span": {
+							"offset": 2191,
+							"length": 11
+						}
+					},
+					{
+						"content": "testar",
+						"polygon": [
+							2.2336,
+							9.2312,
+							2.6364,
+							9.234,
+							2.6353,
+							9.4014,
+							2.2327,
+							9.3977
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 2203,
+							"length": 6
+						}
+					},
+					{
+						"content": "extracao",
+						"polygon": [
+							2.6806,
+							9.2343,
+							3.2627,
+							9.2379,
+							3.2617,
+							9.406,
+							2.6795,
+							9.4018
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 2210,
+							"length": 8
+						}
+					},
+					{
+						"content": "de",
+						"polygon": [
+							3.3124,
+							9.2382,
+							3.4752,
+							9.2392,
+							3.4743,
+							9.4078,
+							3.3115,
+							9.4065
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 2219,
+							"length": 2
+						}
+					},
+					{
+						"content": "dados",
+						"polygon": [
+							3.5248,
+							9.2394,
+							3.9221,
+							9.2415,
+							3.9214,
+							9.4119,
+							3.524,
+							9.4081
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 2222,
+							"length": 5
+						}
+					},
+					{
+						"content": "em",
+						"polygon": [
+							3.9746,
+							9.2418,
+							4.176,
+							9.2437,
+							4.1753,
+							9.414,
+							3.9739,
+							9.4125
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 2228,
+							"length": 2
+						}
+					},
+					{
+						"content": "PDF",
+						"polygon": [
+							4.2339,
+							9.2444,
+							4.4905,
+							9.2465,
+							4.4896,
+							9.4155,
+							4.2333,
+							9.4142
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 2231,
+							"length": 3
+						}
+					},
+					{
+						"content": "com",
+						"polygon": [
+							4.5346,
+							9.2467,
+							4.8078,
+							9.2485,
+							4.8065,
+							9.4179,
+							4.5336,
+							9.4158
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 2235,
+							"length": 3
+						}
+					},
+					{
+						"content": "texto",
+						"polygon": [
+							4.8602,
+							9.2491,
+							5.2051,
+							9.2526,
+							5.204,
+							9.4214,
+							4.8589,
+							9.4185
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 2239,
+							"length": 5
+						}
+					},
+					{
+						"content": "+",
+						"polygon": [
+							5.2602,
+							9.2531,
+							5.3513,
+							9.254,
+							5.3504,
+							9.4226,
+							5.2592,
+							9.4219
+						],
+						"confidence": 0.991,
+						"span": {
+							"offset": 2245,
+							"length": 1
+						}
+					},
+					{
+						"content": "imagem.",
+						"polygon": [
+							5.4147,
+							9.2546,
+							6.0039,
+							9.2587,
+							6.0039,
+							9.4264,
+							5.4139,
+							9.4231
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 2247,
+							"length": 7
+						}
+					},
+					{
+						"content": "Documento",
+						"polygon": [
+							0.6578,
+							11.1818,
+							1.2316,
+							11.1824,
+							1.2315,
+							11.3121,
+							0.6576,
+							11.3102
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 2255,
+							"length": 9
+						}
+					},
+					{
+						"content": "ficticio",
+						"polygon": [
+							1.2634,
+							11.1824,
+							1.5725,
+							11.1824,
+							1.5723,
+							11.313,
+							1.2632,
+							11.3122
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 2265,
+							"length": 8
+						}
+					},
+					{
+						"content": "para",
+						"polygon": [
+							1.6085,
+							11.1824,
+							1.8245,
+							11.1829,
+							1.8243,
+							11.3135,
+							1.6084,
+							11.3131
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 2274,
+							"length": 4
+						}
+					},
+					{
+						"content": "teste",
+						"polygon": [
+							1.8562,
+							11.183,
+							2.0955,
+							11.1833,
+							2.0951,
+							11.3134,
+							1.8561,
+							11.3135
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 2279,
+							"length": 5
+						}
+					},
+					{
+						"content": "tecnico",
+						"polygon": [
+							2.1294,
+							11.1834,
+							2.4809,
+							11.1845,
+							2.4806,
+							11.312,
+							2.1289,
+							11.3133
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 2285,
+							"length": 7
+						}
+					},
+					{
+						"content": "-",
+						"polygon": [
+							2.5126,
+							11.1844,
+							2.5381,
+							11.1844,
+							2.5378,
+							11.3121,
+							2.5124,
+							11.3121
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 2293,
+							"length": 1
+						}
+					},
+					{
+						"content": "nao",
+						"polygon": [
+							2.5635,
+							11.1844,
+							2.7625,
+							11.1844,
+							2.7623,
+							11.3121,
+							2.5632,
+							11.3121
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 2295,
+							"length": 3
+						}
+					},
+					{
+						"content": "utilizar",
+						"polygon": [
+							2.8006,
+							11.1844,
+							3.1203,
+							11.1838,
+							3.1201,
+							11.3119,
+							2.8005,
+							11.312
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 2299,
+							"length": 8
+						}
+					},
+					{
+						"content": "como",
+						"polygon": [
+							3.1479,
+							11.1837,
+							3.4189,
+							11.1826,
+							3.4187,
+							11.3119,
+							3.1476,
+							11.3119
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 2308,
+							"length": 4
+						}
+					},
+					{
+						"content": "documento",
+						"polygon": [
+							3.4507,
+							11.1825,
+							3.9864,
+							11.1821,
+							3.9864,
+							11.3126,
+							3.4504,
+							11.3119
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 2313,
+							"length": 9
+						}
+					},
+					{
+						"content": "real",
+						"polygon": [
+							4.0118,
+							11.1822,
+							4.229,
+							11.1827,
+							4.229,
+							11.3114,
+							4.0118,
+							11.3125
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 2323,
+							"length": 4
+						}
+					},
+					{
+						"content": "Pagina",
+						"polygon": [
+							7.1444,
+							11.187,
+							7.4971,
+							11.1874,
+							7.4972,
+							11.3111,
+							7.1442,
+							11.3121
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 2328,
+							"length": 6
+						}
+					},
+					{
+						"content": "2",
+						"polygon": [
+							7.5296,
+							11.1872,
+							7.6019,
+							11.1865,
+							7.6019,
+							11.3101,
+							7.5296,
+							11.3106
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 2335,
+							"length": 1
+						}
+					}
+				],
+				"lines": [
+					{
+						"content": "Anexos do Cliente",
+						"polygon": [
+							3.1469,
+							0.7032,
+							5.1052,
+							0.701,
+							5.1055,
+							0.9284,
+							3.1472,
+							0.9297
+						],
+						"spans": [
+							{
+								"offset": 1274,
+								"length": 17
+							}
+						]
+					},
+					{
+						"content": "A pagina abaixo simula comprovantes inseridos como imagem dentro do PDF.",
+						"polygon": [
+							0.7346,
+							1.1152,
+							4.618,
+							1.1135,
+							4.6181,
+							1.2642,
+							0.7347,
+							1.2659
+						],
+						"spans": [
+							{
+								"offset": 1292,
+								"length": 72
+							}
+						]
+					},
+					{
+						"content": "COMPROVANTES ANEXADOS - DOCUMENTO FICTICIO",
+						"polygon": [
+							1.5022,
+							1.865,
+							5.7881,
+							1.8832,
+							5.7872,
+							2.0531,
+							1.5013,
+							2.0303
+						],
+						"spans": [
+							{
+								"offset": 1365,
+								"length": 42
+							}
+						]
+					},
+					{
+						"content": "Uso exclusivo para teste tecnico - dados simulados",
+						"polygon": [
+							1.5036,
+							2.091,
+							4.4413,
+							2.1034,
+							4.4407,
+							2.2606,
+							1.503,
+							2.2483
+						],
+						"spans": [
+							{
+								"offset": 1408,
+								"length": 50
+							}
+						]
+					},
+					{
+						"content": "Comprovante de Endereco",
+						"polygon": [
+							1.4718,
+							2.6977,
+							3.6523,
+							2.7013,
+							3.652,
+							2.871,
+							1.4715,
+							2.8671
+						],
+						"spans": [
+							{
+								"offset": 1459,
+								"length": 23
+							}
+						]
+					},
+					{
+						"content": "Titular: Maria Almeida Costa",
+						"polygon": [
+							1.4968,
+							3.0595,
+							3.4192,
+							3.0687,
+							3.4184,
+							3.2327,
+							1.496,
+							3.2235
+						],
+						"spans": [
+							{
+								"offset": 1483,
+								"length": 28
+							}
+						]
+					},
+					{
+						"content": "Endereco: Rua das Laranjeiras, 145, Apto 302",
+						"polygon": [
+							1.497,
+							3.2835,
+							4.591,
+							3.3001,
+							4.59,
+							3.4717,
+							1.4961,
+							3.4551
+						],
+						"spans": [
+							{
+								"offset": 1512,
+								"length": 44
+							}
+						]
+					},
+					{
+						"content": "Bairro: Boa Vista - Recife/PE",
+						"polygon": [
+							1.4968,
+							3.5087,
+							3.3888,
+							3.5157,
+							3.3882,
+							3.6775,
+							1.4963,
+							3.6705
+						],
+						"spans": [
+							{
+								"offset": 1557,
+								"length": 29
+							}
+						]
+					},
+					{
+						"content": "CEP: 50050-120",
+						"polygon": [
+							1.4964,
+							3.7334,
+							2.5895,
+							3.7365,
+							2.5891,
+							3.8923,
+							1.4959,
+							3.8892
+						],
+						"spans": [
+							{
+								"offset": 1587,
+								"length": 14
+							}
+						]
+					},
+					{
+						"content": "Referencia: Conta de energia - Companhia Ficticia de Energia",
+						"polygon": [
+							1.4919,
+							3.9491,
+							5.6464,
+							3.9766,
+							5.6452,
+							4.1536,
+							1.4908,
+							4.1262
+						],
+						"spans": [
+							{
+								"offset": 1602,
+								"length": 60
+							}
+						]
+					},
+					{
+						"content": "Mes/Ano: 03/2026",
+						"polygon": [
+							1.4905,
+							4.1788,
+							2.7244,
+							4.1843,
+							2.7237,
+							4.3447,
+							1.4898,
+							4.3392
+						],
+						"spans": [
+							{
+								"offset": 1663,
+								"length": 16
+							}
+						]
+					},
+					{
+						"content": "Valor: R$ 184,72",
+						"polygon": [
+							1.4845,
+							4.4017,
+							2.6193,
+							4.4081,
+							2.6184,
+							4.5701,
+							1.4838,
+							4.5636
+						],
+						"spans": [
+							{
+								"offset": 1680,
+								"length": 16
+							}
+						]
+					},
+					{
+						"content": "Codigo de barras: 34191.79001 01043.510047 91020.150008 1 99990000018472",
+						"polygon": [
+							1.4912,
+							4.6166,
+							6.897,
+							4.6463,
+							6.8961,
+							4.8152,
+							1.4903,
+							4.7856
+						],
+						"spans": [
+							{
+								"offset": 1697,
+								"length": 72
+							}
+						]
+					},
+					{
+						"content": "Comprovante Bancario",
+						"polygon": [
+							1.4504,
+							5.7089,
+							3.3287,
+							5.7168,
+							3.328,
+							5.8914,
+							1.4497,
+							5.8836
+						],
+						"spans": [
+							{
+								"offset": 1770,
+								"length": 20
+							}
+						]
+					},
+					{
+						"content": "Banco: Banco Exemplo S.A.",
+						"polygon": [
+							1.4786,
+							6.0752,
+							3.338,
+							6.0841,
+							3.3372,
+							6.2509,
+							1.4781,
+							6.2422
+						],
+						"spans": [
+							{
+								"offset": 1791,
+								"length": 25
+							}
+						]
+					},
+					{
+						"content": "Agencia: 1234 | Conta: 00098765-4",
+						"polygon": [
+							1.4676,
+							6.2992,
+							3.8972,
+							6.3039,
+							3.8968,
+							6.4734,
+							1.4673,
+							6.4727
+						],
+						"spans": [
+							{
+								"offset": 1817,
+								"length": 33
+							}
+						]
+					},
+					{
+						"content": "Data da transacao: 18/03/2026",
+						"polygon": [
+							1.4745,
+							6.5237,
+							3.5926,
+							6.5295,
+							3.5921,
+							6.6919,
+							1.474,
+							6.6861
+						],
+						"spans": [
+							{
+								"offset": 1851,
+								"length": 29
+							}
+						]
+					},
+					{
+						"content": "Tipo: Pagamento parcial de acordo",
+						"polygon": [
+							1.4715,
+							6.7483,
+							3.8273,
+							6.7526,
+							3.827,
+							6.9271,
+							1.4712,
+							6.9228
+						],
+						"spans": [
+							{
+								"offset": 1881,
+								"length": 33
+							}
+						]
+					},
+					{
+						"content": "Pagador: Maria Almeida Costa",
+						"polygon": [
+							1.4687,
+							6.9723,
+							3.5095,
+							6.9769,
+							3.5092,
+							7.1439,
+							1.4683,
+							7.1392
+						],
+						"spans": [
+							{
+								"offset": 1915,
+								"length": 28
+							}
+						]
+					},
+					{
+						"content": "Recebedor: Banco X - Carteira de Cobranca",
+						"polygon": [
+							1.4682,
+							7.1935,
+							4.4156,
+							7.2095,
+							4.4147,
+							7.3744,
+							1.4673,
+							7.3584
+						],
+						"spans": [
+							{
+								"offset": 1944,
+								"length": 41
+							}
+						]
+					},
+					{
+						"content": "Valor pago: R$ 750,00",
+						"polygon": [
+							1.4651,
+							7.4201,
+							2.9821,
+							7.4234,
+							2.9817,
+							7.5941,
+							1.4647,
+							7.5909
+						],
+						"spans": [
+							{
+								"offset": 1986,
+								"length": 21
+							}
+						]
+					},
+					{
+						"content": "Autenticacao: BX26.03.18.00045.99871.FICT",
+						"polygon": [
+							1.4624,
+							7.6362,
+							4.5539,
+							7.6487,
+							4.5533,
+							7.8055,
+							1.4617,
+							7.793
+						],
+						"spans": [
+							{
+								"offset": 2008,
+								"length": 41
+							}
+						]
+					},
+					{
+						"content": "PAGO",
+						"polygon": [
+							5.5463,
+							7.4678,
+							6.2127,
+							7.4714,
+							6.2116,
+							7.6808,
+							5.5451,
+							7.6771
+						],
+						"spans": [
+							{
+								"offset": 2050,
+								"length": 4
+							}
+						]
+					},
+					{
+						"content": "Observacoes do Anexo",
+						"polygon": [
+							1.4387,
+							8.4102,
+							3.3099,
+							8.4245,
+							3.3086,
+							8.587,
+							1.4375,
+							8.5727
+						],
+						"spans": [
+							{
+								"offset": 2055,
+								"length": 20
+							}
+						]
+					},
+					{
+						"content": "Imagem simulada para parecer com comprovante digitalizado.",
+						"polygon": [
+							1.4571,
+							8.7832,
+							5.7067,
+							8.8054,
+							5.7058,
+							8.9765,
+							1.4562,
+							8.954
+						],
+						"spans": [
+							{
+								"offset": 2076,
+								"length": 58
+							}
+						]
+					},
+					{
+						"content": "Nao contem dados reais de pessoas, bancos ou operacoes.",
+						"polygon": [
+							1.4596,
+							9.0024,
+							5.4581,
+							9.0353,
+							5.4568,
+							9.1989,
+							1.4583,
+							9.1659
+						],
+						"spans": [
+							{
+								"offset": 2135,
+								"length": 55
+							}
+						]
+					},
+					{
+						"content": "Finalidade: testar extracao de dados em PDF com texto + imagem.",
+						"polygon": [
+							1.4528,
+							9.223,
+							6.0022,
+							9.2568,
+							6.001,
+							9.4252,
+							1.4516,
+							9.3913
+						],
+						"spans": [
+							{
+								"offset": 2191,
+								"length": 63
+							}
+						]
+					},
+					{
+						"content": "Documento ficticio para teste tecnico - nao utilizar como documento real",
+						"polygon": [
+							0.6576,
+							11.1818,
+							4.2289,
+							11.1821,
+							4.2289,
+							11.3117,
+							0.6576,
+							11.3114
+						],
+						"spans": [
+							{
+								"offset": 2255,
+								"length": 72
+							}
+						]
+					},
+					{
+						"content": "Pagina 2",
+						"polygon": [
+							7.1441,
+							11.187,
+							7.6007,
+							11.1865,
+							7.6008,
+							11.3096,
+							7.1442,
+							11.3101
+						],
+						"spans": [
+							{
+								"offset": 2328,
+								"length": 8
+							}
+						]
+					}
+				],
+				"spans": [
+					{
+						"offset": 1274,
+						"length": 1062
+					}
+				]
+			}
+		],
+		"tables": [
+			{
+				"rowCount": 8,
+				"columnCount": 2,
+				"cells": [
+					{
+						"kind": "columnHeader",
+						"rowIndex": 0,
+						"columnIndex": 0,
+						"content": "Campo",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									0.972,
+									1.788,
+									2.9364,
+									1.7946,
+									2.9364,
+									2.0492,
+									0.972,
+									2.0361
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 125,
+								"length": 5
+							}
+						],
+						"elements": [
+							"/paragraphs/3"
+						]
+					},
+					{
+						"kind": "columnHeader",
+						"rowIndex": 0,
+						"columnIndex": 1,
+						"content": "Informacao",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									2.9364,
+									1.7946,
+									7.2765,
+									1.7815,
+									7.2765,
+									2.0492,
+									2.9364,
+									2.0492
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 131,
+								"length": 10
+							}
+						],
+						"elements": [
+							"/paragraphs/4"
+						]
+					},
+					{
+						"rowIndex": 1,
+						"columnIndex": 0,
+						"content": "Nome completo",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									0.972,
+									2.0361,
+									2.9364,
+									2.0492,
+									2.9364,
+									2.2908,
+									0.972,
+									2.2908
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 142,
+								"length": 13
+							}
+						],
+						"elements": [
+							"/paragraphs/5"
+						]
+					},
+					{
+						"rowIndex": 1,
+						"columnIndex": 1,
+						"content": "Maria Almeida Costa",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									2.9364,
+									2.0492,
+									7.2765,
+									2.0492,
+									7.2765,
+									2.2908,
+									2.9364,
+									2.2908
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 156,
+								"length": 19
+							}
+						],
+						"elements": [
+							"/paragraphs/6"
+						]
+					},
+					{
+						"rowIndex": 2,
+						"columnIndex": 0,
+						"content": "CPF",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									0.972,
+									2.2908,
+									2.9364,
+									2.2908,
+									2.9364,
+									2.5454,
+									0.972,
+									2.5454
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 176,
+								"length": 3
+							}
+						],
+						"elements": [
+							"/paragraphs/7"
+						]
+					},
+					{
+						"rowIndex": 2,
+						"columnIndex": 1,
+						"content": "123.456.789-09 (ficticio)",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									2.9364,
+									2.2908,
+									7.2765,
+									2.2908,
+									7.2765,
+									2.5389,
+									2.9364,
+									2.5454
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 180,
+								"length": 25
+							}
+						],
+						"elements": [
+							"/paragraphs/8"
+						]
+					},
+					{
+						"rowIndex": 3,
+						"columnIndex": 0,
+						"content": "Data de nascimento",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									0.972,
+									2.5454,
+									2.9364,
+									2.5454,
+									2.9364,
+									2.787,
+									0.972,
+									2.787
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 206,
+								"length": 18
+							}
+						],
+						"elements": [
+							"/paragraphs/9"
+						]
+					},
+					{
+						"rowIndex": 3,
+						"columnIndex": 1,
+						"content": "14/08/1983",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									2.9364,
+									2.5454,
+									7.2765,
+									2.5389,
+									7.2765,
+									2.787,
+									2.9364,
+									2.787
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 225,
+								"length": 10
+							}
+						],
+						"elements": [
+							"/paragraphs/10"
+						]
+					},
+					{
+						"rowIndex": 4,
+						"columnIndex": 0,
+						"content": "Telefone",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									0.972,
+									2.787,
+									2.9364,
+									2.787,
+									2.9364,
+									3.0482,
+									0.9785,
+									3.0482
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 236,
+								"length": 8
+							}
+						],
+						"elements": [
+							"/paragraphs/11"
+						]
+					},
+					{
+						"rowIndex": 4,
+						"columnIndex": 1,
+						"content": "(81) 98888-1122",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									2.9364,
+									2.787,
+									7.2765,
+									2.787,
+									7.2765,
+									3.0482,
+									2.9364,
+									3.0482
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 245,
+								"length": 15
+							}
+						],
+						"elements": [
+							"/paragraphs/12"
+						]
+					},
+					{
+						"rowIndex": 5,
+						"columnIndex": 0,
+						"content": "E-mail",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									0.9785,
+									3.0482,
+									2.9364,
+									3.0482,
+									2.9364,
+									3.2963,
+									0.9785,
+									3.2832
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 261,
+								"length": 6
+							}
+						],
+						"elements": [
+							"/paragraphs/13"
+						]
+					},
+					{
+						"rowIndex": 5,
+						"columnIndex": 1,
+						"content": "maria.costa.exemplo@emailficticio.com",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									2.9364,
+									3.0482,
+									7.2765,
+									3.0482,
+									7.2765,
+									3.2963,
+									2.9364,
+									3.2963
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 268,
+								"length": 37
+							}
+						],
+						"elements": [
+							"/paragraphs/14"
+						]
+					},
+					{
+						"rowIndex": 6,
+						"columnIndex": 0,
+						"content": "Endereco",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									0.9785,
+									3.2832,
+									2.9364,
+									3.2963,
+									2.9364,
+									3.5444,
+									0.9785,
+									3.5444
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 306,
+								"length": 8
+							}
+						],
+						"elements": [
+							"/paragraphs/15"
+						]
+					},
+					{
+						"rowIndex": 6,
+						"columnIndex": 1,
+						"content": "Rua das Laranjeiras, 145, Apto 302 - Boa Vista - Recife/PE",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									2.9364,
+									3.2963,
+									7.2765,
+									3.2963,
+									7.2765,
+									3.5509,
+									2.9364,
+									3.5444
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 315,
+								"length": 58
+							}
+						],
+						"elements": [
+							"/paragraphs/16"
+						]
+					},
+					{
+						"rowIndex": 7,
+						"columnIndex": 0,
+						"content": "CEP",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									0.9785,
+									3.5444,
+									2.9364,
+									3.5444,
+									2.9364,
+									3.7991,
+									0.9785,
+									3.786
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 374,
+								"length": 3
+							}
+						],
+						"elements": [
+							"/paragraphs/17"
+						]
+					},
+					{
+						"rowIndex": 7,
+						"columnIndex": 1,
+						"content": "50050-120",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									2.9364,
+									3.5444,
+									7.2765,
+									3.5509,
+									7.2765,
+									3.7991,
+									2.9364,
+									3.7991
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 378,
+								"length": 9
+							}
+						],
+						"elements": [
+							"/paragraphs/18"
+						]
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.9761,
+							1.7773,
+							7.2868,
+							1.7819,
+							7.2776,
+							3.8031,
+							0.9676,
+							3.7981
+						]
+					}
+				],
+				"spans": [
+					{
+						"offset": 125,
+						"length": 262
+					}
+				]
+			},
+			{
+				"rowCount": 10,
+				"columnCount": 2,
+				"cells": [
+					{
+						"kind": "columnHeader",
+						"rowIndex": 0,
+						"columnIndex": 0,
+						"content": "Campo",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									0.9775,
+									4.1877,
+									2.9468,
+									4.1877,
+									2.9468,
+									4.4417,
+									0.9775,
+									4.4417
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 413,
+								"length": 5
+							}
+						],
+						"elements": [
+							"/paragraphs/20"
+						]
+					},
+					{
+						"kind": "columnHeader",
+						"rowIndex": 0,
+						"columnIndex": 1,
+						"content": "Informacao",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									2.9468,
+									4.1877,
+									7.2636,
+									4.1877,
+									7.2636,
+									4.4417,
+									2.9468,
+									4.4417
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 419,
+								"length": 10
+							}
+						],
+						"elements": [
+							"/paragraphs/21"
+						]
+					},
+					{
+						"rowIndex": 1,
+						"columnIndex": 0,
+						"content": "Contrato",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									0.9775,
+									4.4417,
+									2.9468,
+									4.4417,
+									2.9468,
+									4.6957,
+									0.9775,
+									4.6827
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 430,
+								"length": 8
+							}
+						],
+						"elements": [
+							"/paragraphs/22"
+						]
+					},
+					{
+						"rowIndex": 1,
+						"columnIndex": 1,
+						"content": "BX-2024-0004587",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									2.9468,
+									4.4417,
+									7.2636,
+									4.4417,
+									7.2701,
+									4.6957,
+									2.9468,
+									4.6957
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 439,
+								"length": 15
+							}
+						],
+						"elements": [
+							"/paragraphs/23"
+						]
+					},
+					{
+						"rowIndex": 2,
+						"columnIndex": 0,
+						"content": "Produto",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									0.9775,
+									4.6827,
+									2.9468,
+									4.6957,
+									2.9403,
+									4.9367,
+									0.9775,
+									4.9367
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 455,
+								"length": 7
+							}
+						],
+						"elements": [
+							"/paragraphs/24"
+						]
+					},
+					{
+						"rowIndex": 2,
+						"columnIndex": 1,
+						"content": "Emprestimo pessoal",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									2.9468,
+									4.6957,
+									7.2701,
+									4.6957,
+									7.2701,
+									4.9302,
+									2.9403,
+									4.9367
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 463,
+								"length": 18
+							}
+						],
+						"elements": [
+							"/paragraphs/25"
+						]
+					},
+					{
+						"rowIndex": 3,
+						"columnIndex": 0,
+						"content": "Data de contratacao",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									0.9775,
+									4.9367,
+									2.9403,
+									4.9367,
+									2.9403,
+									5.1972,
+									0.9775,
+									5.1907
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 482,
+								"length": 19
+							}
+						],
+						"elements": [
+							"/paragraphs/26"
+						]
+					},
+					{
+						"rowIndex": 3,
+						"columnIndex": 1,
+						"content": "12/02/2024",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									2.9403,
+									4.9367,
+									7.2701,
+									4.9302,
+									7.2701,
+									5.1842,
+									2.9403,
+									5.1972
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 502,
+								"length": 10
+							}
+						],
+						"elements": [
+							"/paragraphs/27"
+						]
+					},
+					{
+						"rowIndex": 4,
+						"columnIndex": 0,
+						"content": "Valor original",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									0.9775,
+									5.1907,
+									2.9403,
+									5.1972,
+									2.9403,
+									5.4447,
+									0.971,
+									5.4447
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 513,
+								"length": 14
+							}
+						],
+						"elements": [
+							"/paragraphs/28"
+						]
+					},
+					{
+						"rowIndex": 4,
+						"columnIndex": 1,
+						"content": "R$ 18.450,00",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									2.9403,
+									5.1972,
+									7.2701,
+									5.1842,
+									7.2701,
+									5.4447,
+									2.9403,
+									5.4447
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 528,
+								"length": 12
+							}
+						],
+						"elements": [
+							"/paragraphs/29"
+						]
+					},
+					{
+						"rowIndex": 5,
+						"columnIndex": 0,
+						"content": "Saldo atualizado",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									0.971,
+									5.4447,
+									2.9403,
+									5.4447,
+									2.9403,
+									5.6921,
+									0.971,
+									5.6856
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 541,
+								"length": 16
+							}
+						],
+						"elements": [
+							"/paragraphs/30"
+						]
+					},
+					{
+						"rowIndex": 5,
+						"columnIndex": 1,
+						"content": "R$ 22.780,35",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									2.9403,
+									5.4447,
+									7.2701,
+									5.4447,
+									7.2701,
+									5.6856,
+									2.9403,
+									5.6921
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 558,
+								"length": 12
+							}
+						],
+						"elements": [
+							"/paragraphs/31"
+						]
+					},
+					{
+						"rowIndex": 6,
+						"columnIndex": 0,
+						"content": "Dias em atraso",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									0.971,
+									5.6856,
+									2.9403,
+									5.6921,
+									2.9403,
+									5.9461,
+									0.971,
+									5.9461
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 571,
+								"length": 14
+							}
+						],
+						"elements": [
+							"/paragraphs/32"
+						]
+					},
+					{
+						"rowIndex": 6,
+						"columnIndex": 1,
+						"content": "147 dias",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									2.9403,
+									5.6921,
+									7.2701,
+									5.6856,
+									7.2766,
+									5.9461,
+									2.9403,
+									5.9461
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 586,
+								"length": 8
+							}
+						],
+						"elements": [
+							"/paragraphs/33"
+						]
+					},
+					{
+						"rowIndex": 7,
+						"columnIndex": 0,
+						"content": "Status interno",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									0.971,
+									5.9461,
+									2.9403,
+									5.9461,
+									2.9403,
+									6.1871,
+									0.971,
+									6.1871
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 595,
+								"length": 14
+							}
+						],
+						"elements": [
+							"/paragraphs/34"
+						]
+					},
+					{
+						"rowIndex": 7,
+						"columnIndex": 1,
+						"content": "Em negociacao",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									2.9403,
+									5.9461,
+									7.2766,
+									5.9461,
+									7.2766,
+									6.1871,
+									2.9403,
+									6.1871
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 610,
+								"length": 13
+							}
+						],
+						"elements": [
+							"/paragraphs/35"
+						]
+					},
+					{
+						"rowIndex": 8,
+						"columnIndex": 0,
+						"content": "Ultima tentativa de contato",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									0.971,
+									6.1871,
+									2.9403,
+									6.1871,
+									2.9403,
+									6.4476,
+									0.971,
+									6.4411
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 624,
+								"length": 27
+							}
+						],
+						"elements": [
+							"/paragraphs/36"
+						]
+					},
+					{
+						"rowIndex": 8,
+						"columnIndex": 1,
+						"content": "25/04/2026",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									2.9403,
+									6.1871,
+									7.2766,
+									6.1871,
+									7.2766,
+									6.4476,
+									2.9403,
+									6.4476
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 652,
+								"length": 10
+							}
+						],
+						"elements": [
+							"/paragraphs/37"
+						]
+					},
+					{
+						"rowIndex": 9,
+						"columnIndex": 0,
+						"content": "Responsavel interno",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									0.971,
+									6.4411,
+									2.9403,
+									6.4476,
+									2.9403,
+									6.6821,
+									0.971,
+									6.6821
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 663,
+								"length": 19
+							}
+						],
+						"elements": [
+							"/paragraphs/38"
+						]
+					},
+					{
+						"rowIndex": 9,
+						"columnIndex": 1,
+						"content": "Equipe Cobranca - Nucleo 03",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									2.9403,
+									6.4476,
+									7.2766,
+									6.4476,
+									7.2766,
+									6.6886,
+									2.9403,
+									6.6821
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 683,
+								"length": 27
+							}
+						],
+						"elements": [
+							"/paragraphs/39"
+						]
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.9763,
+							4.1815,
+							7.2862,
+							4.1967,
+							7.2805,
+							6.7087,
+							0.9708,
+							6.6935
+						]
+					}
+				],
+				"spans": [
+					{
+						"offset": 413,
+						"length": 297
+					}
+				]
+			}
+		],
+		"paragraphs": [
+			{
+				"spans": [
+					{
+						"offset": 0,
+						"length": 35
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							1.8178,
+							0.677,
+							6.4413,
+							0.6793,
+							6.4412,
+							0.9332,
+							1.8177,
+							0.9309
+						]
+					}
+				],
+				"role": "title",
+				"content": "BANCO X - DOSSIÊ DE CLIENTE DEVEDOR"
+			},
+			{
+				"spans": [
+					{
+						"offset": 36,
+						"length": 60
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.7398,
+							1.1199,
+							3.7873,
+							1.1187,
+							3.7873,
+							1.2547,
+							0.7399,
+							1.2559
+						]
+					}
+				],
+				"content": "Documento ficticio para desafio tecnico de extracao de dados"
+			},
+			{
+				"spans": [
+					{
+						"offset": 97,
+						"length": 27
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.7446,
+							1.5528,
+							2.6394,
+							1.5504,
+							2.6396,
+							1.7147,
+							0.7448,
+							1.7171
+						]
+					}
+				],
+				"role": "sectionHeading",
+				"content": "1. Identificacao do Cliente"
+			},
+			{
+				"spans": [
+					{
+						"offset": 125,
+						"length": 5
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.972,
+							1.788,
+							2.9364,
+							1.7946,
+							2.9364,
+							2.0492,
+							0.972,
+							2.0361
+						]
+					}
+				],
+				"content": "Campo"
+			},
+			{
+				"spans": [
+					{
+						"offset": 131,
+						"length": 10
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							2.9364,
+							1.7946,
+							7.2765,
+							1.7815,
+							7.2765,
+							2.0492,
+							2.9364,
+							2.0492
+						]
+					}
+				],
+				"content": "Informacao"
+			},
+			{
+				"spans": [
+					{
+						"offset": 142,
+						"length": 13
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.972,
+							2.0361,
+							2.9364,
+							2.0492,
+							2.9364,
+							2.2908,
+							0.972,
+							2.2908
+						]
+					}
+				],
+				"content": "Nome completo"
+			},
+			{
+				"spans": [
+					{
+						"offset": 156,
+						"length": 19
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							2.9364,
+							2.0492,
+							7.2765,
+							2.0492,
+							7.2765,
+							2.2908,
+							2.9364,
+							2.2908
+						]
+					}
+				],
+				"content": "Maria Almeida Costa"
+			},
+			{
+				"spans": [
+					{
+						"offset": 176,
+						"length": 3
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.972,
+							2.2908,
+							2.9364,
+							2.2908,
+							2.9364,
+							2.5454,
+							0.972,
+							2.5454
+						]
+					}
+				],
+				"content": "CPF"
+			},
+			{
+				"spans": [
+					{
+						"offset": 180,
+						"length": 25
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							2.9364,
+							2.2908,
+							7.2765,
+							2.2908,
+							7.2765,
+							2.5389,
+							2.9364,
+							2.5454
+						]
+					}
+				],
+				"content": "123.456.789-09 (ficticio)"
+			},
+			{
+				"spans": [
+					{
+						"offset": 206,
+						"length": 18
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.972,
+							2.5454,
+							2.9364,
+							2.5454,
+							2.9364,
+							2.787,
+							0.972,
+							2.787
+						]
+					}
+				],
+				"content": "Data de nascimento"
+			},
+			{
+				"spans": [
+					{
+						"offset": 225,
+						"length": 10
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							2.9364,
+							2.5454,
+							7.2765,
+							2.5389,
+							7.2765,
+							2.787,
+							2.9364,
+							2.787
+						]
+					}
+				],
+				"content": "14/08/1983"
+			},
+			{
+				"spans": [
+					{
+						"offset": 236,
+						"length": 8
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.972,
+							2.787,
+							2.9364,
+							2.787,
+							2.9364,
+							3.0482,
+							0.9785,
+							3.0482
+						]
+					}
+				],
+				"content": "Telefone"
+			},
+			{
+				"spans": [
+					{
+						"offset": 245,
+						"length": 15
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							2.9364,
+							2.787,
+							7.2765,
+							2.787,
+							7.2765,
+							3.0482,
+							2.9364,
+							3.0482
+						]
+					}
+				],
+				"content": "(81) 98888-1122"
+			},
+			{
+				"spans": [
+					{
+						"offset": 261,
+						"length": 6
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.9785,
+							3.0482,
+							2.9364,
+							3.0482,
+							2.9364,
+							3.2963,
+							0.9785,
+							3.2832
+						]
+					}
+				],
+				"content": "E-mail"
+			},
+			{
+				"spans": [
+					{
+						"offset": 268,
+						"length": 37
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							2.9364,
+							3.0482,
+							7.2765,
+							3.0482,
+							7.2765,
+							3.2963,
+							2.9364,
+							3.2963
+						]
+					}
+				],
+				"content": "maria.costa.exemplo@emailficticio.com"
+			},
+			{
+				"spans": [
+					{
+						"offset": 306,
+						"length": 8
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.9785,
+							3.2832,
+							2.9364,
+							3.2963,
+							2.9364,
+							3.5444,
+							0.9785,
+							3.5444
+						]
+					}
+				],
+				"content": "Endereco"
+			},
+			{
+				"spans": [
+					{
+						"offset": 315,
+						"length": 58
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							2.9364,
+							3.2963,
+							7.2765,
+							3.2963,
+							7.2765,
+							3.5509,
+							2.9364,
+							3.5444
+						]
+					}
+				],
+				"content": "Rua das Laranjeiras, 145, Apto 302 - Boa Vista - Recife/PE"
+			},
+			{
+				"spans": [
+					{
+						"offset": 374,
+						"length": 3
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.9785,
+							3.5444,
+							2.9364,
+							3.5444,
+							2.9364,
+							3.7991,
+							0.9785,
+							3.786
+						]
+					}
+				],
+				"content": "CEP"
+			},
+			{
+				"spans": [
+					{
+						"offset": 378,
+						"length": 9
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							2.9364,
+							3.5444,
+							7.2765,
+							3.5509,
+							7.2765,
+							3.7991,
+							2.9364,
+							3.7991
+						]
+					}
+				],
+				"content": "50050-120"
+			},
+			{
+				"spans": [
+					{
+						"offset": 388,
+						"length": 24
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.736,
+							3.9465,
+							2.556,
+							3.9462,
+							2.556,
+							4.113,
+							0.736,
+							4.1132
+						]
+					}
+				],
+				"role": "sectionHeading",
+				"content": "2. Informacoes da Divida"
+			},
+			{
+				"spans": [
+					{
+						"offset": 413,
+						"length": 5
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.9775,
+							4.1877,
+							2.9468,
+							4.1877,
+							2.9468,
+							4.4417,
+							0.9775,
+							4.4417
+						]
+					}
+				],
+				"content": "Campo"
+			},
+			{
+				"spans": [
+					{
+						"offset": 419,
+						"length": 10
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							2.9468,
+							4.1877,
+							7.2636,
+							4.1877,
+							7.2636,
+							4.4417,
+							2.9468,
+							4.4417
+						]
+					}
+				],
+				"content": "Informacao"
+			},
+			{
+				"spans": [
+					{
+						"offset": 430,
+						"length": 8
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.9775,
+							4.4417,
+							2.9468,
+							4.4417,
+							2.9468,
+							4.6957,
+							0.9775,
+							4.6827
+						]
+					}
+				],
+				"content": "Contrato"
+			},
+			{
+				"spans": [
+					{
+						"offset": 439,
+						"length": 15
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							2.9468,
+							4.4417,
+							7.2636,
+							4.4417,
+							7.2701,
+							4.6957,
+							2.9468,
+							4.6957
+						]
+					}
+				],
+				"content": "BX-2024-0004587"
+			},
+			{
+				"spans": [
+					{
+						"offset": 455,
+						"length": 7
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.9775,
+							4.6827,
+							2.9468,
+							4.6957,
+							2.9403,
+							4.9367,
+							0.9775,
+							4.9367
+						]
+					}
+				],
+				"content": "Produto"
+			},
+			{
+				"spans": [
+					{
+						"offset": 463,
+						"length": 18
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							2.9468,
+							4.6957,
+							7.2701,
+							4.6957,
+							7.2701,
+							4.9302,
+							2.9403,
+							4.9367
+						]
+					}
+				],
+				"content": "Emprestimo pessoal"
+			},
+			{
+				"spans": [
+					{
+						"offset": 482,
+						"length": 19
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.9775,
+							4.9367,
+							2.9403,
+							4.9367,
+							2.9403,
+							5.1972,
+							0.9775,
+							5.1907
+						]
+					}
+				],
+				"content": "Data de contratacao"
+			},
+			{
+				"spans": [
+					{
+						"offset": 502,
+						"length": 10
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							2.9403,
+							4.9367,
+							7.2701,
+							4.9302,
+							7.2701,
+							5.1842,
+							2.9403,
+							5.1972
+						]
+					}
+				],
+				"content": "12/02/2024"
+			},
+			{
+				"spans": [
+					{
+						"offset": 513,
+						"length": 14
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.9775,
+							5.1907,
+							2.9403,
+							5.1972,
+							2.9403,
+							5.4447,
+							0.971,
+							5.4447
+						]
+					}
+				],
+				"content": "Valor original"
+			},
+			{
+				"spans": [
+					{
+						"offset": 528,
+						"length": 12
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							2.9403,
+							5.1972,
+							7.2701,
+							5.1842,
+							7.2701,
+							5.4447,
+							2.9403,
+							5.4447
+						]
+					}
+				],
+				"content": "R$ 18.450,00"
+			},
+			{
+				"spans": [
+					{
+						"offset": 541,
+						"length": 16
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.971,
+							5.4447,
+							2.9403,
+							5.4447,
+							2.9403,
+							5.6921,
+							0.971,
+							5.6856
+						]
+					}
+				],
+				"content": "Saldo atualizado"
+			},
+			{
+				"spans": [
+					{
+						"offset": 558,
+						"length": 12
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							2.9403,
+							5.4447,
+							7.2701,
+							5.4447,
+							7.2701,
+							5.6856,
+							2.9403,
+							5.6921
+						]
+					}
+				],
+				"content": "R$ 22.780,35"
+			},
+			{
+				"spans": [
+					{
+						"offset": 571,
+						"length": 14
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.971,
+							5.6856,
+							2.9403,
+							5.6921,
+							2.9403,
+							5.9461,
+							0.971,
+							5.9461
+						]
+					}
+				],
+				"content": "Dias em atraso"
+			},
+			{
+				"spans": [
+					{
+						"offset": 586,
+						"length": 8
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							2.9403,
+							5.6921,
+							7.2701,
+							5.6856,
+							7.2766,
+							5.9461,
+							2.9403,
+							5.9461
+						]
+					}
+				],
+				"content": "147 dias"
+			},
+			{
+				"spans": [
+					{
+						"offset": 595,
+						"length": 14
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.971,
+							5.9461,
+							2.9403,
+							5.9461,
+							2.9403,
+							6.1871,
+							0.971,
+							6.1871
+						]
+					}
+				],
+				"content": "Status interno"
+			},
+			{
+				"spans": [
+					{
+						"offset": 610,
+						"length": 13
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							2.9403,
+							5.9461,
+							7.2766,
+							5.9461,
+							7.2766,
+							6.1871,
+							2.9403,
+							6.1871
+						]
+					}
+				],
+				"content": "Em negociacao"
+			},
+			{
+				"spans": [
+					{
+						"offset": 624,
+						"length": 27
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.971,
+							6.1871,
+							2.9403,
+							6.1871,
+							2.9403,
+							6.4476,
+							0.971,
+							6.4411
+						]
+					}
+				],
+				"content": "Ultima tentativa de contato"
+			},
+			{
+				"spans": [
+					{
+						"offset": 652,
+						"length": 10
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							2.9403,
+							6.1871,
+							7.2766,
+							6.1871,
+							7.2766,
+							6.4476,
+							2.9403,
+							6.4476
+						]
+					}
+				],
+				"content": "25/04/2026"
+			},
+			{
+				"spans": [
+					{
+						"offset": 663,
+						"length": 19
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.971,
+							6.4411,
+							2.9403,
+							6.4476,
+							2.9403,
+							6.6821,
+							0.971,
+							6.6821
+						]
+					}
+				],
+				"content": "Responsavel interno"
+			},
+			{
+				"spans": [
+					{
+						"offset": 683,
+						"length": 27
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							2.9403,
+							6.4476,
+							7.2766,
+							6.4476,
+							7.2766,
+							6.6886,
+							2.9403,
+							6.6821
+						]
+					}
+				],
+				"content": "Equipe Cobranca - Nucleo 03"
+			},
+			{
+				"spans": [
+					{
+						"offset": 711,
+						"length": 40
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.7381,
+							6.8478,
+							3.7181,
+							6.8518,
+							3.7178,
+							7.0271,
+							0.7379,
+							7.0231
+						]
+					}
+				],
+				"role": "sectionHeading",
+				"content": "3. Dados a serem extraidos para planilha"
+			},
+			{
+				"spans": [
+					{
+						"offset": 752,
+						"length": 184
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.7384,
+							7.1002,
+							7.3268,
+							7.0988,
+							7.3269,
+							7.4217,
+							0.7385,
+							7.4231
+						]
+					}
+				],
+				"content": "Campos esperados: nome, CPF, telefone, e-mail, endereco, contrato, produto, valor original, saldo atualizado, dias em atraso, status, ultima tentativa de contato e responsavel interno."
+			},
+			{
+				"spans": [
+					{
+						"offset": 937,
+						"length": 14
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.7383,
+							7.7002,
+							1.8818,
+							7.7035,
+							1.8813,
+							7.8571,
+							0.7379,
+							7.8538
+						]
+					}
+				],
+				"role": "sectionHeading",
+				"content": "4. Observacoes"
+			},
+			{
+				"spans": [
+					{
+						"offset": 952,
+						"length": 239
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.7363,
+							7.9494,
+							7.4523,
+							7.9517,
+							7.4521,
+							8.4373,
+							0.7362,
+							8.4349
+						]
+					}
+				],
+				"content": "Este documento foi gerado apenas para simular um PDF operacional com estrutura repetitiva. A segunda pagina contem imagem simulada de comprovantes anexados, exigindo que a solucao avalie tambem documentos com informacoes dentro de imagens."
+			},
+			{
+				"spans": [
+					{
+						"offset": 1192,
+						"length": 72
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.659,
+							11.1844,
+							4.2271,
+							11.1865,
+							4.227,
+							11.3117,
+							0.6589,
+							11.3096
+						]
+					}
+				],
+				"role": "pageFooter",
+				"content": "Documento ficticio para teste tecnico - nao utilizar como documento real"
+			},
+			{
+				"spans": [
+					{
+						"offset": 1265,
+						"length": 8
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							7.1441,
+							11.1875,
+							7.5906,
+							11.1862,
+							7.591,
+							11.3085,
+							7.1444,
+							11.3098
+						]
+					}
+				],
+				"role": "pageNumber",
+				"content": "Pagina 1"
+			},
+			{
+				"spans": [
+					{
+						"offset": 1274,
+						"length": 17
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 2,
+						"polygon": [
+							3.1469,
+							0.7032,
+							5.1052,
+							0.701,
+							5.1055,
+							0.9284,
+							3.1472,
+							0.9306
+						]
+					}
+				],
+				"role": "title",
+				"content": "Anexos do Cliente"
+			},
+			{
+				"spans": [
+					{
+						"offset": 1292,
+						"length": 72
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 2,
+						"polygon": [
+							0.7346,
+							1.1152,
+							4.618,
+							1.1135,
+							4.6181,
+							1.2642,
+							0.7347,
+							1.2659
+						]
+					}
+				],
+				"content": "A pagina abaixo simula comprovantes inseridos como imagem dentro do PDF."
+			},
+			{
+				"spans": [
+					{
+						"offset": 1365,
+						"length": 42
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 2,
+						"polygon": [
+							1.5022,
+							1.8605,
+							5.7881,
+							1.8832,
+							5.7872,
+							2.0531,
+							1.5013,
+							2.0303
+						]
+					}
+				],
+				"role": "sectionHeading",
+				"content": "COMPROVANTES ANEXADOS - DOCUMENTO FICTICIO"
+			},
+			{
+				"spans": [
+					{
+						"offset": 1408,
+						"length": 50
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 2,
+						"polygon": [
+							1.5036,
+							2.091,
+							4.4413,
+							2.1034,
+							4.4407,
+							2.2606,
+							1.503,
+							2.2483
+						]
+					}
+				],
+				"content": "Uso exclusivo para teste tecnico - dados simulados"
+			},
+			{
+				"spans": [
+					{
+						"offset": 1459,
+						"length": 23
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 2,
+						"polygon": [
+							1.4718,
+							2.6973,
+							3.6523,
+							2.7013,
+							3.652,
+							2.871,
+							1.4715,
+							2.8671
+						]
+					}
+				],
+				"role": "sectionHeading",
+				"content": "Comprovante de Endereco"
+			},
+			{
+				"spans": [
+					{
+						"offset": 1483,
+						"length": 28
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 2,
+						"polygon": [
+							1.4968,
+							3.0595,
+							3.4192,
+							3.0687,
+							3.4184,
+							3.2327,
+							1.496,
+							3.2235
+						]
+					}
+				],
+				"content": "Titular: Maria Almeida Costa"
+			},
+			{
+				"spans": [
+					{
+						"offset": 1512,
+						"length": 44
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 2,
+						"polygon": [
+							1.497,
+							3.2835,
+							4.591,
+							3.3001,
+							4.59,
+							3.4717,
+							1.4961,
+							3.4551
+						]
+					}
+				],
+				"content": "Endereco: Rua das Laranjeiras, 145, Apto 302"
+			},
+			{
+				"spans": [
+					{
+						"offset": 1557,
+						"length": 29
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 2,
+						"polygon": [
+							1.4968,
+							3.5087,
+							3.3888,
+							3.5157,
+							3.3882,
+							3.6775,
+							1.4963,
+							3.6705
+						]
+					}
+				],
+				"content": "Bairro: Boa Vista - Recife/PE"
+			},
+			{
+				"spans": [
+					{
+						"offset": 1587,
+						"length": 14
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 2,
+						"polygon": [
+							1.4964,
+							3.7334,
+							2.5895,
+							3.7365,
+							2.5891,
+							3.8923,
+							1.4959,
+							3.8892
+						]
+					}
+				],
+				"content": "CEP: 50050-120"
+			},
+			{
+				"spans": [
+					{
+						"offset": 1602,
+						"length": 60
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 2,
+						"polygon": [
+							1.4919,
+							3.9491,
+							5.6464,
+							3.9766,
+							5.6452,
+							4.1536,
+							1.4908,
+							4.1262
+						]
+					}
+				],
+				"content": "Referencia: Conta de energia - Companhia Ficticia de Energia"
+			},
+			{
+				"spans": [
+					{
+						"offset": 1663,
+						"length": 16
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 2,
+						"polygon": [
+							1.4905,
+							4.1788,
+							2.7244,
+							4.1843,
+							2.7237,
+							4.3447,
+							1.4898,
+							4.3392
+						]
+					}
+				],
+				"content": "Mes/Ano: 03/2026"
+			},
+			{
+				"spans": [
+					{
+						"offset": 1680,
+						"length": 16
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 2,
+						"polygon": [
+							1.4845,
+							4.4017,
+							2.6193,
+							4.4081,
+							2.6184,
+							4.5701,
+							1.4836,
+							4.5636
+						]
+					}
+				],
+				"content": "Valor: R$ 184,72"
+			},
+			{
+				"spans": [
+					{
+						"offset": 1697,
+						"length": 72
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 2,
+						"polygon": [
+							1.4912,
+							4.6166,
+							6.897,
+							4.6463,
+							6.8961,
+							4.8152,
+							1.4903,
+							4.7856
+						]
+					}
+				],
+				"content": "Codigo de barras: 34191.79001 01043.510047 91020.150008 1 99990000018472"
+			},
+			{
+				"spans": [
+					{
+						"offset": 1770,
+						"length": 20
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 2,
+						"polygon": [
+							1.4504,
+							5.7089,
+							3.3287,
+							5.7168,
+							3.328,
+							5.8915,
+							1.4497,
+							5.8836
+						]
+					}
+				],
+				"role": "sectionHeading",
+				"content": "Comprovante Bancario"
+			},
+			{
+				"spans": [
+					{
+						"offset": 1791,
+						"length": 25
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 2,
+						"polygon": [
+							1.4786,
+							6.0752,
+							3.338,
+							6.0841,
+							3.3372,
+							6.2512,
+							1.4778,
+							6.2422
+						]
+					}
+				],
+				"content": "Banco: Banco Exemplo S.A."
+			},
+			{
+				"spans": [
+					{
+						"offset": 1817,
+						"length": 33
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 2,
+						"polygon": [
+							1.4676,
+							6.2992,
+							3.8972,
+							6.3039,
+							3.8968,
+							6.4774,
+							1.4673,
+							6.4727
+						]
+					}
+				],
+				"content": "Agencia: 1234 | Conta: 00098765-4"
+			},
+			{
+				"spans": [
+					{
+						"offset": 1851,
+						"length": 29
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 2,
+						"polygon": [
+							1.4745,
+							6.5237,
+							3.5926,
+							6.5295,
+							3.5921,
+							6.6919,
+							1.474,
+							6.6861
+						]
+					}
+				],
+				"content": "Data da transacao: 18/03/2026"
+			},
+			{
+				"spans": [
+					{
+						"offset": 1881,
+						"length": 33
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 2,
+						"polygon": [
+							1.4715,
+							6.7483,
+							3.8273,
+							6.7526,
+							3.827,
+							6.9271,
+							1.4712,
+							6.9228
+						]
+					}
+				],
+				"content": "Tipo: Pagamento parcial de acordo"
+			},
+			{
+				"spans": [
+					{
+						"offset": 1915,
+						"length": 28
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 2,
+						"polygon": [
+							1.4687,
+							6.9723,
+							3.5095,
+							6.9769,
+							3.5092,
+							7.1439,
+							1.4683,
+							7.1392
+						]
+					}
+				],
+				"content": "Pagador: Maria Almeida Costa"
+			},
+			{
+				"spans": [
+					{
+						"offset": 1944,
+						"length": 41
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 2,
+						"polygon": [
+							1.4682,
+							7.1935,
+							4.4156,
+							7.2095,
+							4.4147,
+							7.3744,
+							1.4673,
+							7.3584
+						]
+					}
+				],
+				"content": "Recebedor: Banco X - Carteira de Cobranca"
+			},
+			{
+				"spans": [
+					{
+						"offset": 1986,
+						"length": 63
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 2,
+						"polygon": [
+							1.4632,
+							7.4172,
+							4.5548,
+							7.4297,
+							4.5533,
+							7.8055,
+							1.4617,
+							7.793
+						]
+					}
+				],
+				"content": "Valor pago: R$ 750,00 Autenticacao: BX26.03.18.00045.99871.FICT"
+			},
+			{
+				"spans": [
+					{
+						"offset": 2050,
+						"length": 4
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 2,
+						"polygon": [
+							5.5463,
+							7.4678,
+							6.2127,
+							7.4714,
+							6.2116,
+							7.6808,
+							5.5451,
+							7.6771
+						]
+					}
+				],
+				"content": "PAGO"
+			},
+			{
+				"spans": [
+					{
+						"offset": 2055,
+						"length": 20
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 2,
+						"polygon": [
+							1.4387,
+							8.4102,
+							3.3099,
+							8.4245,
+							3.3086,
+							8.587,
+							1.4375,
+							8.5727
+						]
+					}
+				],
+				"role": "sectionHeading",
+				"content": "Observacoes do Anexo"
+			},
+			{
+				"spans": [
+					{
+						"offset": 2076,
+						"length": 178
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 2,
+						"polygon": [
+							1.4562,
+							8.7738,
+							6.0056,
+							8.8076,
+							6.001,
+							9.4252,
+							1.4516,
+							9.3913
+						]
+					}
+				],
+				"content": "Imagem simulada para parecer com comprovante digitalizado. Nao contem dados reais de pessoas, bancos ou operacoes. Finalidade: testar extracao de dados em PDF com texto + imagem."
+			},
+			{
+				"spans": [
+					{
+						"offset": 2255,
+						"length": 72
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 2,
+						"polygon": [
+							0.6576,
+							11.1818,
+							4.2289,
+							11.1821,
+							4.2289,
+							11.3117,
+							0.6576,
+							11.3114
+						]
+					}
+				],
+				"role": "pageFooter",
+				"content": "Documento ficticio para teste tecnico - nao utilizar como documento real"
+			},
+			{
+				"spans": [
+					{
+						"offset": 2328,
+						"length": 8
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 2,
+						"polygon": [
+							7.1441,
+							11.187,
+							7.6007,
+							11.1865,
+							7.6008,
+							11.3096,
+							7.1442,
+							11.3101
+						]
+					}
+				],
+				"role": "pageNumber",
+				"content": "Pagina 2"
+			}
+		],
+		"styles": [],
+		"contentFormat": "text",
+		"sections": [
+			{
+				"spans": [
+					{
+						"offset": 0,
+						"length": 1191
+					},
+					{
+						"offset": 1274,
+						"length": 980
+					}
+				],
+				"elements": [
+					"/sections/1",
+					"/sections/6"
+				]
+			},
+			{
+				"spans": [
+					{
+						"offset": 0,
+						"length": 1191
+					}
+				],
+				"elements": [
+					"/paragraphs/0",
+					"/paragraphs/1",
+					"/sections/2",
+					"/sections/3",
+					"/sections/4",
+					"/sections/5"
+				]
+			},
+			{
+				"spans": [
+					{
+						"offset": 97,
+						"length": 290
+					}
+				],
+				"elements": [
+					"/paragraphs/2",
+					"/tables/0"
+				]
+			},
+			{
+				"spans": [
+					{
+						"offset": 388,
+						"length": 322
+					}
+				],
+				"elements": [
+					"/paragraphs/19",
+					"/tables/1"
+				]
+			},
+			{
+				"spans": [
+					{
+						"offset": 711,
+						"length": 225
+					}
+				],
+				"elements": [
+					"/paragraphs/40",
+					"/paragraphs/41"
+				]
+			},
+			{
+				"spans": [
+					{
+						"offset": 937,
+						"length": 254
+					}
+				],
+				"elements": [
+					"/paragraphs/42",
+					"/paragraphs/43"
+				]
+			},
+			{
+				"spans": [
+					{
+						"offset": 1274,
+						"length": 980
+					}
+				],
+				"elements": [
+					"/paragraphs/46",
+					"/paragraphs/47",
+					"/sections/7"
+				]
+			},
+			{
+				"spans": [
+					{
+						"offset": 1365,
+						"length": 889
+					}
+				],
+				"elements": [
+					"/paragraphs/48",
+					"/paragraphs/49",
+					"/sections/8",
+					"/sections/9",
+					"/sections/10"
+				]
+			},
+			{
+				"spans": [
+					{
+						"offset": 1459,
+						"length": 310
+					}
+				],
+				"elements": [
+					"/paragraphs/50",
+					"/paragraphs/51",
+					"/paragraphs/52",
+					"/paragraphs/53",
+					"/paragraphs/54",
+					"/paragraphs/55",
+					"/paragraphs/56",
+					"/paragraphs/57",
+					"/paragraphs/58"
+				]
+			},
+			{
+				"spans": [
+					{
+						"offset": 1770,
+						"length": 284
+					}
+				],
+				"elements": [
+					"/paragraphs/59",
+					"/paragraphs/60",
+					"/paragraphs/61",
+					"/paragraphs/62",
+					"/paragraphs/63",
+					"/paragraphs/64",
+					"/paragraphs/65",
+					"/paragraphs/66",
+					"/paragraphs/67"
+				]
+			},
+			{
+				"spans": [
+					{
+						"offset": 2055,
+						"length": 199
+					}
+				],
+				"elements": [
+					"/paragraphs/68",
+					"/paragraphs/69"
+				]
+			}
+		],
+		"figures": [
+			{
+				"id": "2.1",
+				"boundingRegions": [
+					{
+						"pageNumber": 2,
+						"polygon": [
+							0.8938,
+							1.333,
+							7.3795,
+							1.3297,
+							7.3776,
+							10.558,
+							0.8923,
+							10.5601
+						]
+					}
+				],
+				"spans": [
+					{
+						"offset": 1365,
+						"length": 889
+					}
+				],
+				"elements": [
+					"/paragraphs/48",
+					"/paragraphs/49",
+					"/paragraphs/50",
+					"/paragraphs/51",
+					"/paragraphs/52",
+					"/paragraphs/53",
+					"/paragraphs/54",
+					"/paragraphs/55",
+					"/paragraphs/56",
+					"/paragraphs/57",
+					"/paragraphs/58",
+					"/paragraphs/59",
+					"/paragraphs/60",
+					"/paragraphs/61",
+					"/paragraphs/62",
+					"/paragraphs/63",
+					"/paragraphs/64",
+					"/paragraphs/65",
+					"/paragraphs/66",
+					"/paragraphs/67",
+					"/paragraphs/68",
+					"/paragraphs/69"
+				]
+			}
+		]
+	}
+}

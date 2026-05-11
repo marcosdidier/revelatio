@@ -1,0 +1,1391 @@
+{
+  "fixtures": {
+    "F02_missing_email.pdf": {
+      "cells": [
+        {
+          "field": "Nome completo",
+          "extracted": "Maria Almeida Costa",
+          "gold": "Maria Almeida Costa",
+          "extracted_norm": "maria almeida costa",
+          "gold_norm": "maria almeida costa",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "CPF",
+          "extracted": "123.456.789-09",
+          "gold": "123.456.789-09",
+          "extracted_norm": "12345678909",
+          "gold_norm": "12345678909",
+          "result": "exact",
+          "weight": 2,
+          "weighted_score": 2.0
+        },
+        {
+          "field": "Data de nascimento",
+          "extracted": "14/08/1983",
+          "gold": "1983-08-14",
+          "extracted_norm": "1983-08-14",
+          "gold_norm": "1983-08-14",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Telefone",
+          "extracted": "(81) 98888-1122",
+          "gold": "(81) 98888-1122",
+          "extracted_norm": "81988881122",
+          "gold_norm": "81988881122",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "E-mail",
+          "extracted": null,
+          "gold": null,
+          "extracted_norm": null,
+          "gold_norm": null,
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Endereço",
+          "extracted": "Rua das Laranjeiras, 145, Apto 302 - Boa Vista - Recife/PE",
+          "gold": "Rua das Laranjeiras, 145, Apto 302 - Boa Vista - Recife/PE",
+          "extracted_norm": "rua das laranjeiras, 145, apto 302 - boa vista - recife/pe",
+          "gold_norm": "rua das laranjeiras, 145, apto 302 - boa vista - recife/pe",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "CEP",
+          "extracted": "50050-120",
+          "gold": "50050-120",
+          "extracted_norm": "50050120",
+          "gold_norm": "50050120",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Número do contrato",
+          "extracted": "BX-2024-0004587",
+          "gold": "BX-2024-0004587",
+          "extracted_norm": "bx-2024-0004587",
+          "gold_norm": "bx-2024-0004587",
+          "result": "exact",
+          "weight": 2,
+          "weighted_score": 2.0
+        },
+        {
+          "field": "Produto",
+          "extracted": "Empréstimo pessoal",
+          "gold": "Empréstimo pessoal",
+          "extracted_norm": "emprestimo pessoal",
+          "gold_norm": "emprestimo pessoal",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Data de contratação",
+          "extracted": "2024-12-02 00:00:00",
+          "gold": "2024-02-12",
+          "extracted_norm": "2024-12-02",
+          "gold_norm": "2024-02-12",
+          "result": "miss",
+          "weight": 1,
+          "weighted_score": 0.0
+        },
+        {
+          "field": "Valor original",
+          "extracted": "R$ 18.450,00",
+          "gold": "18450.00",
+          "extracted_norm": "18450.00",
+          "gold_norm": "18450.00",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Saldo atualizado",
+          "extracted": "R$ 22.780,35",
+          "gold": "22780.35",
+          "extracted_norm": "22780.35",
+          "gold_norm": "22780.35",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Dias em atraso",
+          "extracted": "147 dias",
+          "gold": 147,
+          "extracted_norm": "147",
+          "gold_norm": "147",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Status interno",
+          "extracted": "Em negociação",
+          "gold": "Em negociação",
+          "extracted_norm": "em negociacao",
+          "gold_norm": "em negociacao",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Última tentativa de contato",
+          "extracted": "25/04/2026",
+          "gold": "2026-04-25",
+          "extracted_norm": "2026-04-25",
+          "gold_norm": "2026-04-25",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Responsável interno",
+          "extracted": "Equipe Cobrança - Núcleo 03",
+          "gold": "Equipe Cobrança - Núcleo 03",
+          "extracted_norm": "equipe cobranca - nucleo 03",
+          "gold_norm": "equipe cobranca - nucleo 03",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Titular do comprovante",
+          "extracted": "Maria Almeida Costa",
+          "gold": "Maria Almeida Costa",
+          "extracted_norm": "maria almeida costa",
+          "gold_norm": "maria almeida costa",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Endereço do comprovante",
+          "extracted": "Rua das Laranjeiras, 145, Apto 302",
+          "gold": "Rua das Laranjeiras, 145, Apto 302",
+          "extracted_norm": "rua das laranjeiras, 145, apto 302",
+          "gold_norm": "rua das laranjeiras, 145, apto 302",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Bairro/Cidade/UF",
+          "extracted": "Boa Vista - Recife/PE",
+          "gold": "Boa Vista - Recife/PE",
+          "extracted_norm": "boa vista - recife/pe",
+          "gold_norm": "boa vista - recife/pe",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "CEP do comprovante",
+          "extracted": "50050-120",
+          "gold": "50050-120",
+          "extracted_norm": "50050120",
+          "gold_norm": "50050120",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Tipo de conta (Referência)",
+          "extracted": "Conta de energia - Companhia Fictícia de Energia",
+          "gold": "Conta de energia - Companhia Fictícia de Energia",
+          "extracted_norm": "conta de energia - companhia ficticia de energia",
+          "gold_norm": "conta de energia - companhia ficticia de energia",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Mês/Ano de referência",
+          "extracted": "2026-03-01 00:00:00",
+          "gold": "2026-03",
+          "extracted_norm": "2026-03",
+          "gold_norm": "2026-03",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Valor da conta",
+          "extracted": "R$ 184,72",
+          "gold": "184.72",
+          "extracted_norm": "184.72",
+          "gold_norm": "184.72",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Código de barras",
+          "extracted": "34191.79001 01043.510047 91020.150008 1 99990000018472",
+          "gold": "34191790010104351004791020150008199990000018472",
+          "extracted_norm": "34191790010104351004791020150008199990000018472",
+          "gold_norm": "34191790010104351004791020150008199990000018472",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Banco",
+          "extracted": "Banco Exemplo S.A.",
+          "gold": "Banco Exemplo S.A.",
+          "extracted_norm": "banco exemplo s.a",
+          "gold_norm": "banco exemplo s.a",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Agência",
+          "extracted": 1234,
+          "gold": "1234",
+          "extracted_norm": "1234",
+          "gold_norm": "1234",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Conta",
+          "extracted": "00098765-4",
+          "gold": "00098765-4",
+          "extracted_norm": "00098765-4",
+          "gold_norm": "00098765-4",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Data da transação",
+          "extracted": "18/03/2026",
+          "gold": "2026-03-18",
+          "extracted_norm": "2026-03-18",
+          "gold_norm": "2026-03-18",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Tipo de transação",
+          "extracted": "Pagamento parcial de acordo",
+          "gold": "Pagamento parcial de acordo",
+          "extracted_norm": "pagamento parcial de acordo",
+          "gold_norm": "pagamento parcial de acordo",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Pagador",
+          "extracted": "Maria Almeida Costa",
+          "gold": "Maria Almeida Costa",
+          "extracted_norm": "maria almeida costa",
+          "gold_norm": "maria almeida costa",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Recebedor",
+          "extracted": "Banco X - Carteira de Cobrança",
+          "gold": "Banco X - Carteira de Cobrança",
+          "extracted_norm": "banco x - carteira de cobranca",
+          "gold_norm": "banco x - carteira de cobranca",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Valor pago",
+          "extracted": "R$ 750,00",
+          "gold": "750.00",
+          "extracted_norm": "750.00",
+          "gold_norm": "750.00",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Código de autenticação",
+          "extracted": "BX26.03.18.00045.99871.FICT",
+          "gold": "BX26.03.18.00045.99871.FICT",
+          "extracted_norm": "bx26.03.18.00045.99871.fict",
+          "gold_norm": "bx26.03.18.00045.99871.fict",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        }
+      ],
+      "page1_score": 17.0,
+      "page1_max": 18.0,
+      "page2_score": 17.0,
+      "page2_max": 17.0,
+      "total_score": 34.0,
+      "total_max": 35.0,
+      "overall_pct": 97.1,
+      "hallucinations": 0,
+      "pdf": "F02_missing_email.pdf",
+      "confidence_at_runtime": 0.99,
+      "verdict": "Production-ready as primary extractor"
+    },
+    "F04_low_quality_page2.pdf": {
+      "cells": [
+        {
+          "field": "Nome completo",
+          "extracted": "Maria Almeida Costa",
+          "gold": "Maria Almeida Costa",
+          "extracted_norm": "maria almeida costa",
+          "gold_norm": "maria almeida costa",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "CPF",
+          "extracted": "123.456.789-09",
+          "gold": "123.456.789-09",
+          "extracted_norm": "12345678909",
+          "gold_norm": "12345678909",
+          "result": "exact",
+          "weight": 2,
+          "weighted_score": 2.0
+        },
+        {
+          "field": "Data de nascimento",
+          "extracted": "14/08/1983",
+          "gold": "1983-08-14",
+          "extracted_norm": "1983-08-14",
+          "gold_norm": "1983-08-14",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Telefone",
+          "extracted": "(81) 98888-1122",
+          "gold": "(81) 98888-1122",
+          "extracted_norm": "81988881122",
+          "gold_norm": "81988881122",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "E-mail",
+          "extracted": "maria.costa.exemplo@emailficticio.com",
+          "gold": "maria.costa.exemplo@emailficticio.com",
+          "extracted_norm": "maria.costa.exemplo@emailficticio.com",
+          "gold_norm": "maria.costa.exemplo@emailficticio.com",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Endereço",
+          "extracted": "Rua das Laranjeiras, 145, Apto 302 - Boa Vista - Recife/PE",
+          "gold": "Rua das Laranjeiras, 145, Apto 302 - Boa Vista - Recife/PE",
+          "extracted_norm": "rua das laranjeiras, 145, apto 302 - boa vista - recife/pe",
+          "gold_norm": "rua das laranjeiras, 145, apto 302 - boa vista - recife/pe",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "CEP",
+          "extracted": "50050-120",
+          "gold": "50050-120",
+          "extracted_norm": "50050120",
+          "gold_norm": "50050120",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Número do contrato",
+          "extracted": "BX-2024-0004587",
+          "gold": "BX-2024-0004587",
+          "extracted_norm": "bx-2024-0004587",
+          "gold_norm": "bx-2024-0004587",
+          "result": "exact",
+          "weight": 2,
+          "weighted_score": 2.0
+        },
+        {
+          "field": "Produto",
+          "extracted": "Empréstimo pessoal",
+          "gold": "Empréstimo pessoal",
+          "extracted_norm": "emprestimo pessoal",
+          "gold_norm": "emprestimo pessoal",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Data de contratação",
+          "extracted": "2024-12-02 00:00:00",
+          "gold": "2024-02-12",
+          "extracted_norm": "2024-12-02",
+          "gold_norm": "2024-02-12",
+          "result": "miss",
+          "weight": 1,
+          "weighted_score": 0.0
+        },
+        {
+          "field": "Valor original",
+          "extracted": "R$ 18.450,00",
+          "gold": "18450.00",
+          "extracted_norm": "18450.00",
+          "gold_norm": "18450.00",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Saldo atualizado",
+          "extracted": "R$ 22.780,35",
+          "gold": "22780.35",
+          "extracted_norm": "22780.35",
+          "gold_norm": "22780.35",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Dias em atraso",
+          "extracted": "147 dias",
+          "gold": 147,
+          "extracted_norm": "147",
+          "gold_norm": "147",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Status interno",
+          "extracted": "Em negociação",
+          "gold": "Em negociação",
+          "extracted_norm": "em negociacao",
+          "gold_norm": "em negociacao",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Última tentativa de contato",
+          "extracted": "25/04/2026",
+          "gold": "2026-04-25",
+          "extracted_norm": "2026-04-25",
+          "gold_norm": "2026-04-25",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Responsável interno",
+          "extracted": "Equipe Cobrança - Núcleo 03",
+          "gold": "Equipe Cobrança - Núcleo 03",
+          "extracted_norm": "equipe cobranca - nucleo 03",
+          "gold_norm": "equipe cobranca - nucleo 03",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Titular do comprovante",
+          "extracted": "Maria Almeida Costa",
+          "gold": "Maria Almeida Costa",
+          "extracted_norm": "maria almeida costa",
+          "gold_norm": "maria almeida costa",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Endereço do comprovante",
+          "extracted": "Rua das Laranjeiras, 145, Apto 302",
+          "gold": "Rua das Laranjeiras, 145, Apto 302",
+          "extracted_norm": "rua das laranjeiras, 145, apto 302",
+          "gold_norm": "rua das laranjeiras, 145, apto 302",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Bairro/Cidade/UF",
+          "extracted": "Boa Vista - Recite/PE",
+          "gold": "Boa Vista - Recife/PE",
+          "extracted_norm": "boa vista - recite/pe",
+          "gold_norm": "boa vista - recife/pe",
+          "result": "miss",
+          "weight": 1,
+          "weighted_score": 0.0
+        },
+        {
+          "field": "CEP do comprovante",
+          "extracted": "50050-120.",
+          "gold": "50050-120",
+          "extracted_norm": "50050120",
+          "gold_norm": "50050120",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Tipo de conta (Referência)",
+          "extracted": "Conta de energia - Companhia Ficticia de Energia",
+          "gold": "Conta de energia - Companhia Fictícia de Energia",
+          "extracted_norm": "conta de energia - companhia ficticia de energia",
+          "gold_norm": "conta de energia - companhia ficticia de energia",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Mês/Ano de referência",
+          "extracted": "2026-03-01 00:00:00",
+          "gold": "2026-03",
+          "extracted_norm": "2026-03",
+          "gold_norm": "2026-03",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Valor da conta",
+          "extracted": "R$ 184,72",
+          "gold": "184.72",
+          "extracted_norm": "184.72",
+          "gold_norm": "184.72",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Código de barras",
+          "extracted": "34191.79001 01043.510047 91020.150008 1-99990000018472",
+          "gold": "34191790010104351004791020150008199990000018472",
+          "extracted_norm": "34191790010104351004791020150008199990000018472",
+          "gold_norm": "34191790010104351004791020150008199990000018472",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Banco",
+          "extracted": "Barico Exemplo S.A.",
+          "gold": "Banco Exemplo S.A.",
+          "extracted_norm": "barico exemplo s.a",
+          "gold_norm": "banco exemplo s.a",
+          "result": "miss",
+          "weight": 1,
+          "weighted_score": 0.0
+        },
+        {
+          "field": "Agência",
+          "extracted": 1234,
+          "gold": "1234",
+          "extracted_norm": "1234",
+          "gold_norm": "1234",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Conta",
+          "extracted": "00098765-4",
+          "gold": "00098765-4",
+          "extracted_norm": "00098765-4",
+          "gold_norm": "00098765-4",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Data da transação",
+          "extracted": "18/03/2026",
+          "gold": "2026-03-18",
+          "extracted_norm": "2026-03-18",
+          "gold_norm": "2026-03-18",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Tipo de transação",
+          "extracted": "Pagamento parcial de acordo",
+          "gold": "Pagamento parcial de acordo",
+          "extracted_norm": "pagamento parcial de acordo",
+          "gold_norm": "pagamento parcial de acordo",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Pagador",
+          "extracted": "Maria Almeida Costa",
+          "gold": "Maria Almeida Costa",
+          "extracted_norm": "maria almeida costa",
+          "gold_norm": "maria almeida costa",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Recebedor",
+          "extracted": "Banco' X - Carteira de Cobrança",
+          "gold": "Banco X - Carteira de Cobrança",
+          "extracted_norm": "banco' x - carteira de cobranca",
+          "gold_norm": "banco x - carteira de cobranca",
+          "result": "miss",
+          "weight": 1,
+          "weighted_score": 0.0
+        },
+        {
+          "field": "Valor pago",
+          "extracted": "R$ 750,00",
+          "gold": "750.00",
+          "extracted_norm": "750.00",
+          "gold_norm": "750.00",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Código de autenticação",
+          "extracted": "8(26.03.18.00045.99871.FICT",
+          "gold": "BX26.03.18.00045.99871.FICT",
+          "extracted_norm": "8(26.03.18.00045.99871.fict",
+          "gold_norm": "bx26.03.18.00045.99871.fict",
+          "result": "miss",
+          "weight": 1,
+          "weighted_score": 0.0
+        }
+      ],
+      "page1_score": 17.0,
+      "page1_max": 18.0,
+      "page2_score": 13.0,
+      "page2_max": 17.0,
+      "total_score": 30.0,
+      "total_max": 35.0,
+      "overall_pct": 85.7,
+      "hallucinations": 0,
+      "pdf": "F04_low_quality_page2.pdf",
+      "confidence_at_runtime": 0.99,
+      "verdict": "Production-ready with HITL on flagged rows"
+    },
+    "F03_missing_phone.pdf": {
+      "cells": [
+        {
+          "field": "Nome completo",
+          "extracted": "Maria Almeida Costa",
+          "gold": "Maria Almeida Costa",
+          "extracted_norm": "maria almeida costa",
+          "gold_norm": "maria almeida costa",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "CPF",
+          "extracted": "123.456.789-09",
+          "gold": "123.456.789-09",
+          "extracted_norm": "12345678909",
+          "gold_norm": "12345678909",
+          "result": "exact",
+          "weight": 2,
+          "weighted_score": 2.0
+        },
+        {
+          "field": "Data de nascimento",
+          "extracted": "14/08/1983",
+          "gold": "1983-08-14",
+          "extracted_norm": "1983-08-14",
+          "gold_norm": "1983-08-14",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Telefone",
+          "extracted": null,
+          "gold": null,
+          "extracted_norm": null,
+          "gold_norm": null,
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "E-mail",
+          "extracted": "maria.costa.exemplo@emailficticio.com",
+          "gold": "maria.costa.exemplo@emailficticio.com",
+          "extracted_norm": "maria.costa.exemplo@emailficticio.com",
+          "gold_norm": "maria.costa.exemplo@emailficticio.com",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Endereço",
+          "extracted": "Rua das Laranjeiras, 145, Apto 302 - Boa Vista - Recife/PE",
+          "gold": "Rua das Laranjeiras, 145, Apto 302 - Boa Vista - Recife/PE",
+          "extracted_norm": "rua das laranjeiras, 145, apto 302 - boa vista - recife/pe",
+          "gold_norm": "rua das laranjeiras, 145, apto 302 - boa vista - recife/pe",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "CEP",
+          "extracted": "50050-120",
+          "gold": "50050-120",
+          "extracted_norm": "50050120",
+          "gold_norm": "50050120",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Número do contrato",
+          "extracted": "BX-2024-0004587",
+          "gold": "BX-2024-0004587",
+          "extracted_norm": "bx-2024-0004587",
+          "gold_norm": "bx-2024-0004587",
+          "result": "exact",
+          "weight": 2,
+          "weighted_score": 2.0
+        },
+        {
+          "field": "Produto",
+          "extracted": "Empréstimo pessoal",
+          "gold": "Empréstimo pessoal",
+          "extracted_norm": "emprestimo pessoal",
+          "gold_norm": "emprestimo pessoal",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Data de contratação",
+          "extracted": "2024-12-02 00:00:00",
+          "gold": "2024-02-12",
+          "extracted_norm": "2024-12-02",
+          "gold_norm": "2024-02-12",
+          "result": "miss",
+          "weight": 1,
+          "weighted_score": 0.0
+        },
+        {
+          "field": "Valor original",
+          "extracted": "R$ 18.450,00",
+          "gold": "18450.00",
+          "extracted_norm": "18450.00",
+          "gold_norm": "18450.00",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Saldo atualizado",
+          "extracted": "R$ 22.780,35",
+          "gold": "22780.35",
+          "extracted_norm": "22780.35",
+          "gold_norm": "22780.35",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Dias em atraso",
+          "extracted": "147 dias",
+          "gold": 147,
+          "extracted_norm": "147",
+          "gold_norm": "147",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Status interno",
+          "extracted": "Em negociação",
+          "gold": "Em negociação",
+          "extracted_norm": "em negociacao",
+          "gold_norm": "em negociacao",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Última tentativa de contato",
+          "extracted": "25/04/2026",
+          "gold": "2026-04-25",
+          "extracted_norm": "2026-04-25",
+          "gold_norm": "2026-04-25",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Responsável interno",
+          "extracted": "Equipe Cobrança - Núcleo 03",
+          "gold": "Equipe Cobrança - Núcleo 03",
+          "extracted_norm": "equipe cobranca - nucleo 03",
+          "gold_norm": "equipe cobranca - nucleo 03",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Titular do comprovante",
+          "extracted": "Maria Almeida Costa",
+          "gold": "Maria Almeida Costa",
+          "extracted_norm": "maria almeida costa",
+          "gold_norm": "maria almeida costa",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Endereço do comprovante",
+          "extracted": "Rua das Laranjeiras, 145, Apto 302",
+          "gold": "Rua das Laranjeiras, 145, Apto 302",
+          "extracted_norm": "rua das laranjeiras, 145, apto 302",
+          "gold_norm": "rua das laranjeiras, 145, apto 302",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Bairro/Cidade/UF",
+          "extracted": "Boa Vista - Recife/PE",
+          "gold": "Boa Vista - Recife/PE",
+          "extracted_norm": "boa vista - recife/pe",
+          "gold_norm": "boa vista - recife/pe",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "CEP do comprovante",
+          "extracted": "50050-120",
+          "gold": "50050-120",
+          "extracted_norm": "50050120",
+          "gold_norm": "50050120",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Tipo de conta (Referência)",
+          "extracted": "Conta de energia - Companhia Fictícia de Energia",
+          "gold": "Conta de energia - Companhia Fictícia de Energia",
+          "extracted_norm": "conta de energia - companhia ficticia de energia",
+          "gold_norm": "conta de energia - companhia ficticia de energia",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Mês/Ano de referência",
+          "extracted": "2026-03-01 00:00:00",
+          "gold": "2026-03",
+          "extracted_norm": "2026-03",
+          "gold_norm": "2026-03",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Valor da conta",
+          "extracted": "R$ 184,72",
+          "gold": "184.72",
+          "extracted_norm": "184.72",
+          "gold_norm": "184.72",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Código de barras",
+          "extracted": "34191.79001 01043.510047 91020.150008 1 99990000018472",
+          "gold": "34191790010104351004791020150008199990000018472",
+          "extracted_norm": "34191790010104351004791020150008199990000018472",
+          "gold_norm": "34191790010104351004791020150008199990000018472",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Banco",
+          "extracted": "Banco Exemplo S.A.",
+          "gold": "Banco Exemplo S.A.",
+          "extracted_norm": "banco exemplo s.a",
+          "gold_norm": "banco exemplo s.a",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Agência",
+          "extracted": 1234,
+          "gold": "1234",
+          "extracted_norm": "1234",
+          "gold_norm": "1234",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Conta",
+          "extracted": "00098765-4",
+          "gold": "00098765-4",
+          "extracted_norm": "00098765-4",
+          "gold_norm": "00098765-4",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Data da transação",
+          "extracted": "18/03/2026",
+          "gold": "2026-03-18",
+          "extracted_norm": "2026-03-18",
+          "gold_norm": "2026-03-18",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Tipo de transação",
+          "extracted": "Pagamento parcial de acordo",
+          "gold": "Pagamento parcial de acordo",
+          "extracted_norm": "pagamento parcial de acordo",
+          "gold_norm": "pagamento parcial de acordo",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Pagador",
+          "extracted": "Maria Almeida Costa",
+          "gold": "Maria Almeida Costa",
+          "extracted_norm": "maria almeida costa",
+          "gold_norm": "maria almeida costa",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Recebedor",
+          "extracted": "Banco X - Carteira de Cobrança",
+          "gold": "Banco X - Carteira de Cobrança",
+          "extracted_norm": "banco x - carteira de cobranca",
+          "gold_norm": "banco x - carteira de cobranca",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Valor pago",
+          "extracted": "R$ 750,00",
+          "gold": "750.00",
+          "extracted_norm": "750.00",
+          "gold_norm": "750.00",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Código de autenticação",
+          "extracted": "BX26.03.18.00045.99871.FICT",
+          "gold": "BX26.03.18.00045.99871.FICT",
+          "extracted_norm": "bx26.03.18.00045.99871.fict",
+          "gold_norm": "bx26.03.18.00045.99871.fict",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        }
+      ],
+      "page1_score": 17.0,
+      "page1_max": 18.0,
+      "page2_score": 17.0,
+      "page2_max": 17.0,
+      "total_score": 34.0,
+      "total_max": 35.0,
+      "overall_pct": 97.1,
+      "hallucinations": 0,
+      "pdf": "F03_missing_phone.pdf",
+      "confidence_at_runtime": 0.99,
+      "verdict": "Production-ready as primary extractor"
+    },
+    "F08_partial_obscure_page2.pdf": {
+      "cells": [
+        {
+          "field": "Nome completo",
+          "extracted": "Maria Almeida Costa",
+          "gold": "Maria Almeida Costa",
+          "extracted_norm": "maria almeida costa",
+          "gold_norm": "maria almeida costa",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "CPF",
+          "extracted": "123.456.789-09",
+          "gold": "123.456.789-09",
+          "extracted_norm": "12345678909",
+          "gold_norm": "12345678909",
+          "result": "exact",
+          "weight": 2,
+          "weighted_score": 2.0
+        },
+        {
+          "field": "Data de nascimento",
+          "extracted": "14/08/1983",
+          "gold": "1983-08-14",
+          "extracted_norm": "1983-08-14",
+          "gold_norm": "1983-08-14",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Telefone",
+          "extracted": "(81) 98888-1122",
+          "gold": "(81) 98888-1122",
+          "extracted_norm": "81988881122",
+          "gold_norm": "81988881122",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "E-mail",
+          "extracted": "maria.costa.exemplo@emailficticio.com",
+          "gold": "maria.costa.exemplo@emailficticio.com",
+          "extracted_norm": "maria.costa.exemplo@emailficticio.com",
+          "gold_norm": "maria.costa.exemplo@emailficticio.com",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Endereço",
+          "extracted": "Rua das Laranjeiras, 145, Apto 302 - Boa Vista - Recife/PE",
+          "gold": "Rua das Laranjeiras, 145, Apto 302 - Boa Vista - Recife/PE",
+          "extracted_norm": "rua das laranjeiras, 145, apto 302 - boa vista - recife/pe",
+          "gold_norm": "rua das laranjeiras, 145, apto 302 - boa vista - recife/pe",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "CEP",
+          "extracted": "50050-120",
+          "gold": "50050-120",
+          "extracted_norm": "50050120",
+          "gold_norm": "50050120",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Número do contrato",
+          "extracted": "BX-2024-0004587",
+          "gold": "BX-2024-0004587",
+          "extracted_norm": "bx-2024-0004587",
+          "gold_norm": "bx-2024-0004587",
+          "result": "exact",
+          "weight": 2,
+          "weighted_score": 2.0
+        },
+        {
+          "field": "Produto",
+          "extracted": "Empréstimo pessoal",
+          "gold": "Empréstimo pessoal",
+          "extracted_norm": "emprestimo pessoal",
+          "gold_norm": "emprestimo pessoal",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Data de contratação",
+          "extracted": "2024-12-02 00:00:00",
+          "gold": "2024-02-12",
+          "extracted_norm": "2024-12-02",
+          "gold_norm": "2024-02-12",
+          "result": "miss",
+          "weight": 1,
+          "weighted_score": 0.0
+        },
+        {
+          "field": "Valor original",
+          "extracted": "R$ 18.450,00",
+          "gold": "18450.00",
+          "extracted_norm": "18450.00",
+          "gold_norm": "18450.00",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Saldo atualizado",
+          "extracted": "R$ 22.780,35",
+          "gold": "22780.35",
+          "extracted_norm": "22780.35",
+          "gold_norm": "22780.35",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Dias em atraso",
+          "extracted": "147 dias",
+          "gold": 147,
+          "extracted_norm": "147",
+          "gold_norm": "147",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Status interno",
+          "extracted": "Em negociação",
+          "gold": "Em negociação",
+          "extracted_norm": "em negociacao",
+          "gold_norm": "em negociacao",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Última tentativa de contato",
+          "extracted": "25/04/2026",
+          "gold": "2026-04-25",
+          "extracted_norm": "2026-04-25",
+          "gold_norm": "2026-04-25",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Responsável interno",
+          "extracted": "Equipe Cobrança - Núcleo 03",
+          "gold": "Equipe Cobrança - Núcleo 03",
+          "extracted_norm": "equipe cobranca - nucleo 03",
+          "gold_norm": "equipe cobranca - nucleo 03",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Titular do comprovante",
+          "extracted": "Maria Almeida Costa",
+          "gold": "Maria Almeida Costa",
+          "extracted_norm": "maria almeida costa",
+          "gold_norm": "maria almeida costa",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Endereço do comprovante",
+          "extracted": "Rua das Laranjeiras, 145, Apto 302",
+          "gold": "Rua das Laranjeiras, 145, Apto 302",
+          "extracted_norm": "rua das laranjeiras, 145, apto 302",
+          "gold_norm": "rua das laranjeiras, 145, apto 302",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Bairro/Cidade/UF",
+          "extracted": "Boa Vista - Recife/PE",
+          "gold": "Boa Vista - Recife/PE",
+          "extracted_norm": "boa vista - recife/pe",
+          "gold_norm": "boa vista - recife/pe",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "CEP do comprovante",
+          "extracted": "50050-120",
+          "gold": "50050-120",
+          "extracted_norm": "50050120",
+          "gold_norm": "50050120",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Tipo de conta (Referência)",
+          "extracted": "Conta de energia - Companhia Ficticia de Energia",
+          "gold": "Conta de energia - Companhia Fictícia de Energia",
+          "extracted_norm": "conta de energia - companhia ficticia de energia",
+          "gold_norm": "conta de energia - companhia ficticia de energia",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Mês/Ano de referência",
+          "extracted": "2026-03-01 00:00:00",
+          "gold": "2026-03",
+          "extracted_norm": "2026-03",
+          "gold_norm": "2026-03",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Valor da conta",
+          "extracted": "R$ 184,72",
+          "gold": "184.72",
+          "extracted_norm": "184.72",
+          "gold_norm": "184.72",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Código de barras",
+          "extracted": "34191.79001 01043.510047 91020.150008 1 99990000018472",
+          "gold": "34191790010104351004791020150008199990000018472",
+          "extracted_norm": "34191790010104351004791020150008199990000018472",
+          "gold_norm": "34191790010104351004791020150008199990000018472",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Banco",
+          "extracted": "Banco Exemplo S.A.",
+          "gold": "Banco Exemplo S.A.",
+          "extracted_norm": "banco exemplo s.a",
+          "gold_norm": "banco exemplo s.a",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Agência",
+          "extracted": 1234,
+          "gold": "1234",
+          "extracted_norm": "1234",
+          "gold_norm": "1234",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Conta",
+          "extracted": "00098765-4",
+          "gold": "00098765-4",
+          "extracted_norm": "00098765-4",
+          "gold_norm": "00098765-4",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Data da transação",
+          "extracted": null,
+          "gold": "2026-03-18",
+          "extracted_norm": null,
+          "gold_norm": "2026-03-18",
+          "result": "miss",
+          "weight": 1,
+          "weighted_score": 0.0
+        },
+        {
+          "field": "Tipo de transação",
+          "extracted": "Tpo. Pagamento parcial ue acordo",
+          "gold": "Pagamento parcial de acordo",
+          "extracted_norm": "tpo. pagamento parcial ue acordo",
+          "gold_norm": "pagamento parcial de acordo",
+          "result": "miss",
+          "weight": 1,
+          "weighted_score": 0.0
+        },
+        {
+          "field": "Pagador",
+          "extracted": "Maria Almeida Costa",
+          "gold": "Maria Almeida Costa",
+          "extracted_norm": "maria almeida costa",
+          "gold_norm": "maria almeida costa",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Recebedor",
+          "extracted": "Banco X - Carteira de Cobrança",
+          "gold": "Banco X - Carteira de Cobrança",
+          "extracted_norm": "banco x - carteira de cobranca",
+          "gold_norm": "banco x - carteira de cobranca",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Valor pago",
+          "extracted": "R$ 750,00",
+          "gold": "750.00",
+          "extracted_norm": "750.00",
+          "gold_norm": "750.00",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        },
+        {
+          "field": "Código de autenticação",
+          "extracted": "BX26.03.18.00045.99871.FICT",
+          "gold": "BX26.03.18.00045.99871.FICT",
+          "extracted_norm": "bx26.03.18.00045.99871.fict",
+          "gold_norm": "bx26.03.18.00045.99871.fict",
+          "result": "exact",
+          "weight": 1,
+          "weighted_score": 1.0
+        }
+      ],
+      "page1_score": 17.0,
+      "page1_max": 18.0,
+      "page2_score": 15.0,
+      "page2_max": 17.0,
+      "total_score": 32.0,
+      "total_max": 35.0,
+      "overall_pct": 91.4,
+      "hallucinations": 0,
+      "pdf": "F08_partial_obscure_page2.pdf",
+      "confidence_at_runtime": 0.99,
+      "verdict": "Production-ready with HITL on flagged rows"
+    }
+  },
+  "aggregate": {
+    "n_fixtures": 4,
+    "avg_overall_pct": 92.8,
+    "avg_page1_pct": 94.4,
+    "avg_page2_pct": 91.2,
+    "total_hallucinations": 0
+  }
+}

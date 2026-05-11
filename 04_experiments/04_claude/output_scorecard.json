@@ -1,0 +1,281 @@
+{
+  "extracted_path": "04_experiments/04_claude/output.json",
+  "gold_path": "/Users/marcosdidier/testeRevelatio/01_field_map/gold_truth.json",
+  "page1_score": 18.0,
+  "page1_max": 18.0,
+  "page1_pct": 100.0,
+  "page2_score": 17.0,
+  "page2_max": 17.0,
+  "page2_pct": 100.0,
+  "overall_score": 35.0,
+  "overall_max": 35.0,
+  "overall_pct": 100.0,
+  "hallucinations": 0,
+  "verdict": "Production-ready as primary extractor",
+  "cells": [
+    {
+      "field": "client_name",
+      "extracted": "Maria Almeida Costa",
+      "gold": "Maria Almeida Costa",
+      "result": "exact",
+      "weight": 1,
+      "weighted_score": 1.0
+    },
+    {
+      "field": "cpf",
+      "extracted": "123.456.789-09",
+      "gold": "123.456.789-09",
+      "result": "exact",
+      "weight": 2,
+      "weighted_score": 2.0
+    },
+    {
+      "field": "birth_date",
+      "extracted": "1983-08-14",
+      "gold": "1983-08-14",
+      "result": "exact",
+      "weight": 1,
+      "weighted_score": 1.0
+    },
+    {
+      "field": "phone",
+      "extracted": "(81) 98888-1122",
+      "gold": "(81) 98888-1122",
+      "result": "exact",
+      "weight": 1,
+      "weighted_score": 1.0
+    },
+    {
+      "field": "email",
+      "extracted": "maria.costa.exemplo@emailficticio.com",
+      "gold": "maria.costa.exemplo@emailficticio.com",
+      "result": "exact",
+      "weight": 1,
+      "weighted_score": 1.0
+    },
+    {
+      "field": "address",
+      "extracted": "Rua das Laranjeiras, 145, Apto 302 - Boa Vista - Recife/PE",
+      "gold": "Rua das Laranjeiras, 145, Apto 302 - Boa Vista - Recife/PE",
+      "result": "exact",
+      "weight": 1,
+      "weighted_score": 1.0
+    },
+    {
+      "field": "postal_code",
+      "extracted": "50050-120",
+      "gold": "50050-120",
+      "result": "exact",
+      "weight": 1,
+      "weighted_score": 1.0
+    },
+    {
+      "field": "contract_number",
+      "extracted": "BX-2024-0004587",
+      "gold": "BX-2024-0004587",
+      "result": "exact",
+      "weight": 2,
+      "weighted_score": 2.0
+    },
+    {
+      "field": "product",
+      "extracted": "Emprestimo pessoal",
+      "gold": "Empréstimo pessoal",
+      "result": "exact",
+      "weight": 1,
+      "weighted_score": 1.0
+    },
+    {
+      "field": "contract_date",
+      "extracted": "2024-02-12",
+      "gold": "2024-02-12",
+      "result": "exact",
+      "weight": 1,
+      "weighted_score": 1.0
+    },
+    {
+      "field": "original_amount",
+      "extracted": "18450.00",
+      "gold": "18450.00",
+      "result": "exact",
+      "weight": 1,
+      "weighted_score": 1.0
+    },
+    {
+      "field": "updated_balance",
+      "extracted": "22780.35",
+      "gold": "22780.35",
+      "result": "exact",
+      "weight": 1,
+      "weighted_score": 1.0
+    },
+    {
+      "field": "days_overdue",
+      "extracted": 147,
+      "gold": 147,
+      "result": "exact",
+      "weight": 1,
+      "weighted_score": 1.0
+    },
+    {
+      "field": "status",
+      "extracted": "Em negociacao",
+      "gold": "Em negociação",
+      "result": "exact",
+      "weight": 1,
+      "weighted_score": 1.0
+    },
+    {
+      "field": "last_contact_attempt",
+      "extracted": "2026-04-25",
+      "gold": "2026-04-25",
+      "result": "exact",
+      "weight": 1,
+      "weighted_score": 1.0
+    },
+    {
+      "field": "internal_owner",
+      "extracted": "Equipe Cobranca - Nucleo 03",
+      "gold": "Equipe Cobrança - Núcleo 03",
+      "result": "exact",
+      "weight": 1,
+      "weighted_score": 1.0
+    },
+    {
+      "field": "proof_address_holder",
+      "extracted": "Maria Almeida Costa",
+      "gold": "Maria Almeida Costa",
+      "result": "exact",
+      "weight": 1,
+      "weighted_score": 1.0
+    },
+    {
+      "field": "proof_address_line",
+      "extracted": "Rua das Laranjeiras, 145, Apto 302",
+      "gold": "Rua das Laranjeiras, 145, Apto 302",
+      "result": "exact",
+      "weight": 1,
+      "weighted_score": 1.0
+    },
+    {
+      "field": "proof_address_neighborhood",
+      "extracted": "Boa Vista - Recife/PE",
+      "gold": "Boa Vista - Recife/PE",
+      "result": "exact",
+      "weight": 1,
+      "weighted_score": 1.0
+    },
+    {
+      "field": "proof_address_postal",
+      "extracted": "50050-120",
+      "gold": "50050-120",
+      "result": "exact",
+      "weight": 1,
+      "weighted_score": 1.0
+    },
+    {
+      "field": "proof_reference",
+      "extracted": "Conta de energia - Companhia Ficticia de Energia",
+      "gold": "Conta de energia - Companhia Fictícia de Energia",
+      "result": "exact",
+      "weight": 1,
+      "weighted_score": 1.0
+    },
+    {
+      "field": "proof_period",
+      "extracted": "2026-03",
+      "gold": "2026-03",
+      "result": "exact",
+      "weight": 1,
+      "weighted_score": 1.0
+    },
+    {
+      "field": "proof_value",
+      "extracted": "184.72",
+      "gold": "184.72",
+      "result": "exact",
+      "weight": 1,
+      "weighted_score": 1.0
+    },
+    {
+      "field": "proof_barcode",
+      "extracted": "34191790010104351004791020150008199990000018472",
+      "gold": "34191790010104351004791020150008199990000018472",
+      "result": "exact",
+      "weight": 1,
+      "weighted_score": 1.0
+    },
+    {
+      "field": "bank_name",
+      "extracted": "Banco Exemplo S.A.",
+      "gold": "Banco Exemplo S.A.",
+      "result": "exact",
+      "weight": 1,
+      "weighted_score": 1.0
+    },
+    {
+      "field": "bank_branch",
+      "extracted": "1234",
+      "gold": "1234",
+      "result": "exact",
+      "weight": 1,
+      "weighted_score": 1.0
+    },
+    {
+      "field": "bank_account",
+      "extracted": "00098765-4",
+      "gold": "00098765-4",
+      "result": "exact",
+      "weight": 1,
+      "weighted_score": 1.0
+    },
+    {
+      "field": "transaction_date",
+      "extracted": "2026-03-18",
+      "gold": "2026-03-18",
+      "result": "exact",
+      "weight": 1,
+      "weighted_score": 1.0
+    },
+    {
+      "field": "transaction_type",
+      "extracted": "Pagamento parcial de acordo",
+      "gold": "Pagamento parcial de acordo",
+      "result": "exact",
+      "weight": 1,
+      "weighted_score": 1.0
+    },
+    {
+      "field": "payer",
+      "extracted": "Maria Almeida Costa",
+      "gold": "Maria Almeida Costa",
+      "result": "exact",
+      "weight": 1,
+      "weighted_score": 1.0
+    },
+    {
+      "field": "payee",
+      "extracted": "Banco X - Carteira de Cobranca",
+      "gold": "Banco X - Carteira de Cobrança",
+      "result": "exact",
+      "weight": 1,
+      "weighted_score": 1.0
+    },
+    {
+      "field": "amount_paid",
+      "extracted": "750.00",
+      "gold": "750.00",
+      "result": "exact",
+      "weight": 1,
+      "weighted_score": 1.0
+    },
+    {
+      "field": "authentication_code",
+      "extracted": "BX26.03.18.00045.99871.FICT",
+      "gold": "BX26.03.18.00045.99871.FICT",
+      "result": "exact",
+      "weight": 1,
+      "weighted_score": 1.0
+    }
+  ]
+}

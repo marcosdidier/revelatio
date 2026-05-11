@@ -1,0 +1,9 @@
+fixture_id,description,axis_exercised,client_name,expected_signal
+F01_perfect,Smoke test mirrors the original example PDF,baseline,Maria Almeida Costa,All tools should ace this; failure here is a smoke-test failure
+F02_missing_email,Email field intentionally blank,missing_optional,Maria Almeida Costa,Tools must return null/empty for email — hallucination penalty if invented
+F03_missing_phone,Phone field intentionally blank,missing_optional,Maria Almeida Costa,Same as F02 with phone
+F04_low_quality_page2,Page-2 image blurred + noise,bad_scan,Maria Almeida Costa,OCR-dependent tools should degrade gracefully; cloud Doc AI > local OCR > LLMs
+F05_cpf_no_separators,CPF as 11 digits only,format_drift,Maria Almeida Costa,Normalization rule in scoring rubric handles this; tools that strict-match the dotted format fail
+F06_alternate_labels,Field labels shortened,label_drift,João Silva Pereira,Anchor-on-text tools that hardcode 'Nome completo' fail; semantic extractors pass
+F07_skewed_page2,Page-2 rotated 3 degrees,scan_skew,Maria Almeida Costa,Cloud Doc AI APIs handle rotation; some local OCR tools require explicit deskew
+F08_partial_obscure_page2,Page-2 has black streak,partial_occlusion,Maria Almeida Costa,Tests partial-failure reporting — tool should extract what it can and flag what it can't
