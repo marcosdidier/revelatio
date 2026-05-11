@@ -5,7 +5,7 @@
 ## What this project is
 Take-home challenge: **Implementador de IA & Automações** for a Brazilian law firm. Automate extraction of ~10k debtor-PDF dossiers (Banco X) into Excel. Deadline **2026-05-13 17:00 BRT**. PT-BR deliverables, EN internal artifacts.
 
-## Status snapshot (as of 2026-05-11, very early morning — session ended at ~01:40 BRT after Epic 6 wrapped)
+## Status snapshot (as of 2026-05-11, late morning — Epic 7 completed at ~11:50 BRT)
 
 | Epic | Status |
 |---|---|
@@ -22,47 +22,35 @@ Take-home challenge: **Implementador de IA & Automações** for a Brazilian law 
 | **5.9 — Scoreboard synthesis** | ✅ **done — `04_experiments/SCOREBOARD.md` (source-of-truth for relatório §4)** |
 | 5.10 — Skipped: Make + n8n full hands-on (covered via dossiers + diagrams instead) | — |
 | **6 — Reference Python script (+ Streamlit UI)** | ✅ **done — 99.07% avg on 3-PDF test, 0 hallucinations, ~$89/10k** |
-| 7 — Architecture / LGPD / ROI | ⏳ pending (~2h) |
-| 8 — Relatório PT-BR | ⏳ pending (~4-6h) |
+| **7 — Architecture / LGPD / ROI** | ✅ **done — 4 docs in `07_architecture/`, all WebFetch-verified, R$50k → R$436 ROI locked in** |
+| 8 — Relatório PT-BR | ⏳ pending (~4-6h) — **see `08_kickoff_prompt.md` for fresh-session kickoff** |
 | 9 — Video ≤ 5 min PT-BR | ⏳ pending (~2-3h) |
 | 10 — QA & submission | ⏳ pending |
 
-**Time remaining**: ~2 days (deadline 2026-05-13 17:00 BRT). Comfortable pace — all empirical work done, only writing artifacts remain. Reserve 1 full day for Epics 8 + 9 + 10.
+**Time remaining**: ~2 days (deadline 2026-05-13 17:00 BRT). Comfortable pace — all empirical work + architecture/ROI/LGPD writing done. Reserve 1 full day for Epics 8 + 9 + 10.
 
 ## Where we left off — exact next step
 
-**Epic 7 — Architecture / LGPD / ROI.** All empirical evaluation is complete (Epics 0–6 done, committed). Epic 7 produces three documents that feed directly into Epic 8 (relatório) and Epic 9 (video).
+**Epic 8 — Relatório PT-BR.** All empirical evaluation + stakeholder docs are done (Epics 0–7 committed). Epic 8 produces the take-home deliverable: a PT-BR relatório consolidating everything for the law firm's hiring panel.
 
-### Epic 7 deliverables (~2h total)
+**Recommended approach**: open a fresh Claude Code session and use the standalone kickoff prompt at **`08_kickoff_prompt.md`**. It is self-contained — gives a fresh session the brief's prescribed 7-section structure, section-to-artifact mappings, the diferenciais to weave in, and the open questions to ask via AskUserQuestion before drafting.
 
-Create directory `07_architecture/` and write three files:
+### Epic 7 — What was delivered (2026-05-11)
 
-1. **`07_architecture/diagrams.md`** — Mermaid diagrams of the recommended hybrid architecture. At minimum:
-   - **M365 path**: SharePoint folder → Power Automate flow → AI Builder (page 1) → Azure DI Layout (page 2 fallback) → Claude API (field mapping) → cross-validation → Excel / HITL queue
-   - **Non-M365 path**: file upload (n8n trigger) → reference Python script (engine) → CSV + audit log + HITL queue
-   - **Cross-validation flow**: how page-1 anchors (client_name, CPF) gate page-2 acceptance, and the per-page confidence routing
-   - **HITL queue lifecycle**: needs_review=TRUE → SharePoint list (M365) or DB row (non-M365) → paralegal review form → approve/correct → write-back
+All four documents in `07_architecture/`, committed as `1d8d791`:
 
-2. **`07_architecture/lgpd.md`** — LGPD compliance posture. Anchored to LGPD Articles 6 (princípios), 7 (bases legais), 18 (direitos do titular), 46–49 (segurança e governança). Cover:
-   - **Data residency**: where PDFs and extracted data live (Azure DI region, M365 tenant region, audit log location). Note: tenant is currently US for trial reasons — production must be Brazil South or document the cross-border data flow under Art. 33–36.
-   - **Retention policy**: how long extracted CSV rows persist, how long PDFs are retained, when audit logs are purged.
-   - **Access control**: who reads `dossiers.csv`, who reads `audit.csv` (with potentially-PII mismatch strings), who can modify HITL queue.
-   - **PII redaction**: CPFs in `audit.csv` mismatch strings need masking. Production hardening checklist item #5 from `06_reference_script/notes.md`.
-   - **In-tenant processing**: prevent third-party logging. Anthropic API does not retain customer data by default (cite the policy URL); Azure DI processes in-region.
-   - **Direitos do titular**: how the firm responds to access / deletion / portability requests (Art. 18).
+1. **`07_architecture/diagrams.md`** (239 lines) — 4 Mermaid blocks (M365 path, non-M365 path, cross-validation flow, HITL lifecycle) + decision rubric + anchors index.
+2. **`07_architecture/roi.md`** (179 lines) — $88.60 / R$ 434 at 10k dossiers vs. R$ 50,500 manual baseline at midpoint labor rate. 116× cost ratio at midpoint, >10× even at 20% HITL.
+3. **`07_architecture/lgpd.md`** (302 lines) — 12-section article-by-article posture (Art. 6, 7, 18, 20, 33–36, 46–49) + 10-item production gaps checklist. Anthropic + Azure DI policy URLs WebFetch-verified.
+4. **`07_architecture/manual_timing.md`** (58 lines) — empirical paralegal baseline: 6 min 44 sec on one PDF using copy-paste-page-1 + manual-page-2 two-tab workflow. n=1, honestly disclosed. The two-page asymmetry mirrors the architecture's two-layer routing.
 
-3. **`07_architecture/roi.md`** — ROI math at 10k-dossier scale. Anchored on the **empirically validated $0.0089/dossier** (from `06_reference_script/notes.md` and `04_experiments/SCOREBOARD.md` §4). Cover:
-   - **Baseline cost**: paralegal time at ~10 min/dossier × R$ 30–60/h labor cost = R$ 50k–100k for 10k dossiers (one-time backlog) or annual recurring at the steady-state intake.
-   - **Automated cost**: ~$89 (Azure DI + Claude API) + engineering time (~3 days one-time setup or ~$0 marginal for M365 path).
-   - **Payback period**: essentially first day of operation.
-   - **Sensitivity table**: what happens if the firm processes 1k, 10k, 100k dossiers/year. What happens if the HITL queue rate is 5% vs 20% (impacts paralegal residual cost).
-   - **Hidden costs**: re-training Custom Neural every 6 months as Banco X templates evolve; LGPD audit costs; SharePoint storage scaling.
+**Key Epic 7 findings to carry into Epic 8**:
 
-### Approach to writing these
-
-These are **stakeholder-facing documents** (the relatório author will pull paragraphs directly into §5, §6, §7). Write in EN internally; the relatório translation to PT-BR happens in Epic 8. Anchor every claim in a specific empirical artifact (SCOREBOARD row, notes.md finding, scorecard number) so a skeptical reader can verify.
-
-Recommended order: **diagrams first** (forces the architecture to be concrete), **ROI second** (anchored on the $89 we already validated), **LGPD third** (most legal-research-heavy, can pull from `02_tool_universe/07_power_automate.md` for tenant-region details).
+- **Headline ROI math**: $0.00886/dossier × 10k = $88.60 = **R$ 434** (PTAX venda 4.8999, 2026-05-08) vs. **R$ 50,500** manual baseline at midpoint labor rate. Cost ratio 116×. Robust to 20% HITL rate assumption (still >10×).
+- **Decision rubric** (3 binary inputs: M365? dev capacity? ≥30 training dossiers?) → recommended path. Lives in `07_architecture/diagrams.md` §5; relatório §5 should paraphrase or cite, not duplicate.
+- **LGPD Art. 20 framing**: system is *data-preparation*, not *automated decision-making*. HITL gate is non-negotiable for this framing to hold. Documented in `07_architecture/lgpd.md` §10.
+- **US tenant region** is an evaluation-time workaround, not a production decision. Honestly flagged as the #1 production gap in `lgpd.md` §11.
+- **PTAX FX rate** for any future currency conversion: USD 1.00 ≈ BRL 4.8999 (2026-05-08, fetched from BCB Olinda API).
 
 ## Key findings already captured (do NOT redo)
 
@@ -109,6 +97,12 @@ From Epic 5.2 (`04_experiments/02_power_automate/notes.md`):
 | `06_reference_script/test_corpus/audit.csv` | Validation run audit log |
 | `05_synthetic_data/pdfs/` | 8 synthetic PDFs (F01–F08) |
 | `05_synthetic_data/gold/` | Matching gold JSONs |
+| **`07_architecture/diagrams.md`** | **M365 + non-M365 paths, cross-val, HITL lifecycle, decision rubric** |
+| **`07_architecture/roi.md`** | **$88.60 / R$ 434 vs. R$ 50,500 manual; sensitivity table; PTAX-anchored** |
+| **`07_architecture/lgpd.md`** | **12-section article-by-article posture; Anthropic + Azure DI URLs verified** |
+| `07_architecture/manual_timing.md` | n=1 paralegal baseline (6 min 44 sec, two-tab workflow) |
+| **`08_kickoff_prompt.md`** | **Standalone Epic 8 fresh-session kickoff — paste the prompt block, get a clean start** |
+| `00_brief/spec_decoded.md` | Brief checklist — relatório must satisfy all 7 prescribed sections + 5 diferenciais |
 
 ## Tenant info (for Power Automate / SharePoint references)
 
@@ -118,33 +112,13 @@ From Epic 5.2 (`04_experiments/02_power_automate/notes.md`):
 - AI Builder model: trained 2026-05-09, published, "Dossie_Revelatio" collection
 - Power Automate flow: "Revelatio Debtor Extraction" — built end-to-end, working
 
-## How to resume in a new conversation (Epic 7 kickoff prompt)
+## How to resume in a new conversation (Epic 8 kickoff)
 
 1. Open Claude Code in `/Users/marcosdidier/testeRevelatio/`.
-2. Paste the **full block below** as the first message — it's self-contained and gives a fresh Claude session everything it needs to pick up cleanly:
-
----
-
-> Continue Project Revelatio. Read `SESSION_RESUME.md` first — it has the complete status, deliverables, and empirical context.
->
-> **Where we are**: Epics 0–6 are done and committed (3 commits on `main`, most recent `8f887ca`). The reference Python pipeline at `06_reference_script/` is empirically validated: **99.07% average accuracy** on a 3-PDF test corpus (brief + F02 + F07), **0 hallucinations**, **$0.0089 per dossier** ($89 for the full 10k Banco X backlog). The Streamlit demo UI at `06_reference_script/app.py` has been visually validated and is ready for video recording in Epic 9.
->
-> **What I'm starting today**: Epic 7 — Architecture / LGPD / ROI. Three stakeholder-facing documents in a new `07_architecture/` directory:
->
-> 1. `07_architecture/diagrams.md` — Mermaid diagrams for the recommended hybrid architecture (M365 path, non-M365 path, cross-validation flow, HITL queue lifecycle)
-> 2. `07_architecture/lgpd.md` — LGPD compliance posture anchored to Art. 6, 7, 18, 33–36, 46–49 (data residency, retention, access control, PII redaction in audit logs, in-tenant processing, direitos do titular)
-> 3. `07_architecture/roi.md` — 10k-dossier ROI math using the empirically validated $89, against a paralegal baseline (~R$ 50k–100k for 10k dossiers at ~10 min each)
->
-> See the "Where we left off" section of `SESSION_RESUME.md` for the full spec of each document.
->
-> **Pacing for today**: depth + insights welcome (this is writing, not hands-on execution). Anchor every claim to a specific artifact (a SCOREBOARD row, a notes.md finding, a scorecard number) so a skeptical reader can verify. Recommended order: diagrams first → ROI second → LGPD third.
->
-> **Start by**: proposing the structure of all three documents (section outlines, ~5 min) so I can approve the shape before you draft prose. Don't start writing prose until I confirm the outline.
-
----
-
-3. Auto-memory will load 5 feedback rules automatically — they're still relevant for Epic 7:
-   - Explain artifacts before writing them (especially relevant — Epic 7 is heavy on artifact writing)
+2. Open `08_kickoff_prompt.md` — copy the block under **"## The prompt"** and paste it as the first message in the new session.
+3. The kickoff block is self-contained: it references SESSION_RESUME.md + `08_kickoff_prompt.md` for full context, lists the brief's 7 prescribed sections, and instructs the new Claude to enter plan mode and ask the user 3 open questions before drafting.
+4. Auto-memory will load 5 feedback rules automatically — still relevant for Epic 8:
+   - Explain artifacts before writing them (especially relevant for PT-BR translation choices)
    - Propagate strategic choices immediately
    - Defer artifact updates until user pauses
    - Don't fabricate analytical narratives — ask for specific outputs
@@ -160,11 +134,13 @@ From Epic 5.2 (`04_experiments/02_power_automate/notes.md`):
 
 ## Git state
 
-Three commits on `main` (no remote — local-only):
+Five commits on `main` (no remote — local-only):
 
 - `63f0ed3` — Initial commit: Epics 0–5 (brief decoded, scoring rubric, tool universe, synthetic corpus, Power Automate end-to-end, LLM round-robin)
 - `936b029` — Epic 5.7–5.9: Azure DI Layout + Tabula empirical tests + SCOREBOARD synthesis
 - `8f887ca` — Epic 6: reference pipeline + Streamlit demo UI
+- `7be8039` — docs: README for reference script + Epic 7 kickoff prompt in resume
+- `1d8d791` — Epic 7: Architecture / LGPD / ROI stakeholder docs + n=1 manual baseline
 
 ## What to NOT redo
 
@@ -178,3 +154,6 @@ Three commits on `main` (no remote — local-only):
 - **Don't re-provision Azure DI** — `di-revelatio-test` is live in East US, key in `.env`
 - **Don't re-test the reference pipeline** — empirically validated at 99.07% on brief + F02 + F07, outputs at `06_reference_script/test_corpus/`
 - **Don't re-write `04_experiments/SCOREBOARD.md`** — source-of-truth, edit only if a new tool is added
+- **Don't re-draft the Epic 7 architecture / ROI / LGPD docs** — committed at `1d8d791`. Edit only if a fact changes (e.g., PTAX moves materially, an Anthropic policy URL changes wording). Epic 8 *pulls from* these docs into PT-BR; it does not re-derive them.
+- **Don't re-fetch the Anthropic / Azure DI / PTAX URLs** for Epic 8 prose — already verified 2026-05-11 and quoted with date stamps in `07_architecture/lgpd.md` §7 and `roi.md` §1. Re-fetch only if Epic 8 needs a *new* citation not already in those docs.
+- **Don't re-measure the paralegal baseline** — 6 min 44 sec on the brief PDF is captured in `07_architecture/manual_timing.md`. n=1 is honestly disclosed; expanding to 3 PDFs is a *nice-to-have*, not a re-do.
