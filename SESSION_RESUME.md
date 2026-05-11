@@ -21,7 +21,7 @@ Take-home challenge: **Implementador de IA & Automações** for a Brazilian law 
 | **5.8 — Tabula (OSS hands-on)** | ✅ **done — 16/16 page-1 cells, 0 page-2 (no OCR); class-level finding** |
 | **5.9 — Scoreboard synthesis** | ✅ **done — `04_experiments/SCOREBOARD.md` (source-of-truth for relatório §4)** |
 | 5.10 — Skipped: Make + n8n full hands-on (covered via dossiers + diagrams instead) | — |
-| 6 — Reference Python script | ⏳ pending (~3-4h) |
+| **6 — Reference Python script (+ Streamlit UI)** | ✅ **done — 99.07% avg on 3-PDF test, 0 hallucinations, ~$89/10k** |
 | 7 — Architecture / LGPD / ROI | ⏳ pending (~2h) |
 | 8 — Relatório PT-BR | ⏳ pending (~4-6h) |
 | 9 — Video ≤ 5 min PT-BR | ⏳ pending (~2-3h) |
