@@ -2,6 +2,15 @@
 
 One-line ADRs (Architecture Decision Records). Newest at the top. Format: `[YYYY-MM-DD] decision — rationale`.
 
+## 2026-05-12 — D-007: reference engine exposed publicly via Streamlit Community Cloud + Google Sheets write-back
+
+- **D-007 — The reference engine (D-006) is exposed publicly at `https://revelatio-demo.streamlit.app` via Streamlit Community Cloud, with an opt-in Google Sheets write-back as a shared demo sink for the hiring panel.** Same engine as D-006 (`06_reference_script/extract_dossier.process_one`); the deployment is a presentation + delivery layer, not an algorithmic change. *Why:*
+  - **Strengthens "Capacidade de implementação" evidence (brief §1)**: the panel can click a real URL and exercise the engine on their own PDFs, not just watch a localhost recording. Strictly stronger artifact than the original "run `streamlit run` locally" demo posture.
+  - **Single-tenant demo, single-service auth**: service-account JSON in Streamlit Cloud secrets (gspread + google-auth, scoped to `spreadsheets` only — not `drive`). No OAuth flow, no per-user state. Appropriate for a take-home demo, not a multi-tenant production app.
+  - **PT-BR presentation labels**: UI dataframe, CSV download header, and Google Sheet header all use PT-BR via `06_reference_script/labels_pt.py`. Pipeline dict keys remain in English so `process_one()` and the rest of the codebase are unaffected.
+  - **Production gaps honestly preserved**: the deployed app is a demo skin — no SSO, no per-field HITL review workflow, no rate limiting on the public URL. Production hardening checklist in `06_reference_script/notes.md` item #6 still applies; Diagram 2 in `07_architecture/diagrams.md` retains the pink-dashed HITL annotation.
+  - **Repo public for transparency**: source at `https://github.com/marcosdidier/revelatio`. Public repo is a feature for a take-home, not a leak — and a hard requirement for Streamlit Community Cloud's free tier.
+
 ## 2026-05-12 — D-006 supersedes D-005: reference Python engine becomes the primary recommendation
 
 - **D-006 — Primary recommended solution: the Python reference engine in `06_reference_script/` (Azure DI Layout + Claude Sonnet 4.6 with Option-B cross-validation), orchestrated in production by n8n.** Supersedes D-005 (which had Power Automate as primary) without invalidating its findings — Power Automate + AI Builder is reclassified as the *caminho alternativo* for firms already resident in Microsoft 365 that prefer no-code maintenance. *Why the flip*:

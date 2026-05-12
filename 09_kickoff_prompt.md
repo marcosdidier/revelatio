@@ -10,7 +10,7 @@
 Continue Project Revelatio. Read SESSION_RESUME.md and 09_kickoff_prompt.md
 first — they have the complete status and Epic 9 specification.
 
-Where we are: Epics 0–8 are done. The relatório PT-BR is at
+Where we are: Epics 0–8.5 are done. The relatório PT-BR is at
 08_deliverables/relatorio.md (+ relatorio.pdf at the same path, ready to
 bundle). The reference Python pipeline at 06_reference_script/ is the
 *caminho principal* of the recommendation per ADR D-006 (2026-05-12),
@@ -18,7 +18,10 @@ empirically validated at 100% accuracy on a 3-PDF baseline plus an OOD
 holdout (F09_brief_shape) with 0 hallucinations and $0.00934 per dossier
 ($93 / R$ 457 for the full 10k backlog, ~110× cheaper than the manual
 baseline of R$ 50,500). M365 + Power Automate is positioned as the
-*caminho alternativo* for firms preferring no-code maintenance.
+*caminho alternativo* for firms preferring no-code maintenance. **The
+engine is publicly deployed at https://revelatio-demo.streamlit.app
+(Epic 8.5 / D-007) with Google Sheets write-back — Act 3 of the video
+should demo the live URL, not localhost.**
 
 What I'm starting today: Epic 9 — Vídeo PT-BR ≤ 5 minutos. The brief
 prescribes five act-questions verbatim (00_brief/spec_decoded.md §7):
@@ -69,11 +72,12 @@ finalizing the outline — they're listed in 09_kickoff_prompt.md under
 | 1 | Ground truth + scoring rubric | `01_field_map/` |
 | 2 | 8 tool dossiers + comparison matrix | `02_tool_universe/` |
 | 3 | External research sprint | `03_external_research/` |
-| 4 | Synthetic PDFs + golds (8 fixtures) | `05_synthetic_data/` |
+| 4 | Synthetic PDFs + golds (8 fixtures + F09 OOD holdout) | `05_synthetic_data/` |
 | 5.2–5.9 | Tool hands-on tests + SCOREBOARD synthesis | `04_experiments/` |
 | 6 | Reference Python pipeline + Streamlit demo UI | `06_reference_script/` |
 | 7 | Architecture / LGPD / ROI stakeholder docs | `07_architecture/` |
 | 8 | Relatório PT-BR (markdown + PDF) | `08_deliverables/` |
+| **8.5** | **Streamlit Cloud deploy + Google Sheets write-back** | **`https://revelatio-demo.streamlit.app` + `06_reference_script/app.py` + `sheets_writer.py` + `DEPLOY.md`** |
 
 ### Act → artifact mapping (the messaging backbone)
 
@@ -81,21 +85,22 @@ finalizing the outline — they're listed in 09_kickoff_prompt.md under
 |---|---|
 | Act 1 — Qual solução | `08_deliverables/relatorio.md` Sumário Executivo + §4 |
 | Act 2 — Por que (com âncoras quantitativas) | Relatório §1 (tabela das 9 ferramentas) + §3 (falhas) + §4 (justificativa) + `04_experiments/SCOREBOARD.md` §1 |
-| Act 3 — Como funcionaria na prática (DEMO) | `06_reference_script/app.py` (Streamlit) + `extract_dossier.py` (CLI) + um PDF de teste (sugestão: `05_synthetic_data/pdfs/F09_brief_shape.pdf` para mostrar OOD) |
+| Act 3 — Como funcionaria na prática (DEMO) | **`https://revelatio-demo.streamlit.app` (URL viva, Epic 8.5 / D-007)** + um PDF de teste (sugestão: `05_synthetic_data/pdfs/F09_brief_shape.pdf` para mostrar OOD) + a planilha Google compartilhada como *closer* visual |
 | Act 4 — Como a equipe utilizaria | Relatório §5 (caminho principal + alternativo + HITL + rubrica) + `07_architecture/diagrams.md` §4 (HITL lifecycle) |
 | Act 5 — O que seria necessário para produção | Relatório §6 (gaps) + §7 (plano 3 fases) + `07_architecture/lgpd.md` §11 (10 gaps de produção) + `06_reference_script/notes.md` "Production hardening checklist" |
 
 ### Demo flow for Act 3 (the load-bearing part of the video)
 
-Sugestão de cue sheet em ≤ 2 minutos:
+Sugestão de cue sheet em ≤ 2 minutos (Epic 8.5 atualizado — usar URL viva, não localhost):
 
-1. **0:00–0:10** — Tela inicial do Streamlit (`.venv/bin/python -m streamlit run 06_reference_script/app.py`). Mostrar título.
-2. **0:10–0:25** — Arrastar `F09_brief_shape.pdf` (ou o PDF do brief) para o uploader. Botão "▶ Extrair".
-3. **0:25–1:30** — Enquanto roda (~11 s real), narrar a arquitetura em duas camadas: página 1 determinística + página 2 OCR + LLM + *cross-validation*. Aqui vale fazer edição para cortar o tempo de espera.
-4. **1:30–1:50** — Mostrar a tabela `dossiers.csv` na tela do Streamlit; destacar os 32 campos preenchidos + a coluna `needs_review = FALSE`.
-5. **1:50–2:00** — Abrir o expander "Detalhes operacionais"; mostrar `audit.csv` com latência, custo (~$0,0093), `cross_val_consistent = TRUE`.
+1. **0:00–0:10** — Abrir `https://revelatio-demo.streamlit.app` no navegador. Mostrar título "Revelatio — Extração de Dossiês" e a barra superior do Streamlit Cloud (sinal claro de que é app público hospedado, não localhost).
+2. **0:10–0:25** — Arrastar `F09_brief_shape.pdf` (ou o PDF do brief) para o uploader. Botão "▶ Extrair 1 dossiê(s)".
+3. **0:25–1:25** — Enquanto roda (~11 s real, ~3 s na latência de cold-start do Cloud), narrar a arquitetura em duas camadas: página 1 determinística + página 2 OCR + LLM + *cross-validation*. Aqui vale fazer edição para cortar o tempo de espera.
+4. **1:25–1:40** — Mostrar a tabela de resultado com cabeçalhos PT-BR (Nome do cliente, CPF, Comprovante — titular, ...); destacar os 32 campos preenchidos + a coluna "Revisar" = FALSE.
+5. **1:40–1:50** — Clicar "📤 Enviar para Planilha Google"; mostrar a confirmação + link "Abrir planilha"; clicar no link para abrir a planilha compartilhada em uma nova aba e mostrar a linha aparecendo com o timestamp `Extraído em (UTC)`.
+6. **1:50–2:00** — Voltar ao app, abrir o expander "Detalhes operacionais"; mostrar audit log com latência, custo (~$0,0093), `cross_val_consistent = TRUE`.
 
-Se rolar tempo, encaixar uma demonstração rápida da fila HITL: editar uma célula do CSV para simular *mismatch*, mostrar `needs_review = TRUE`. Opcional.
+A planilha Google é o *closer* visual mais forte: artefato fora do Streamlit, "spreadsheet" é o substantivo que o brief usa (*"em planilha Excel"*), e é o que a banca pode clicar depois do vídeo para confirmar que rodou. Se rolar tempo, encaixar uma demonstração rápida da fila HITL: editar uma célula para simular *mismatch*, mostrar "Revisar" = TRUE. Opcional.
 
 ### Diferenciais to weave in (brief §5 — explicit bonus criteria)
 

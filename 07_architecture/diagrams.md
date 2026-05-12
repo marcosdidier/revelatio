@@ -81,11 +81,11 @@ flowchart LR
 
 ## 2. Diagram 2 — Non-M365 path with reference Python engine (primary recommendation as of D-006, 2026-05-12)
 
-**When this applies**: firm has no M365 commitment, prefers OSS / vendor-neutral stack, or already has Python / Linux infrastructure. **As of D-006 (2026-05-12), this is also the *primary* recommended path** across all firm profiles in the rubric below — Diagram 1 (M365 path) remains a valid alternative for M365-resident firms preferring no-code maintenance. This non-M365 architecture is implemented in `06_reference_script/` and empirically validated at **100% / 0 hallucinations / $0.00934/dossier** on a 3-PDF baseline plus an OOD holdout (`F09_brief_shape.pdf`, brief-faithful structure with fresh client data).
+**When this applies**: firm has no M365 commitment, prefers OSS / vendor-neutral stack, or already has Python / Linux infrastructure. **As of D-006 (2026-05-12), this is also the *primary* recommended path** across all firm profiles in the rubric below — Diagram 1 (M365 path) remains a valid alternative for M365-resident firms preferring no-code maintenance. This non-M365 architecture is implemented in `06_reference_script/` and empirically validated at **100% / 0 hallucinations / $0.00934/dossier** on a 3-PDF baseline plus an OOD holdout (`F09_brief_shape.pdf`, brief-faithful structure with fresh client data). **As of D-007 (2026-05-12), the engine is also exposed publicly at `https://revelatio-demo.streamlit.app`** via a Streamlit Community Cloud deployment that wraps `extract_dossier.process_one()` and writes results to a shared Google Sheet.
 
 ```mermaid
 flowchart LR
-    A[/PDF arrives<br/>⚠ n8n trigger recommended<br/>CLI used in PoC/] --> B[reference Python engine<br/>extract_dossier.py]
+    A[/PDF arrives via<br/>Streamlit Cloud upload<br/>or CLI for batch/] --> B[reference Python engine<br/>extract_dossier.py]
     B --> C([Azure DI Layout<br/>analyze_pdf])
     C --> D[page1_parser<br/>deterministic table parse]
     C --> E([Claude Sonnet 4.6<br/>extract_page2<br/>+ Option-B prompt])
@@ -95,7 +95,8 @@ flowchart LR
     G -- TRUE --> H[(dossiers.csv<br/>needs_review=FALSE)]
     G -- FALSE --> I[(dossiers.csv<br/>needs_review=TRUE)]
     F --> J[(audit.csv<br/>per-row trace)]
-    I -.HITL queue<br/>⚠ production form unbuilt<br/>app.py is demo skin only.-> H
+    H --> K[(Google Sheet<br/>append_dossiers<br/>shared with panel)]
+    I -.HITL queue<br/>⚠ production review form unbuilt<br/>Streamlit app.py is demo skin.-> H
 
     classDef prebuilt fill:#d1e7dd,stroke:#198754
     classDef script fill:#e9ecef,stroke:#6c757d
@@ -103,26 +104,26 @@ flowchart LR
     classDef store fill:#e2d9f3,stroke:#6f42c1
     classDef unbuilt fill:#f8d7da,stroke:#dc3545,stroke-dasharray: 5 5
     class C,E prebuilt
-    class B,D,F script
+    class A,B,D,F script
     class I hitl
-    class H,J store
-    class A unbuilt
+    class H,J,K store
 ```
 
-**Legend for this diagram**: every gray (script) and green (prebuilt) box was **built and exercised end-to-end** — the empirical 100% / 0 hallucinations / $0.00934 result comes from running this exact graph on the 3-PDF baseline + the OOD holdout. **Pink-dashed = recommended in production but not built in the PoC**: the n8n trigger is replaced by direct CLI invocation in `extract_dossier.py`, and the production HITL review form is a future replacement for `app.py` (which is a demo Streamlit skin only, see `06_reference_script/notes.md` production hardening item #6).
+**Legend for this diagram**: every gray (script) and green (prebuilt) box was **built and exercised end-to-end** — the empirical 100% / 0 hallucinations / $0.00934 result comes from running this exact graph on the 3-PDF baseline + the OOD holdout. Box A is no longer pink-dashed: as of D-007 the public Streamlit Cloud deployment (`06_reference_script/app.py` served at `https://revelatio-demo.streamlit.app`) is the validated entry point for interactive use; the CLI in `extract_dossier.py --batch` is the alternate entry point for headless batch runs. **The single remaining pink-dashed item** is the production HITL review form for `needs_review=TRUE` rows — the Streamlit UI surfaces the flag but does not implement the per-field review workflow with SSO described in `06_reference_script/notes.md` production hardening item #6. Box K (Google Sheet sink) is the demo write-back target shared with the hiring panel; in production it would be replaced by the firm's chosen spreadsheet/database destination.
 
 **Anchors for Diagram 2** (✅ = built and validated in PoC; ⚠ = recommended for production, not built):
 
 | Box / arrow | Status | Empirical anchor |
 |---|---|---|
-| PDF arrival / n8n trigger (A) | ⚠ CLI used in PoC | Dossier `02_tool_universe/05_n8n.md`; the validated entry point in the PoC is `extract_dossier.py --batch input_dir/ --out output_dir/` — n8n would replace this trigger in production but the engine itself is unchanged |
+| PDF arrival (A) | ✅ public Streamlit Cloud deploy + CLI for batch | Streamlit Cloud app at `https://revelatio-demo.streamlit.app` (source: `06_reference_script/app.py`, Epic 8.5 / D-007); CLI alternate at `extract_dossier.py --batch input_dir/ --out output_dir/` — both call the same `process_one()` engine. n8n remains a recommended production batch orchestrator (`02_tool_universe/05_n8n.md`) but is unbuilt in PoC |
+| Google Sheet sink (K) | ✅ built (Epic 8.5) | `06_reference_script/sheets_writer.py` (gspread + service-account auth, append-only with `extracted_at` UTC stamp); demo sheet shared with the hiring panel |
 | Reference Python engine (B) | ✅ built | `06_reference_script/extract_dossier.py` (130 lines, CLI orchestrator) |
 | Azure DI Layout `analyze_pdf` (C) | ✅ built | `06_reference_script/azure_di_client.py` (31 lines); $0.003/dossier (2 pages @ $1.50/1000 per Microsoft pricing) |
 | `page1_parser` (D) | ✅ built | `06_reference_script/page1_parser.py` (79 lines); normalizes BR dates DD/MM/YYYY → YYYY-MM-DD, money "R$ 18.450,00" → "18450.00", "147 dias" → 147 |
 | Claude Sonnet 4.6 + Option-B prompt (E) | ✅ built | `06_reference_script/claude_extractor.py` (~100 lines, post-2026-05-12 literal-extraction rule); ~$0.00362 input + ~$0.00572 output per dossier |
 | Cross-validation gate (G) | ✅ built | Option-B prompt implements the gate; `cross_val_consistent` column in `06_reference_script/test_corpus/audit.csv` |
 | `dossiers.csv` + `audit.csv` (H, I, J) | ✅ built | `06_reference_script/test_corpus/dossiers.csv` + `audit.csv` (baseline 3-PDF re-run); F09 OOD outputs reproducible via `extract_dossier.py 05_synthetic_data/pdfs/F09_brief_shape.pdf` |
-| HITL queue web form (I → H dashed arrow) | ⚠ production form unbuilt | `app.py` (Streamlit) demonstrates the UX as a demo only; production replacement with SSO is hardening item #6 in `06_reference_script/notes.md` |
+| HITL review form (I → H dashed arrow) | ⚠ production per-field form unbuilt | The deployed Streamlit app (`06_reference_script/app.py` at `https://revelatio-demo.streamlit.app`) surfaces `needs_review=TRUE` rows but does not implement the per-field review workflow with SSO; that replacement is hardening item #6 in `06_reference_script/notes.md` |
 | 100% avg / 0 hallucinations / $0.00934 (3-PDF baseline + OOD holdout F09) | ✅ empirically measured | `06_reference_script/notes.md` results table + OOD validation section |
 
 The reference script is the **only tested configuration** that simultaneously: (a) handles page-2 layout drift like the LLMs, (b) operates at API scale unlike the chat UIs, (c) provides full audit trail and cross-validation unlike a plain LLM call, (d) costs less than 100 USD for the full backlog (`notes.md` line 63–65).
@@ -238,7 +239,8 @@ The rubric is intentionally pessimistic about "no M365 + no dev capacity" — th
 | Option-B cross-validation prompt | `06_reference_script/claude_extractor.py` | 95-line implementation |
 | `dossiers.csv` / `audit.csv` schemas | `06_reference_script/test_corpus/` | Live output from validation run |
 | Single-field-gating-insufficient (motivation for cross-val) | `04_experiments/02_power_automate/notes.md` finding #5 | Epic 5.2 |
-| Strategic locks (current ordering: Python engine primary, M365 alternative) | `decisions.md` ADRs D-004, D-005, **D-006 (2026-05-12 supersedes D-005's primary/alternative ordering)** | D-005 stays in the log as historical record |
+| Strategic locks (current ordering: Python engine primary, M365 alternative) | `decisions.md` ADRs D-004, D-005, **D-006 (2026-05-12 supersedes D-005's primary/alternative ordering)**, **D-007 (2026-05-12 public Streamlit Cloud deploy + Google Sheets write-back)** | D-005 stays in the log as historical record |
+| Public demo URL + Google Sheets write-back | `https://revelatio-demo.streamlit.app` + service-account-shared Google Sheet | D-007 (2026-05-12). Source: `06_reference_script/app.py` + `sheets_writer.py` + `labels_pt.py`. Deploy runbook at `DEPLOY.md` |
 | OOD holdout `F09_brief_shape` (brief-faithful layout, fresh client data, 100% on the post-2026-05-12 prompt) | `05_synthetic_data/pdfs/F09_brief_shape.pdf` + `gold/F09_brief_shape.json` + generator at `05_synthetic_data/generate_brief_shaped_ood.py` | Reproducible via `extract_dossier.py 05_synthetic_data/pdfs/F09_brief_shape.pdf` |
 | `unbuilt` class (pink dashed border in Diagrams 1 & 2) | §0 conventions table; introduced 2026-05-12 alongside D-006 | Marks components specified architecturally but not built in PoC |
 

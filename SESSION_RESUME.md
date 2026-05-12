@@ -23,8 +23,9 @@ Take-home challenge: **Implementador de IA & Automações** for a Brazilian law 
 | 5.10 — Skipped: Make + n8n full hands-on (covered via dossiers + diagrams instead) | — |
 | **6 — Reference Python script (+ Streamlit UI)** | ✅ **done — 100% on 3-PDF baseline + OOD holdout F09, 0 hallucinations, ~$93/10k (post-2026-05-12 literal-extraction prompt)** |
 | **7 — Architecture / LGPD / ROI** | ✅ **done — 4 docs in `07_architecture/`, all WebFetch-verified, R$50k → R$436 ROI locked in** |
-| 8 — Relatório PT-BR | ⏳ pending (~4-6h) — **see `08_kickoff_prompt.md` for fresh-session kickoff** |
-| 9 — Video ≤ 5 min PT-BR | ⏳ pending (~2-3h) |
+| **8 — Relatório PT-BR** | ✅ **done — `08_deliverables/relatorio.md` + `relatorio.pdf`** |
+| **8.5 — Streamlit Cloud deploy + Google Sheets write-back** | ✅ **done — live at `https://revelatio-demo.streamlit.app`, PT-BR labels, append-only Sheets sink, D-007 (2026-05-12)** |
+| 9 — Video ≤ 5 min PT-BR | ⏳ pending (~2-3h) — **see `09_kickoff_prompt.md`** |
 | 10 — QA & submission | ⏳ pending |
 
 **Time remaining**: ~2 days (deadline 2026-05-13 17:00 BRT). Comfortable pace — all empirical work + architecture/ROI/LGPD writing done. Reserve 1 full day for Epics 8 + 9 + 10.
@@ -65,7 +66,7 @@ From Epic 5.2 (`04_experiments/02_power_automate/notes.md`):
 
 ## Strategic angles already locked in
 
-- **Python reference engine (`06_reference_script/`) + Azure DI Layout + Claude Sonnet 4.6** = **primary recommendation** (D-006, 2026-05-12). Empirically validated at 100% on 3-PDF baseline + OOD holdout, $0,00934/dossier. Production orchestration via n8n recommended but not built in PoC (CLI used).
+- **Python reference engine (`06_reference_script/`) + Azure DI Layout + Claude Sonnet 4.6** = **primary recommendation** (D-006, 2026-05-12). Empirically validated at 100% on 3-PDF baseline + OOD holdout, $0,00934/dossier. **Exposed publicly at `https://revelatio-demo.streamlit.app` with Google Sheets write-back (D-007, 2026-05-12)** — panel can click the URL and exercise the engine directly. CLI in `extract_dossier.py` remains for batch; production batch orchestration via n8n recommended but not built in PoC.
 - **Power Automate + AI Builder** = alternative recommendation for M365-resident firms preferring no-code maintenance by paralegal (D-005, reclassified by D-006). PA flow built end-to-end on page-1 (Epic 5.2); page-2 fallback (Azure DI + Claude) specified architecturally but not added inside PA in the PoC.
 - **Azure DI Custom Neural** = page-2 cross-validator (Epic 5.7, layout-tolerant model)
 - **Two-layer routing** insight: page 1 deterministic, page 2 OCR — empirically validated in Phase 1.5 + Phase 3
@@ -77,7 +78,9 @@ From Epic 5.2 (`04_experiments/02_power_automate/notes.md`):
 | File | Purpose |
 |---|---|
 | `backlog.md` | Master plan, 11 epics |
-| `decisions.md` | ADRs (D-001 lang, D-002 budget, D-003 synth corpus, D-004 M365, D-005 Power Automate primary) |
+| `decisions.md` | ADRs (D-001 lang, D-002 budget, D-003 synth corpus, D-004 M365, D-005 Power Automate primary, D-006 Python primary, D-007 Streamlit Cloud deploy) |
+| **`DEPLOY.md`** (raiz) | **Runbook PT-BR para deploy Streamlit Cloud + Google Sheets (Epic 8.5)** |
+| **`08_deliverables/relatorio.md` + `relatorio.pdf`** | **Relatório PT-BR final (Epic 8 deliverable)** |
 | `lessons.md` | Per-project learnings |
 | `01_field_map/gold_truth.json` | Brief example PDF gold (used for scoring) |
 | `01_field_map/scoring_rubric.md` | Grading rules (encoded in scoring scripts) |

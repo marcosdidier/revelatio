@@ -2,6 +2,8 @@
 
 Final deliverables for the take-home video (PT-BR, ≤ 5 minutos). Populated by Epic 9.
 
+**Demo URL for Act 3** (live as of Epic 8.5 / D-007, 2026-05-12): `https://revelatio-demo.streamlit.app` — open the URL in the browser instead of running `streamlit run` locally. The Google Sheets write-back button is the strongest visual *closer* (panel can click it after the video to confirm it ran end-to-end).
+
 Expected contents after Epic 9 completes:
 
 | File | Purpose |
