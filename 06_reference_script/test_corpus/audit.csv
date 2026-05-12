@@ -1,4 +1,4 @@
 pdf_filename,timestamp,total_latency_s,azure_latency_s,llm_latency_s,llm_input_tokens,llm_output_tokens,estimated_cost_usd,cross_val_consistent,mismatches,error
-F02_missing_email.pdf,2026-05-11T01:38:34.990542,11.68,6.6,5.08,1061,375,0.00881,TRUE,,
-F07_skewed_page2.pdf,2026-05-11T01:38:46.754658,10.99,6.45,4.54,1060,375,0.00881,TRUE,,
-exemplo_pdf_cliente_devedor_ficticio.pdf,2026-05-11T01:38:57.747939,10.44,6.55,3.89,1087,380,0.00896,TRUE,,
+F02_missing_email.pdf,2026-05-11T18:01:55.742749+00:00,12.17,7.41,4.76,1200,381,0.00932,TRUE,,
+F07_skewed_page2.pdf,2026-05-11T18:02:08.006321+00:00,10.76,6.77,3.99,1199,381,0.00931,TRUE,,
+exemplo_pdf_cliente_devedor_ficticio.pdf,2026-05-11T18:02:18.775442+00:00,10.84,6.95,3.89,1226,380,0.00938,TRUE,,

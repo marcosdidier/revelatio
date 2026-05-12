@@ -68,7 +68,7 @@ PDF
   → Azure DI Layout (deterministic OCR + table + paragraph structure)
   → Page 1: parse tables directly from Layout JSON (no LLM needed)
   → Page 2: send paragraph text to LLM (Claude/GPT) with field schema
-  → Cross-validate (CPF/name consistency between page 1 and page 2)
+  → Cross-validate (name consistency: page-2 Titular and Pagador match page-1 client_name; CPF passed as prompt context but absent from page-2 layout)
   → Output: CSV row + audit log + HITL queue for low-confidence
 ```
 

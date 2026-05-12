@@ -1,7 +1,9 @@
 # Epic 6 — Reference extraction script
 
-**Date**: 2026-05-10/11
+**Date**: 2026-05-10/12
 **Pipeline**: PDF → Azure DI Layout → page-1 deterministic table parse + page-2 Claude Sonnet 4.6 with Option-B cross-validation → CSV row.
+
+**2026-05-12 update**: prompt updated to enforce **literal field extraction** (return everything after the field label verbatim, do not segment compound values). This eliminated a parsing quirk on `proof_address_neighborhood` (the LLM had been semantically dropping the city/UF suffix from values like `Bairro: Boa Vista - Recife/PE`). After the change, the 3-PDF test corpus scores **100,0% on every PDF**, both pages, with 0 hallucinations. Average cost rose marginally to **$0,00934 / dossier** due to ~120 extra input tokens for the new rule.
 
 ## What this exists for
 
@@ -28,31 +30,55 @@ PDF
 
 ## Empirical results (3-PDF test corpus)
 
-Tested against `00_brief/exemplo_pdf_cliente_devedor_ficticio.pdf` (the PDF Power Automate hallucinated on), `F02_missing_email.pdf` (anti-hallucination test for null fields), and `F07_skewed_page2.pdf` (layout-robustness test).
+Tested against `00_brief/exemplo_pdf_cliente_devedor_ficticio.pdf` (the PDF Power Automate hallucinated on), `F02_missing_email.pdf` (anti-hallucination test for null fields), and `F07_skewed_page2.pdf` (layout-robustness test). Results below reflect the **post-2026-05-12 prompt** with the literal-extraction rule.
 
 | PDF | Overall | Page 1 | Page 2 | Hallucinations | Latency | Cost (USD) |
 |---|---|---|---|---|---|---|
-| Brief example | **100.0%** | 100% | 100% | 0 | 11.20s | $0.00896 |
-| F02 missing-email | **98.6%** | 100% | 97.1%† | 0 | 11.68s | $0.00881 |
-| F07 skewed page 2 | **98.6%** | 100% | 97.1%† | 0 | 10.99s | $0.00881 |
-| **Average** | **99.07%** | **100%** | **98.1%** | **0** | **11.29s** | **$0.00886** |
+| Brief example | **100.0%** | 100% | 100% | 0 | 10.84s | $0.00938 |
+| F02 missing-email | **100.0%** | 100% | 100% | 0 | 12.17s | $0.00932 |
+| F07 skewed page 2 | **100.0%** | 100% | 100% | 0 | 10.76s | $0.00931 |
+| **Average** | **100.0%** | **100%** | **100%** | **0** | **11.26s** | **$0.00934** |
 
-† The 1 non-exact cell (`proof_address_neighborhood`) is a synthetic-gold inconsistency, not an LLM error. The synthetic PDF renders `Bairro: Boa Vista` but the gold expects `"Boa Vista - Recife/PE"`. The LLM correctly extracted `"Boa Vista"` matching the rendered text. To be fixed in the gold during Epic 8 QA, or kept as-is and noted (the LLM's behavior is the correct one).
+### History note — the parsing quirk we fixed
+
+Before the 2026-05-12 prompt update, the F02 and F07 PDFs scored 98,6% overall (97,1% page 2) due to a single non-exact cell in `proof_address_neighborhood`. The PDF renders `Bairro: Boa Vista - Recife/PE` (`05_synthetic_data/generate_pdfs.py` line 237 passes the full value to the renderer; gold matches the same value at line 368), but the LLM was returning only `"Boa Vista"` — semantically interpreting `Bairro` as "just the neighborhood name" and dropping the city/UF suffix. The fix was a single rule added to `claude_extractor.py` (Regra 2): *extract each field value literally, do not segment compound values*. This restored 100% on every cell of every test PDF and preserves anti-hallucination (we are being more literal, not less).
 
 ### Anti-hallucination preserved
 
 F02's email field returned **empty** (`""`), not an invented plausible value. This is the same anti-hallucination property validated for Power Automate in Epic 5.2 (F02 and F03 finding) — preserved through the LLM pipeline by the explicit `"use null (NUNCA invente)"` rule in the prompt.
 
+### OOD holdout validation — F09_brief_shape (2026-05-12)
+
+To validate that the literal-extraction rule generalizes beyond the in-distribution test PDFs, we generated `F09_brief_shape.pdf` — a brief-faithful layout (§3+§4 prose blocks, `"(ficticio)"` CPF suffix, combined `Agencia: X | Conta: Y` page-2 line, running footer with page number) with completely new client data (Ana Beatriz Souza Carvalho, Salvador/BA, financiamento de veículo) that the pipeline had never seen. Generator: `05_synthetic_data/generate_brief_shaped_ood.py`. Gold: `05_synthetic_data/gold/F09_brief_shape.json`.
+
+| Metric | F09 result |
+|---|---|
+| Overall | **100,0%** |
+| Page 1 | 100% |
+| Page 2 | 100% |
+| Hallucinations | 0 |
+| Latency | 11,54s |
+| Cost | $0,00932 |
+
+Adversarial features that behaved correctly:
+- Combined `Agencia: 5678 | Conta: 00045123-7` line was correctly split into `bank_branch="5678"` and `bank_account="00045123-7"` — a real test of literal extraction on a single-line dual-field rendering.
+- Bairro `Centro - Salvador/BA` extracted verbatim (the literal-extraction rule's canonical test case applied to fresh data).
+- CPF table cell `567.890.123-45 (ficticio)` correctly emitted as `567.890.123-45` by the page-1 parser; the `"(ficticio)"` disclaimer suffix did not contaminate the field.
+- Page-1 §3 and §4 prose blocks (not present in F01–F08 fixtures) did not produce spurious fields.
+- Running footer with `Pagina N` did not leak into any field value — the same failure mode that Power Automate exhibited on the brief PDF page 2 (Epic 5.2 Phase 1.5) is fully bounded by the literal-extraction prompt + the page-2 region delimitation.
+
+Combined with the 3-PDF baseline, this brings the pipeline's empirical result to **100% on 4 PDFs, 0 hallucinations, 1 of which is a true OOD holdout**.
+
 ## Cost projection at scale
 
-Average $0.00886/dossier × 10,000 = **$88.60 for the full Banco X backlog**.
+Average **$0.00934/dossier × 10,000 = $93.37** for the full Banco X backlog (≈ R$ 457,45 at PTAX 4,8999 venda 2026-05-08).
 
-Breakdown of the $0.00886:
-- Azure DI Layout: ~$0.003 (2 pages @ $1.50/1000)
-- Claude Sonnet 4.6 input: ~$0.0033 (~1085 tokens @ $3/M)
-- Claude Sonnet 4.6 output: ~$0.0057 (~378 tokens @ $15/M)
+Breakdown of the $0.00934:
+- Azure DI Layout: ~$0.003 (2 pages @ $1.50/1000, unchanged)
+- Claude Sonnet 4.6 input: ~$0.00362 (~1208 tokens @ $3/M — +~120 tokens vs. the pre-2026-05-12 prompt for the literal-extraction rule)
+- Claude Sonnet 4.6 output: ~$0.00572 (~381 tokens @ $15/M, unchanged)
 
-This matches the SCOREBOARD §4 projection of ~$80 within rounding.
+This still sits at the lower end of the SCOREBOARD §4 projection band of ~$80–$150 across architecture variants.
 
 ## Comparison to other tools
 
@@ -60,7 +86,7 @@ This matches the SCOREBOARD §4 projection of ~$80 within rounding.
 |---|---|---|---|---|---|
 | Power Automate + AI Builder | 92.8% (synth avg) | 0/132 cells | ~5–10s | M365 fixed | Page-2 layout-sensitive on brief PDF |
 | LLM round-robin (chat UI) | 100% on brief | 0 | 10–22s | $50–100 | Not scalable via UI |
-| **This script** | **99.07%** on 3-PDF | 0 | 11.3s | **$89** | Production-shaped |
+| **This script** | **100%** on 3-PDF + OOD holdout | 0 | 11.3s | **~$93** | Production-shaped |
 
 The reference script is the only tested configuration that simultaneously: (a) handles page-2 layout drift like the LLMs, (b) operates at API scale unlike the chat UIs, (c) provides full audit trail and cross-validation unlike a plain LLM call, (d) costs less than 100 USD for the full backlog.
 

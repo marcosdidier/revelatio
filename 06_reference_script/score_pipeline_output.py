@@ -20,6 +20,7 @@ GOLD_FOR: dict[str, Path] = {
     "exemplo_pdf_cliente_devedor_ficticio.pdf": REPO / "01_field_map/gold_truth.json",
     "F02_missing_email.pdf": REPO / "05_synthetic_data/gold/F02_missing_email.json",
     "F07_skewed_page2.pdf": REPO / "05_synthetic_data/gold/F07_skewed_page2.json",
+    "F09_brief_shape.pdf": REPO / "05_synthetic_data/gold/F09_brief_shape.json",
 }
 
 PAGE1_FIELDS = [

@@ -2,7 +2,7 @@
 
 Production-shaped Python pipeline that extracts structured data from Banco X debtor-dossier PDFs into a CSV ready for Excel. Two interfaces: **CLI** (for batch operation) and **Streamlit UI** (for demo / one-off drag-drop use).
 
-Empirically validated at **99.07% accuracy** on a 3-PDF test corpus with **0 hallucinations** and **~$0.0089 per dossier**. See `notes.md` for full results, architecture, and production-hardening checklist.
+Empirically validated at **100% accuracy** on a 3-PDF baseline corpus **plus** an out-of-distribution holdout (`F09_brief_shape.pdf`, brief-faithful layout, fresh client data) — also 100%. **0 hallucinations** across all 4 PDFs, **~$0.0093 per dossier**. See `notes.md` for full results, the OOD validation section, prompt-rule history, and production-hardening checklist.
 
 ---
 

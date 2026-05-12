@@ -45,17 +45,18 @@ Date: 2026-05-10. Methodology: each hands-on tool was given the same brief examp
 
 ## 3. Role in the recommended architecture
 
-The relatório recommends a **hybrid stack with two-layer routing**, not a single tool. Each evaluated tool maps to a named role (or is explicitly excluded):
+The relatório recommends a **hybrid stack with two-layer routing**, not a single tool. Each evaluated tool maps to a named role (or is explicitly excluded). **D-006 (2026-05-12) reordered the primary/alternative recommendation**: the Python reference engine in `06_reference_script/` is the primary recommendation (built and validated end-to-end, 100% on 3-PDF baseline + OOD holdout F09); Power Automate is the alternative for M365-resident firms preferring no-code maintenance.
 
 | Role | Recommended tool | Why | Empirical evidence |
 |---|---|---|---|
-| **Primary workflow (M365 firms)** | Power Automate | Native M365 integration, audit trail, no-code maintainable by paralegals | End-to-end flow built in Epic 5.2 |
+| **Primary workflow engine (D-006)** | Python reference pipeline (`06_reference_script/`) | Built and validated end-to-end; explicit cross-validation gate; transparent audit log; cost predictable | 100% on 3-PDF baseline + OOD holdout F09 / 0 hallucinations / $0.00934 per dossier |
+| **Alternative workflow (M365 firms preferring no-code)** | Power Automate + AI Builder | Native M365 integration, audit trail, no-code maintainable by paralegals; page-1 flow built end-to-end | End-to-end PA flow built in Epic 5.2; page-2 fallback (Azure DI + Claude API) specified but not added inside PA in PoC |
 | **Page-1 deterministic extractor (M365 path)** | AI Builder Custom Extraction | Validated on synthetic corpus, low cost, no LLM dependency | 100% page-1 visual on synth + brief |
 | **Page-1 deterministic extractor (non-M365 path)** | Tabula or pdfplumber | Zero cost, 0.7s latency, deterministic | 16/16 cells correct on brief, F01, F07 |
 | **Page-2 OCR + structure (both paths)** | Azure DI Layout | Layout-tolerant where AI Builder failed; not source of PA bug | Page-2 paragraphs detected correctly on brief PDF |
 | **Page-2 field mapping (both paths)** | Claude API or GPT API | 100% on brief PDF; cross-validated across 3 frontier LLMs | LLM round-robin (Epic 5.3–5.5) |
 | **Page-2 layout-tolerant extractor (production strategic)** | Azure DI Custom Neural | Trainable on real Banco X dossiers, beats template models on layout drift | Spec-only — requires 30+ real dossiers |
-| **Cross-validator (production)** | Per-page CPF/name consistency rules | Catches "wrong page-2 in wrong dossier" + AI Builder OOD failures | Documented in Epic 5.2 finding #5 |
+| **Cross-validator (production)** | Per-page name consistency rule (page-2 `proof_address_holder` and `payer` must match page-1 `client_name`; CPF is passed as prompt context but the brief layout has no CPF on page 2 to compare against) | Catches "wrong page-2 in wrong dossier" + AI Builder OOD failures | Documented in Epic 5.2 finding #5 |
 | **Workflow orchestrator (non-M365 firms)** | n8n self-hosted | OSS, no vendor lock-in, can call Azure DI + Claude API | Dossier `02_tool_universe/05_n8n.md` |
 | **HITL queue** | SharePoint list (M365) or any DB + form (non-M365) | Reviewer-friendly, audit-able | Documented design, not built |
 
@@ -75,8 +76,8 @@ The relatório recommends a **hybrid stack with two-layer routing**, not a singl
 
 | Architecture | One-time | Per-dossier | Total 10k | Maintenance |
 |---|---|---|---|---|
-| **M365 path** (PA + AI Builder + Azure DI fallback + Claude API for page-2 mapping on OOD layouts) | $0 (M365 trial / existing license) | ~$0.008 | ~$80 | Paralegal-maintainable PA flow + ~30 real Banco X dossiers for AI Builder retraining |
-| **Non-M365 path** (n8n + Tabula + Azure DI Layout + Claude API) | ~2–3 days eng setup | ~$0.008 | ~$80 | Developer-maintainable Python + n8n flow |
+| **Non-M365 path (primary, D-006)** (`06_reference_script/` reference engine + Azure DI Layout + Claude Sonnet 4.6 + n8n orchestrator) | ~2–3 days eng to wire n8n on top of the validated engine (one-time) | **$0.00934 (measured, 4 PDFs)** | **~$93** | Developer-maintainable Python + n8n flow |
+| **M365 path (alternative)** (PA + AI Builder + Azure DI fallback + Claude API for page-2 mapping on OOD layouts) | $0 (M365 trial / existing license) but ~1–2 days to add the page-2 fallback connector inside PA | ~$0.009 (projected) | ~$90 | Paralegal-maintainable PA flow + ~30 real Banco X dossiers for AI Builder retraining |
 | **Cheapest viable** (n8n + Tabula + Claude API direct for page-2 image) | ~1 day eng | ~$0.005 | ~$50 | Higher hallucination risk without OCR-first step |
 | **Highest-confidence** (M365 + Azure DI Custom Neural + dual-LLM cross-validation) | ~1 week (labeling 30 dossiers + training) | ~$0.015 | ~$150 | Re-train every 6 mo as Banco X templates evolve |
 
@@ -97,7 +98,7 @@ All four are well under the budget headroom for a firm processing 10k dossiers/y
 
 ## 6. The one-paragraph summary for the relatório
 
-> *Avaliamos 9 ferramentas representando 4 categorias arquiteturais: workflows comerciais (Power Automate, Make), workflows OSS (n8n), LLMs frontier (ChatGPT, Claude, NotebookLM, Copilot) e OCR/extração estruturada (Azure Document Intelligence, Tabula). Todas as três LLMs frontier obtiveram 100% de acurácia com zero alucinações no PDF de exemplo. Power Automate + AI Builder obteve 92,8% médio no corpus sintético sem alucinações, mas exibiu falha layout-sensitive na página 2 do PDF de exemplo (campos extraídos de rodapés). Azure DI Layout reconheceu corretamente a estrutura de ambas as páginas sem treinamento. Tabula extraiu 100% da página 1 a custo zero, mas falhou totalmente na página 2 (não possui OCR). A arquitetura recomendada é, portanto, **híbrida e em duas camadas** — extração determinística na página 1, OCR+LLM na página 2, com regras de cross-validation e fila HITL para confiabilidade em produção — não uma ferramenta única.*
+> *Avaliamos 9 ferramentas representando 4 categorias arquiteturais: workflows comerciais (Power Automate, Make), workflows OSS (n8n), LLMs frontier (ChatGPT, Claude, NotebookLM, Copilot) e OCR/extração estruturada (Azure Document Intelligence, Tabula). Todas as três LLMs frontier obtiveram 100% de acurácia com zero alucinações no PDF de exemplo. Power Automate + AI Builder obteve 92,8% médio no corpus sintético sem alucinações, mas exibiu falha layout-sensitive na página 2 do PDF de exemplo (campos extraídos de rodapés). Azure DI Layout reconheceu corretamente a estrutura de ambas as páginas sem treinamento. Tabula extraiu 100% da página 1 a custo zero, mas falhou totalmente na página 2 (não possui OCR). A arquitetura recomendada é, portanto, **híbrida e em duas camadas** — extração determinística na página 1, OCR+LLM na página 2, com regras de cross-validation e fila HITL para confiabilidade em produção — não uma ferramenta única. **Implementamos essa arquitetura em pipeline Python de referência (`06_reference_script/`), com Azure DI Layout na camada OCR e Claude Sonnet 4.6 no mapeamento campo-a-campo: 100% de acurácia em 4 PDFs (corpus de base de 3 + holdout OOD `F09_brief_shape`), zero alucinações, US$ 0,00934 por dossiê. Esse pipeline é a recomendação principal (D-006); Power Automate fica como caminho alternativo para escritórios já residentes em M365 que prefiram manutenção no-code por paralegal.*
 
 ---
 

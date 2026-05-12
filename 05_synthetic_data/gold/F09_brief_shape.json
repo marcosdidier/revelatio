@@ -1,0 +1,52 @@
+{
+  "$meta": {
+    "fixture_id": "F09_brief_shape",
+    "p1_variation": "brief_faithful",
+    "p2_variation": "brief_faithful",
+    "generator": "05_synthetic_data/generate_brief_shaped_ood.py",
+    "purpose": "OOD holdout: brief-faithful structure, fresh client data"
+  },
+  "page1": {
+    "client_name": "Ana Beatriz Souza Carvalho",
+    "cpf": "567.890.123-45",
+    "cpf_digits_only": "56789012345",
+    "birth_date": "1991-03-28",
+    "phone": "(71) 99654-2287",
+    "email": "ana.carvalho.exemplo@emailficticio.com",
+    "address": "Rua Chile, 478, Casa 02 - Centro - Salvador/BA",
+    "postal_code": "40020-000",
+    "contract_number": "BX-2025-0098432",
+    "product": "Financiamento de veiculo",
+    "contract_date": "2025-09-03",
+    "original_amount": "32700.00",
+    "updated_balance": "38940.15",
+    "days_overdue": 89,
+    "status": "Aguardando proposta",
+    "last_contact_attempt": "2026-03-18",
+    "internal_owner": "Equipe Cobranca - Nucleo 02"
+  },
+  "page2": {
+    "comprovante_endereco": {
+      "proof_address_holder": "Ana Beatriz Souza Carvalho",
+      "proof_address_line": "Rua Chile, 478, Casa 02",
+      "proof_address_neighborhood": "Centro - Salvador/BA",
+      "proof_address_postal": "40020-000",
+      "proof_reference": "Conta de gas - Distribuidora Ficticia de Gas",
+      "proof_period": "2026-02",
+      "proof_value": "96.38",
+      "proof_barcode": "81790000004963800000010524050006799990000009638"
+    },
+    "comprovante_bancario": {
+      "bank_name": "Banco Exemplo S.A.",
+      "bank_branch": "5678",
+      "bank_account": "00045123-7",
+      "transaction_date": "2026-03-05",
+      "transaction_type": "Pagamento integral",
+      "payer": "Ana Beatriz Souza Carvalho",
+      "payee": "Banco X - Carteira de Cobranca",
+      "amount_paid": "2800.00",
+      "authentication_code": "BX26.03.05.00098.43210.FICT",
+      "paid_stamp_present": true
+    }
+  }
+}

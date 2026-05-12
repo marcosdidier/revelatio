@@ -457,7 +457,7 @@ Read the bundle as if we were the hirer. Time it. Note any "wait, what?" moments
 
 **10.3 — Submit before 13/05/2026 17:00 BRT**
 Send the Drive link or zip via the channel the hirer specified. Confirm receipt.
-- DoD: confirmation logged in `decisions.md` (D-006: submitted at HH:MM); buffer of ≥ 6 h vs deadline
+- DoD: confirmation logged in `decisions.md` (D-007: submitted at HH:MM); buffer of ≥ 6 h vs deadline. (D-006 was claimed on 2026-05-12 for the strategic flip from Power Automate-primary to Python-engine-primary, so the submission ADR slot bumps to D-007.)
 - Tags: `[Clareza]`
 
 ---

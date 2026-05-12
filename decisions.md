@@ -2,6 +2,15 @@
 
 One-line ADRs (Architecture Decision Records). Newest at the top. Format: `[YYYY-MM-DD] decision — rationale`.
 
+## 2026-05-12 — D-006 supersedes D-005: reference Python engine becomes the primary recommendation
+
+- **D-006 — Primary recommended solution: the Python reference engine in `06_reference_script/` (Azure DI Layout + Claude Sonnet 4.6 with Option-B cross-validation), orchestrated in production by n8n.** Supersedes D-005 (which had Power Automate as primary) without invalidating its findings — Power Automate + AI Builder is reclassified as the *caminho alternativo* for firms already resident in Microsoft 365 that prefer no-code maintenance. *Why the flip*:
+  - **What we built vs. what we recommended**: D-005 nominated Power Automate as primary, but the *complete* hybrid stack (page-1 deterministic + page-2 Azure DI Layout + Claude API field-mapping + cross-validation gate + HITL routing) was built and validated empirically as a Python pipeline in Epic 6, **not** inside Power Automate. The PA flow demonstrates page-1 (AI Builder) but the page-2 fallback layer that fixes the OOD failure was specified, not implemented inside PA.
+  - **Empirical validation strengthened**: the Python engine scores **100% on a 3-PDF baseline corpus + 100% on the OOD holdout F09_brief_shape** (brief-faithful layout, completely new client data). 0 hallucinations across all 4 PDFs. Cost $0,00934 / dossier = $93,37 / 10k = R$ 457 at PTAX 4,8999. Leading with the artifact that has measured numbers is more defensible than leading with one whose recommended completion is unbuilt.
+  - **Brief diferencial alignment**: the brief explicitly bonuses "criar um script básico" (`[Diff:Script]`) and "fluxo alternativo de automação" (`[Diff:AltFlow]`). With D-006, the script *is* the recommendation, and the alternative flow is a real architectural variant (M365), not a fallback narrative.
+  - **n8n role disclosed honestly**: n8n is the recommended production orchestrator in the non-M365 path but was **not built** in the PoC (Epic 5.10 was deliberately skipped); the CLI in `extract_dossier.py` is the orchestrator we tested. This honesty is required by D-006's framing.
+  - **M365 path remains a real recommendation** for M365-resident firms; the value of paralegal-maintainable no-code is real and the PA flow demonstrates the page-1 layer plus the architectural shape. Firms choose by the rubric in `07_architecture/diagrams.md` §5.
+
 ## 2026-05-08 — Strategic pivot to Power Automate as primary recommendation
 
 - **D-005 — Primary recommended solution: Microsoft Power Automate + AI Builder Document Processing, validated hands-on in Epic 5.2.** *Why:*

@@ -11,8 +11,10 @@ Continue Project Revelatio. Read SESSION_RESUME.md and 08_kickoff_prompt.md firs
 — they have the complete status and Epic 8 specification.
 
 Where we are: Epics 0–7 are done and committed (5 commits on `main`, most recent
-`1d8d791`). The reference pipeline is empirically validated at 99.07% / 0
-hallucinations / $0.00886 per dossier. Epic 7 produced four stakeholder-facing
+`1d8d791`). The reference pipeline is empirically validated at 100% / 0
+hallucinations / $0.00934 per dossier on a 3-PDF baseline + OOD holdout
+(F09_brief_shape, brief-faithful structure, fresh client data). Epic 7
+produced four stakeholder-facing
 documents in `07_architecture/` (diagrams.md, roi.md, lgpd.md, manual_timing.md)
 anchored to empirical artifacts and WebFetch-verified external policy URLs.
 
@@ -66,7 +68,7 @@ finalizing the outline — they're listed in `08_kickoff_prompt.md` under
 | 3 | External research sprint | `03_external_research/` |
 | 4 | Synthetic PDFs + golds (8 fixtures) | `05_synthetic_data/` |
 | 5.2–5.9 | Tool hands-on tests (PA, ChatGPT, Claude, NotebookLM, Azure DI, Tabula) + SCOREBOARD synthesis | `04_experiments/` |
-| 6 | Reference Python pipeline (99.07% / 0 hallucinations / $0.0089) + Streamlit demo UI | `06_reference_script/` |
+| 6 | Reference Python pipeline (100% on 3-PDF + OOD F09 / 0 hallucinations / $0.0093) + Streamlit demo UI | `06_reference_script/` |
 | 7 | Architecture / LGPD / ROI stakeholder docs | `07_architecture/` |
 
 ### Section-to-artifact mapping (the prose backbone)

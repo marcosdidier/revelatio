@@ -69,11 +69,12 @@ Tarefa: extraia os campos da página 2 seguindo o schema abaixo. ADICIONALMENTE,
 
 Regras:
 1. Campos ausentes no texto: use null (NUNCA invente valor plausível).
-2. Datas: ISO YYYY-MM-DD (ou YYYY-MM para mês/ano).
-3. Valores monetários: string decimal sem R$ e sem separador de milhar (ex: "184.72").
-4. CEP: formato NNNNN-NNN.
-5. Código de barras: apenas dígitos, sem pontos nem espaços.
-6. paid_stamp_present: true se o texto contém "PAGO" como carimbo visual, false caso contrário.
+2. Extração literal: para cada campo, devolva o valor completo que aparece após o rótulo, exatamente como está no texto. Não segmente valores compostos (ex.: se o texto contém "Bairro: Boa Vista - Recife/PE", extraia "Boa Vista - Recife/PE" inteiro, não apenas "Boa Vista"). Esta regra aplica-se a campos de texto livre; campos com formato específico abaixo (datas, valores, CEP, código de barras) seguem suas próprias regras de normalização.
+3. Datas: ISO YYYY-MM-DD (ou YYYY-MM para mês/ano).
+4. Valores monetários: string decimal sem R$ e sem separador de milhar (ex: "184.72").
+5. CEP: formato NNNNN-NNN.
+6. Código de barras: apenas dígitos, sem pontos nem espaços.
+7. paid_stamp_present: true se o texto contém "PAGO" como carimbo visual, false caso contrário.
 
 Schema obrigatório:
 {SCHEMA_TEXT}

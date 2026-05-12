@@ -41,7 +41,7 @@ This is not a coincidence — both the human and the system face the same fact a
 | ~10 min (brief implied, page-1 manual) | 1,667 h | R$ 50,000 | R$ 100,000 |
 | 5 min (skilled paralegal) | 833 h | R$ 25,000 | R$ 50,000 |
 
-Even at the optimistic measured time of 6:44 and the lower labor rate, the manual baseline is **R$ 33,667** vs. the automated cost of **~R$ 434** (= $88.60 × 4.8999 BRL/USD, PTAX venda 2026-05-08; see `roi.md` §1). The cost ratio is **~78:1** at the low end. At the midpoint labor rate (R$ 45/h), the ratio rises to ~116:1; see `roi.md` §1 TL;DR for the headline number. The optimistic-baseline case still leaves a >R$ 33,000 gap, so ROI is not load-bearing on the precise time measurement; it's load-bearing on the order of magnitude, which a single-PDF measurement establishes confidently.
+Even at the optimistic measured time of 6:44 and the lower labor rate, the manual baseline is **R$ 33,667** vs. the automated cost of **~R$ 457** (= $93.37 × 4.8999 BRL/USD, PTAX venda 2026-05-08, post-2026-05-12 prompt; see `roi.md` §1). The cost ratio is **~74:1** at the low end. At the midpoint labor rate (R$ 45/h), the ratio is ~110:1; see `roi.md` §1 TL;DR for the headline number. The optimistic-baseline case still leaves a >R$ 33,000 gap, so ROI is not load-bearing on the precise time measurement; it's load-bearing on the order of magnitude, which a single-PDF measurement establishes confidently.
 
 ## Stuck moments (qualitative)
 
@@ -53,6 +53,6 @@ Even at the optimistic measured time of 6:44 and the lower labor rate, the manua
 |---|---|
 | 6 min 44 sec measurement, two-tab method | User direct observation, 2026-05-11 |
 | Page-2 is image content (no text layer) | Confirmed by manual transcription workflow + Tabula's 0% page-2 score in `04_experiments/SCOREBOARD.md` §1 row 6 |
-| Automation cost $0.00886/dossier | `06_reference_script/notes.md` lines 33–38 |
+| Automation cost $0.00934/dossier (post-2026-05-12 prompt) | `06_reference_script/notes.md` results table + OOD validation section |
 | Brief's implied 10-min baseline | `00_brief/` PDF + project background context |
 | FX rate USD 1.00 ≈ BRL 4.8999 | PTAX venda 2026-05-08, Banco Central do Brasil ([olinda.bcb.gov.br PTAX API](https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarPeriodo), verified WebFetch 2026-05-11) |

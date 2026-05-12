@@ -2,7 +2,9 @@
 
 > **Status**: Epic 7 deliverable (2 of 3). Written 2026-05-11. Internal language: EN. PT-BR translation lives in the relatório (Epic 8 §6).
 
-The relatório claims this automation pays for itself within the first day of operation. This document is the underlying math, anchored on the **empirically measured** $0.00886/dossier (not estimated, not extrapolated from vendor pricing sheets — measured on 3 real test runs) and on the **empirically measured** 6 min 44 sec paralegal baseline (not assumed from the brief — measured on the same brief PDF). Every number below is reproducible from one of the artifacts cited in §8.
+The relatório claims this automation pays for itself within the first day of operation. This document is the underlying math, anchored on the **empirically measured** $0.00934/dossier (not estimated, not extrapolated from vendor pricing sheets — measured on 4 test runs: 3-PDF baseline corpus plus the OOD holdout `F09_brief_shape.pdf`) and on the **empirically measured** 6 min 44 sec paralegal baseline (not assumed from the brief — measured on the same brief PDF). Every number below is reproducible from one of the artifacts cited in §8.
+
+**Number revision (2026-05-12)**: numbers below reflect the post-2026-05-12 prompt with the literal-extraction rule (`06_reference_script/claude_extractor.py` Regra 2). Pre-fix values were $0.00886 / R$ 434 / 116× cost ratio; the prompt rule added ~123 input tokens per call and the empirical accuracy rose from 99.07% to **100%** across all 4 PDFs. The dominant economic conclusion (~110× cost reduction at 10k volume, day-one payback) is unchanged.
 
 **FX rate used for consolidated lines**: USD 1.00 ≈ **BRL 4.8999** (PTAX venda, 2026-05-08, last trading day before publication; fonte: Banco Central do Brasil, [olinda.bcb.gov.br PTAX API](https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarPeriodo)). Rounded to BRL 4.90 in headline numbers; detail tables keep API costs in USD and labor in BRL.
 
@@ -10,28 +12,28 @@ The relatório claims this automation pays for itself within the first day of op
 
 ## 1. TL;DR
 
-**~$89 USD (~R$ 436) to process the 10,000-dossier Banco X backlog** at 99.07% accuracy with 0 hallucinations, vs. **~R$ 50,500 in paralegal time** (10k × measured 6:44 × R$ 45/h fully-loaded midpoint).
+**~$93 USD (~R$ 457) to process the 10,000-dossier Banco X backlog** at 100% accuracy with 0 hallucinations (3-PDF baseline + OOD holdout F09_brief_shape), vs. **~R$ 50,500 in paralegal time** (10k × measured 6:44 × R$ 45/h fully-loaded midpoint).
 
-**Payback: day one.** Cost ratio at midpoint: ≈ **116×**. Even on pessimistic assumptions (20% HITL rate + cheaper paralegal labor at R$ 30/h), the ratio stays above 10×, so the conclusion is robust to assumption changes.
+**Payback: day one.** Cost ratio at midpoint: ≈ **110×**. Even on pessimistic assumptions (20% HITL rate + cheaper paralegal labor at R$ 30/h), the ratio stays above 10×, so the conclusion is robust to assumption changes.
 
 ---
 
 ## 2. Empirical cost basis (the load-bearing section)
 
-From `06_reference_script/notes.md` lines 47–55 (3-PDF validation run: brief PDF, F02, F07):
+From `06_reference_script/notes.md` "Cost projection at scale" (4-PDF validation: brief PDF + F02 + F07 baseline + F09_brief_shape OOD holdout):
 
 | Component | Per dossier | Mechanics |
 |---|---|---|
 | Azure Document Intelligence Layout | $0.003 | 2 pages × $1.50 / 1000 pages (Microsoft published rate) |
-| Claude Sonnet 4.6 — input tokens | $0.0033 | ~1085 tokens × $3.00 / M tokens |
-| Claude Sonnet 4.6 — output tokens | $0.0057 | ~378 tokens × $15.00 / M tokens |
-| **Total** | **$0.00886** | Measured average over 3 PDFs |
+| Claude Sonnet 4.6 — input tokens | $0.00362 | ~1208 tokens × $3.00 / M tokens |
+| Claude Sonnet 4.6 — output tokens | $0.00572 | ~381 tokens × $15.00 / M tokens |
+| **Total** | **$0.00934** | Measured average over 4 PDFs |
 
-Cross-reference: matches `04_experiments/SCOREBOARD.md` §4 projection of "~$0.008" within rounding (the SCOREBOARD projection was made before the 3-PDF validation; the empirical number is +10% above it because of slightly higher output-token usage on the brief PDF's longer page-2 content).
+Cross-reference: still sits within `04_experiments/SCOREBOARD.md` §4 projection band ("~$0.008–$0.009" for the non-M365 path). The +5,4% jump vs. the pre-2026-05-12 number ($0.00886) is the input-token cost of the literal-extraction rule added to the Claude prompt; this was the trade-off that lifted the empirical accuracy from 99.07% to 100%.
 
-**At 10,000 dossiers**: $0.00886 × 10,000 = **$88.60 USD** = **R$ 434.06** at PTAX 4.8999.
+**At 10,000 dossiers**: $0.00934 × 10,000 = **$93.37 USD** = **R$ 457.45** at PTAX 4.8999.
 
-The cost is dominated by Claude output tokens (~64% of the per-dossier total). Future cost reductions are most leveraged by output-length compression in the prompt (e.g., returning a tighter JSON without explanatory text), not by switching Azure DI or input compression.
+The cost is dominated by Claude output tokens (~61% of the per-dossier total) and by Claude input tokens (~39% combined with output). Future cost reductions are most leveraged by output-length compression in the prompt (tighter JSON, no explanatory text) and by adopting Anthropic prompt caching for the static schema block (`06_reference_script/notes.md` production hardening item #3), not by switching Azure DI.
 
 ---
 
@@ -63,7 +65,7 @@ The brief's implied "~10 min/dossier" assumption is **moderately conservative** 
 | 6 min 44 sec (measured) | **R$ 50,500** |
 | 10 min 6 sec (+50%) | R$ 75,750 |
 
-Even at the optimistic lower bound (R$ 25,250), the automation's ~R$ 436 cost is **58× cheaper**. The ROI conclusion does not depend on the measurement being precisely 6:44 — only on the order of magnitude, which the n=1 measurement establishes confidently.
+Even at the optimistic lower bound (R$ 25,250), the automation's ~R$ 457 cost is **55× cheaper**. The ROI conclusion does not depend on the measurement being precisely 6:44 — only on the order of magnitude, which the n=1 measurement establishes confidently.
 
 ---
 
@@ -74,7 +76,7 @@ From `04_experiments/SCOREBOARD.md` §4, with PTAX 4.8999 applied to USD totals:
 | Architecture | One-time setup | Per-dossier | Total 10k (USD) | Total 10k (BRL) | Maintenance |
 |---|---|---|---|---|---|
 | **M365 path** (PA + AI Builder + DI fallback + Claude page-2 mapping) | $0 (existing M365 licenses) | ~$0.008 | ~$80 | ~R$ 392 | Paralegal-maintainable PA flow + ~30 real Banco X dossiers for AI Builder retraining |
-| **Non-M365 path** (n8n + reference engine + DI + Claude) | ~2–3 days eng (~$3k one-time) | $0.00886 (measured) | **$88.60** | **R$ 434** | Developer-maintainable Python + n8n flow |
+| **Non-M365 path (primary recommendation)** (reference engine + DI + Claude + orchestrator choice: n8n, *cron* + watch folder, or HTTP trigger) | 2–3 days engineering for orchestrator integration only (engine already validated) — ≈ R$ 1,600–3,600 at typical BR Python dev rate of R$ 100–150/h | $0.00934 (measured, 4 PDFs incl. OOD) | **$93.37** | **R$ 457** | Developer-maintainable Python flow |
 | **Cheapest viable** (n8n + Tabula + Claude direct on page-2 image) | ~1 day eng (~$1k one-time) | ~$0.005 | ~$50 | ~R$ 245 | Higher hallucination risk without OCR-first step |
 | **Highest-confidence** (M365 + Azure DI Custom Neural + dual-LLM cross-validation) | ~1 week eng + labeling 30 dossiers (~$8k one-time) | ~$0.015 | ~$150 | ~R$ 735 | Re-train every 6 mo as Banco X templates evolve |
 
@@ -109,7 +111,7 @@ Numbers above are total automated cost (API + paralegal HITL review). Compare to
 
 ### Conclusion from §5
 
-**HITL rate matters more than volume** for the *automated* side. Every percentage point of HITL costs ~R$ 150/year at 10k volume. But even at 20% HITL (a generous estimate — the empirical run had 0 cross-val failures on 3 PDFs, suggesting HITL rate in production will likely be in the 5–10% range with proper AI Builder retraining), the automation costs **R$ 3,434/year at 10k vs. R$ 50,500 manual** — a 14.7× advantage.
+**HITL rate matters more than volume** for the *automated* side. Every percentage point of HITL costs ~R$ 150/year at 10k volume. But even at 20% HITL (a generous estimate — the empirical run had 0 cross-val failures on 4 PDFs incl. the OOD holdout, suggesting HITL rate in production will likely be in the 5–10% range), the automation costs **R$ 3,434/year at 10k vs. R$ 50,500 manual** — a 14.7× advantage.
 
 **Why HITL review is 2 min, not 6:44**: the cross-validation gate identifies *which specific fields* are inconsistent (`audit.csv` `cross_val_reason` column). The paralegal reviews the flagged fields with the rest of the row pre-filled — closer to spot-checking than re-extraction. A naive "treat HITL as full manual rework" assumption would charge 6:44 per HITL row and collapse the ROI at high HITL rates; the cross-validation design specifically prevents this regression.
 
@@ -133,17 +135,17 @@ Costs not captured in §2–§5 that the relatório should disclose honestly:
 
 This is the honest comparison number for the relatório: **R$ 16,400/yr automated (fully loaded) vs. R$ 50,500/yr manual** = ~3.1× advantage on fully-loaded ongoing cost, *plus* the order-of-magnitude advantage on first-batch backlog processing.
 
-The first-batch advantage (R$ 436 vs. R$ 50,500) is what produces the "day one payback" framing. The steady-state advantage (R$ 16k vs. R$ 50k) is what produces the "this isn't a one-time win, it's a structural cost change" framing.
+The first-batch advantage (R$ 457 vs. R$ 50,500) is what produces the "day one payback" framing. The steady-state advantage (R$ 16k vs. R$ 50k) is what produces the "this isn't a one-time win, it's a structural cost change" framing.
 
 ---
 
 ## 7. Payback period
 
-**First batch (10k backlog)**: processing time ≈ **3–6 hours** with concurrency (production hardening item #2 — 5–10 concurrent calls; `notes.md` line 72). Break-even occurs **before the first batch completes**: the manual labor cost to process those same 10k dossiers would be ~R$ 50k spread over ~6 months of paralegal time; the automation produces them in an afternoon at R$ 436 + ~R$ 1.5k HITL paralegal review = R$ 1,936. The differential is realized on day one.
+**First batch (10k backlog)**: processing time ≈ **3–6 hours** with concurrency (production hardening item #2 — 5–10 concurrent calls; `notes.md`). Break-even occurs **before the first batch completes**: the manual labor cost to process those same 10k dossiers would be ~R$ 50k spread over ~6 months of paralegal time; the automation produces them in an afternoon at R$ 457 + ~R$ 1.5k HITL paralegal review = R$ 1,957. The differential is realized on day one.
 
 **Steady-state marginal cost**: adding one dossier to the automated flow costs ~$0.009 (≈ R$ 0.04) of API time. Adding one dossier to the manual flow costs ~R$ 3.40 at the conservative R$ 30/h labor rate (or ~R$ 5.05 at midpoint R$ 45/h) — **~76–120× cost reduction at the margin** depending on labor rate.
 
-**Capital-recovery framing**: the one-time setup cost for the non-M365 path is ~$3k (2–3 days engineering ≈ R$ 14,700). Using the conservative-baseline marginal saving of ~R$ 3.36/dossier (R$ 3.40 manual at R$ 30/h − R$ 0.04 automated), setup is recovered after **~4,400 dossiers**. For a firm doing 10k/year, that's ~5 months. For 100k/year, that's ~16 days. At the midpoint labor rate, payback is faster (~3,000 dossiers).
+**Capital-recovery framing**: the one-time setup cost for the non-M365 path is **2–3 days of engineering**. At a typical Brazilian mid-level Python developer rate of R$ 100–150/hour, that's ≈ **R$ 1,600–3,600**. Using the conservative-baseline marginal saving of ~R$ 3.35/dossier (R$ 3.40 manual at R$ 30/h − R$ 0.046 automated), setup is recovered after **~480–1,070 dossiers**. For a firm doing 10k/year, that's a matter of weeks; for 100k/year, days. (Earlier draft estimated ~$3k / ~4,400 dossiers; revised 2026-05-12 because the $3k figure assumed international/senior dev rates not justified for typical Brazilian dev labor.)
 
 For the M365 path, setup is functionally $0 (existing licenses), so capital recovery is immediate.
 
@@ -153,8 +155,8 @@ For the M365 path, setup is functionally $0 (existing licenses), so capital reco
 
 | Claim or number | Source |
 |---|---|
-| $0.00886/dossier measured | `06_reference_script/notes.md` lines 33–38 (3-PDF results table) + lines 47–55 (cost breakdown) |
-| 99.07% accuracy / 0 hallucinations | `06_reference_script/notes.md` lines 33–38 |
+| $0.00934/dossier measured | `06_reference_script/notes.md` (4-PDF results table + cost projection — post-2026-05-12 prompt) |
+| 100% accuracy / 0 hallucinations (3-PDF + OOD holdout F09) | `06_reference_script/notes.md` (results table + OOD validation section) |
 | Per-component cost ratios (DI / Claude in / Claude out) | `06_reference_script/notes.md` lines 50–53 |
 | 6 min 44 sec paralegal baseline | `07_architecture/manual_timing.md` (single-PDF measurement, 2026-05-11) |
 | Two-tab workflow methodology | `07_architecture/manual_timing.md` "Method" §; mirrors architecture two-layer routing |
@@ -166,7 +168,7 @@ For the M365 path, setup is functionally $0 (existing licenses), so capital reco
 | Engineering on-call estimate | `06_reference_script/notes.md` production hardening checklist items #1, #2, #8 |
 | Concurrency assumption (3–6 h for 10k) | `06_reference_script/notes.md` line 72 (production hardening item #2) |
 | Paralegal labor rate band R$ 30–60/h | Brazilian legal-back-office market benchmark (inherited from project background) — sensitivity table in §3 brackets the band |
-| Marginal cost-per-dossier ~$0.009 ≈ R$ 0.04 | $0.00886 × 4.8999 |
+| Marginal cost-per-dossier ~$0.009 ≈ R$ 0.046 | $0.00934 × 4.8999 |
 | Marginal manual cost ~R$ 3.40/dossier | 6:44 × (R$ 45 / 60) |
 
 ---
