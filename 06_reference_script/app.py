@@ -1,13 +1,12 @@
 """Streamlit demo UI for the Revelatio extraction pipeline.
 
-Wraps extract_dossier.process_one() for a drag-drop UX. This is a DEMO
-skin, not a production tool — in real deployment, the pipeline sits
-behind an n8n workflow or a custom web app built by the firm's IT.
-
-Run with:  streamlit run 06_reference_script/app.py
+Wraps extract_dossier.process_one() for a drag-drop UX. Deployed at
+Streamlit Community Cloud; runs locally with .env. See DEPLOY.md for
+the hosted-deploy runbook.
 """
 import csv
 import io
+import os
 import sys
 import tempfile
 from pathlib import Path
@@ -16,9 +15,37 @@ import streamlit as st
 from dotenv import load_dotenv
 
 sys.path.insert(0, str(Path(__file__).parent))
-from extract_dossier import AUDIT_COLUMNS, DOSSIER_COLUMNS, process_one
 
+
+def _bridge_secrets_to_env() -> None:
+    """Copy st.secrets into os.environ before importing the pipeline.
+
+    extract_dossier.* and sheets_writer.* read env vars at call/import
+    time, so the bridge has to run first. Local .env is loaded after
+    via load_dotenv(); existing env vars always win (no override).
+    """
+    keys = (
+        "ANTHROPIC_API_KEY",
+        "AZURE_DI_ENDPOINT",
+        "AZURE_DI_KEY",
+        "GOOGLE_SHEET_ID",
+        "GOOGLE_SERVICE_ACCOUNT_JSON",
+    )
+    try:
+        secrets = st.secrets
+    except (FileNotFoundError, st.errors.StreamlitSecretNotFoundError):
+        return
+    for key in keys:
+        if key in secrets and key not in os.environ:
+            value = secrets[key]
+            os.environ[key] = value if isinstance(value, str) else str(value)
+
+
+_bridge_secrets_to_env()
 load_dotenv()
+
+from extract_dossier import AUDIT_COLUMNS, DOSSIER_COLUMNS, process_one  # noqa: E402
+from sheets_writer import SheetsWriterError, append_dossiers  # noqa: E402
 
 st.set_page_config(
     page_title="Revelatio — Extração de Dossiês",
@@ -30,6 +57,7 @@ st.caption(
     "Faça upload de PDFs do Banco X · extração automática via Azure DI + Claude · "
     "CSV pronto para Excel."
 )
+st.caption(":warning: Demo: use apenas com dados sintéticos.")
 
 with st.expander("Como funciona"):
     st.markdown(
@@ -40,6 +68,8 @@ with st.expander("Como funciona"):
            (o sistema verifica se o nome e CPF da página 2 batem com a página 1).
         4. **CSV** é gerado pronto para abrir no Excel. A coluna `needs_review`
            identifica os dossiês que precisam de revisão manual.
+        5. **Opcional**: envie o resultado para uma planilha Google compartilhada
+           com o painel (botão aparece após a extração).
         """
     )
 
@@ -77,6 +107,12 @@ if uploaded and st.button(
         f"Concluído. {len(dossier_rows)} dossiê(s) processado(s) · "
         f"{flagged} marcado(s) para revisão."
     )
+    st.session_state["dossier_rows"] = dossier_rows
+    st.session_state["audit_rows"] = audit_rows
+
+if "dossier_rows" in st.session_state:
+    dossier_rows = st.session_state["dossier_rows"]
+    audit_rows = st.session_state["audit_rows"]
 
     st.subheader("Resultado")
     st.dataframe(dossier_rows, use_container_width=True)
@@ -85,13 +121,36 @@ if uploaded and st.button(
     writer = csv.DictWriter(buf, fieldnames=DOSSIER_COLUMNS)
     writer.writeheader()
     writer.writerows(dossier_rows)
-    st.download_button(
-        "⬇ Baixar dossiers.csv",
-        buf.getvalue(),
-        "dossiers.csv",
-        "text/csv",
-        type="primary",
-    )
+
+    col_csv, col_sheet = st.columns(2)
+    with col_csv:
+        st.download_button(
+            "⬇ Baixar dossiers.csv",
+            buf.getvalue(),
+            "dossiers.csv",
+            "text/csv",
+            type="primary",
+        )
+    with col_sheet:
+        sheet_id = os.environ.get("GOOGLE_SHEET_ID", "")
+        if st.button(
+            "📤 Enviar para Planilha Google",
+            disabled=not sheet_id,
+            help=(
+                "Anexa as linhas extraídas na planilha compartilhada."
+                if sheet_id
+                else "GOOGLE_SHEET_ID não configurado (ver DEPLOY.md)."
+            ),
+        ):
+            try:
+                url = append_dossiers(dossier_rows, sheet_id=sheet_id)
+            except SheetsWriterError as exc:
+                st.error(str(exc))
+            else:
+                st.success(
+                    f"{len(dossier_rows)} linha(s) enviada(s) com sucesso."
+                )
+                st.markdown(f"[Abrir planilha]({url})")
 
     with st.expander("Detalhes operacionais (audit log)"):
         st.dataframe(audit_rows, use_container_width=True)

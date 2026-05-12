@@ -29,6 +29,7 @@ dist/
 *api_key*
 *secret*
 credentials.json
+.streamlit/secrets.toml
 
 # Bundle artifacts (rebuild on demand)
 08_deliverables/*.zip
