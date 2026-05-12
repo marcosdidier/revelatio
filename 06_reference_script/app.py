@@ -45,6 +45,7 @@ _bridge_secrets_to_env()
 load_dotenv()
 
 from extract_dossier import AUDIT_COLUMNS, DOSSIER_COLUMNS, process_one  # noqa: E402
+from labels_pt import AUDIT_LABELS_PT, DOSSIER_LABELS_PT, relabel_rows  # noqa: E402
 from sheets_writer import SheetsWriterError, append_dossiers  # noqa: E402
 
 st.set_page_config(
@@ -115,12 +116,17 @@ if "dossier_rows" in st.session_state:
     audit_rows = st.session_state["audit_rows"]
 
     st.subheader("Resultado")
-    st.dataframe(dossier_rows, use_container_width=True)
+    st.dataframe(
+        relabel_rows(dossier_rows, DOSSIER_LABELS_PT),
+        use_container_width=True,
+    )
 
     buf = io.StringIO()
-    writer = csv.DictWriter(buf, fieldnames=DOSSIER_COLUMNS)
-    writer.writeheader()
-    writer.writerows(dossier_rows)
+    csv_writer = csv.writer(buf)
+    csv_writer.writerow([DOSSIER_LABELS_PT.get(c, c) for c in DOSSIER_COLUMNS])
+    csv_writer.writerows(
+        [row.get(c, "") for c in DOSSIER_COLUMNS] for row in dossier_rows
+    )
 
     col_csv, col_sheet = st.columns(2)
     with col_csv:
@@ -143,7 +149,11 @@ if "dossier_rows" in st.session_state:
             ),
         ):
             try:
-                url = append_dossiers(dossier_rows, sheet_id=sheet_id)
+                url = append_dossiers(
+                    dossier_rows,
+                    sheet_id=sheet_id,
+                    header_labels=DOSSIER_LABELS_PT,
+                )
             except SheetsWriterError as exc:
                 st.error(str(exc))
             else:
@@ -153,11 +163,18 @@ if "dossier_rows" in st.session_state:
                 st.markdown(f"[Abrir planilha]({url})")
 
     with st.expander("Detalhes operacionais (audit log)"):
-        st.dataframe(audit_rows, use_container_width=True)
+        st.dataframe(
+            relabel_rows(audit_rows, AUDIT_LABELS_PT),
+            use_container_width=True,
+        )
         audit_buf = io.StringIO()
-        audit_writer = csv.DictWriter(audit_buf, fieldnames=AUDIT_COLUMNS)
-        audit_writer.writeheader()
-        audit_writer.writerows(audit_rows)
+        audit_csv_writer = csv.writer(audit_buf)
+        audit_csv_writer.writerow(
+            [AUDIT_LABELS_PT.get(c, c) for c in AUDIT_COLUMNS]
+        )
+        audit_csv_writer.writerows(
+            [row.get(c, "") for c in AUDIT_COLUMNS] for row in audit_rows
+        )
         st.download_button(
             "⬇ Baixar audit.csv", audit_buf.getvalue(), "audit.csv", "text/csv"
         )

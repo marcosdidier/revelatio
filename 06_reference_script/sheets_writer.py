@@ -69,12 +69,13 @@ def append_dossiers(
     rows: list[dict],
     sheet_id: str,
     worksheet_name: str = "Dossiers",
+    header_labels: dict[str, str] | None = None,
 ) -> str:
     """Append rows to the shared sheet. Returns the sheet URL.
 
     Adds extracted_at (UTC ISO-8601) to each row. Writes the header row
-    if the worksheet is empty. Cells are strings — gspread will coerce
-    numerics on the sheet side via USER_ENTERED.
+    if the worksheet is empty; header uses header_labels when provided
+    (English-key -> display-label), else the raw English keys.
     """
     if not rows:
         raise SheetsWriterError("Nenhuma linha para enviar.")
@@ -90,10 +91,12 @@ def append_dossiers(
     extracted_at = datetime.now(UTC).isoformat(timespec="seconds")
     enriched = [{**row, "extracted_at": extracted_at} for row in rows]
     values = [[str(row.get(col, "")) for col in SHEET_COLUMNS] for row in enriched]
+    labels = header_labels or {}
+    header_row = [labels.get(col, col) for col in SHEET_COLUMNS]
 
     try:
         if not worksheet.row_values(1):
-            worksheet.append_row(SHEET_COLUMNS, value_input_option="USER_ENTERED")
+            worksheet.append_row(header_row, value_input_option="USER_ENTERED")
         worksheet.append_rows(values, value_input_option="USER_ENTERED")
     except gspread.exceptions.APIError as exc:
         raise SheetsWriterError(f"Falha ao gravar na planilha: {exc}") from exc
