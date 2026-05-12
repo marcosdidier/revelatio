@@ -55,9 +55,17 @@ key claim per act anchored to a relatório section, demo cue sheet for
 Act 3. Don't start writing PT-BR script prose until I approve the
 outline.
 
-There are three open questions to raise via AskUserQuestion before
-finalizing the outline — they're listed in 09_kickoff_prompt.md under
-"Open questions for the user". Get answers, then plan.
+The three pre-recording decisions were already answered on 2026-05-12
+(see 09_kickoff_prompt.md "Decisions locked in"):
+- Recording tool: Loom (browser-hosted, brief-recommended)
+- Demo PDF: BOTH — brief PDF first, then F09_brief_shape OOD second
+- Narration tone: scripted, read from 09_video/script.md
+
+Start by entering plan mode, reading 08_deliverables/relatorio.md
+(source of messaging) and proposing the script outline — timing budget
+per act, key claim per act anchored to a relatório section, and the
+two-PDF demo cue sheet for Act 3. Don't start writing PT-BR script
+prose until I approve the outline.
 ```
 
 ---
@@ -91,16 +99,18 @@ finalizing the outline — they're listed in 09_kickoff_prompt.md under
 
 ### Demo flow for Act 3 (the load-bearing part of the video)
 
-Sugestão de cue sheet em ≤ 2 minutos (Epic 8.5 atualizado — usar URL viva, não localhost):
+Cue sheet ≤ 2 minutos com **dois PDFs** (decisão 2026-05-12: brief primeiro para familiaridade, F09 OOD em seguida para argumento de generalização). Acelerar tempo de espera de extração em pós-produção no Loom:
 
-1. **0:00–0:10** — Abrir `https://revelatio-demo.streamlit.app` no navegador. Mostrar título "Revelatio — Extração de Dossiês" e a barra superior do Streamlit Cloud (sinal claro de que é app público hospedado, não localhost).
-2. **0:10–0:25** — Arrastar `F09_brief_shape.pdf` (ou o PDF do brief) para o uploader. Botão "▶ Extrair 1 dossiê(s)".
-3. **0:25–1:25** — Enquanto roda (~11 s real, ~3 s na latência de cold-start do Cloud), narrar a arquitetura em duas camadas: página 1 determinística + página 2 OCR + LLM + *cross-validation*. Aqui vale fazer edição para cortar o tempo de espera.
-4. **1:25–1:40** — Mostrar a tabela de resultado com cabeçalhos PT-BR (Nome do cliente, CPF, Comprovante — titular, ...); destacar os 32 campos preenchidos + a coluna "Revisar" = FALSE.
-5. **1:40–1:50** — Clicar "📤 Enviar para Planilha Google"; mostrar a confirmação + link "Abrir planilha"; clicar no link para abrir a planilha compartilhada em uma nova aba e mostrar a linha aparecendo com o timestamp `Extraído em (UTC)`.
-6. **1:50–2:00** — Voltar ao app, abrir o expander "Detalhes operacionais"; mostrar audit log com latência, custo (~$0,0093), `cross_val_consistent = TRUE`.
+1. **0:00–0:08** — Abrir `https://revelatio-demo.streamlit.app` no navegador. Título "Revelatio — Extração de Dossiês"; barra superior do Streamlit Cloud confirma que é app hospedado.
+2. **0:08–0:18** — Arrastar `00_brief/exemplo_pdf_cliente_devedor_ficticio.pdf` (o PDF do brief) → "▶ Extrair 1 dossiê(s)". Frase de transição: *"primeiro o PDF que vocês conhecem"*.
+3. **0:18–1:00** — Enquanto roda (~11 s), narrar a arquitetura em duas camadas: página 1 determinística (Azure DI Layout) + página 2 (Claude Sonnet 4.6) + *cross-validation* de nome entre páginas. **Acelerar este trecho em 4×–6× na edição do Loom**.
+4. **1:00–1:10** — Mostrar resultado com cabeçalhos PT-BR (Nome do cliente, CPF, Comprovante — titular, ...); destacar 32 campos + "Revisar" = FALSE. Frase: *"100% no PDF do brief, zero alucinações"*.
+5. **1:10–1:20** — *Refresh* da página (ou nova aba) e arrastar `05_synthetic_data/pdfs/F09_brief_shape.pdf`. Frase: *"agora um PDF que o sistema nunca viu — mesma estrutura, dados de cliente completamente novos"*. ▶ Extrair.
+6. **1:20–1:35** — Acelerar a espera no Loom. Mostrar resultado F09: 32 campos preenchidos, "Revisar" = FALSE. Frase: *"também 100%, também zero alucinações — o sistema generaliza"*.
+7. **1:35–1:50** — Clicar "📤 Enviar para Planilha Google". Mostrar mensagem de sucesso + link "Abrir planilha". Clicar no link.
+8. **1:50–2:00** — Planilha aberta em nova aba: mostrar **as duas linhas** (brief + F09) com `Extraído em (UTC)` distinto. Frase de fechamento do Act 3: *"o painel pode clicar nessa planilha depois do vídeo e confirmar"*.
 
-A planilha Google é o *closer* visual mais forte: artefato fora do Streamlit, "spreadsheet" é o substantivo que o brief usa (*"em planilha Excel"*), e é o que a banca pode clicar depois do vídeo para confirmar que rodou. Se rolar tempo, encaixar uma demonstração rápida da fila HITL: editar uma célula para simular *mismatch*, mostrar "Revisar" = TRUE. Opcional.
+A planilha Google é o *closer* visual mais forte: artefato fora do Streamlit, "spreadsheet" é o substantivo que o brief usa (*"em planilha Excel"*), e é o que a banca pode clicar depois do vídeo para confirmar que rodou. Se rolar tempo (improvável com dois PDFs), encaixar audit log: expander "Detalhes operacionais" → latência, custo (~$0,0093), `cross_val_consistent = TRUE`. Opcional.
 
 ### Diferenciais to weave in (brief §5 — explicit bonus criteria)
 
@@ -114,13 +124,11 @@ Os diferenciais já estão refletidos nas escolhas arquiteturais — o vídeo os
 | Preocupação com escala e organização operacional | Act 4 (fila HITL) + Act 5 (plano em fases) |
 | Solução pensada para uso real | Act 5 (gaps LGPD + hardening checklist) |
 
-### Open questions for the user (Epic 9 session should ask via AskUserQuestion before finalizing the outline)
+### Decisions locked in (answered 2026-05-12 — Epic 9 fresh session should NOT re-ask)
 
-1. **Ferramenta de gravação**: Loom (no navegador, link já hosted, mais fácil de compartilhar — recomendado pelo brief), QuickTime / OBS (arquivo MP4 local, mais controle sobre edição), ou ScreenStudio / similar (Mac-native, edição de cortes embutida)?
-
-2. **PDF usado na demo do Act 3**: o do brief (`00_brief/exemplo_pdf_cliente_devedor_ficticio.pdf` — a banca já conhece, evita dúvida sobre layout) ou o *holdout* OOD (`05_synthetic_data/pdfs/F09_brief_shape.pdf` — dados frescos, demonstra empiricamente a generalização e oferece narrativa mais forte)? Recomendação: F09, pelo argumento metodológico — mas confirme.
-
-3. **Tom da narração**: scripted (lido em voz alta a partir do `script.md`, mais controle de tempo e clareza PT-BR) ou extempore (mais natural, porém maior risco de estourar 5 min)? Recomendação: scripted com 2–3 ensaios; gravar take final lendo de monitor secundário ou teleprompter no celular. Confirme.
+1. **Ferramenta de gravação: Loom.** Browser-native + hosted link + brief-recommended. Use o *speed up* embutido para acelerar trechos de espera de extração no Act 3.
+2. **PDF usado na demo do Act 3: AMBOS** — primeiro `00_brief/exemplo_pdf_cliente_devedor_ficticio.pdf` (familiaridade para a banca), depois `05_synthetic_data/pdfs/F09_brief_shape.pdf` (argumento de generalização: estrutura idêntica, dados novos, também 100%). Cue sheet detalhado na seção anterior cabe nos 2 min porque acelera as esperas em pós-produção.
+3. **Tom da narração: scripted**, lido de `09_video/script.md`. 2–3 ensaios antes do take final; gravar lendo de monitor secundário ou teleprompter no celular para manter contato visual com a câmera. Evita estouro de 5 min e hesitações em pontos técnicos (LGPD Art. 7º V, números PTAX).
 
 ### Pacing guidance
 
