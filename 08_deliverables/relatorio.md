@@ -14,19 +14,19 @@ Avaliamos nove ferramentas em quatro categorias arquiteturais — workflows come
 
 ## §1 — Ferramentas testadas
 
-Avaliamos nove ferramentas, das quais seis em testes *hands-on* e três em estudo analítico (dossiês comparativos). A tabela abaixo consolida os resultados sobre o PDF de exemplo do brief; o Power Automate foi adicionalmente avaliado contra o corpus sintético de oito *fixtures* (F01–F08), e o pipeline de referência em Python foi adicionalmente validado contra o *holdout* OOD `F09_brief_shape` (descrito em §2). A fonte dos números é `04_experiments/SCOREBOARD.md` §1.
+Avaliamos nove ferramentas, das quais seis em testes *hands-on* e três em análise documental comparativa (orquestradores e proxies de LLM, avaliados a partir de documentação oficial em `02_tool_universe/`). A tabela abaixo consolida os resultados sobre o PDF de exemplo do brief; o Power Automate foi adicionalmente avaliado contra o corpus sintético de oito *fixtures* (F01–F08), e o pipeline de referência em Python foi adicionalmente validado contra o *holdout* OOD `F09_brief_shape` (descrito em §2). A fonte dos números é `04_experiments/SCOREBOARD.md` §1.
 
-| # | Ferramenta | Classe | Página 1 | Página 2 | Alucinações | *Hands-on?* |
+| # | Ferramenta | Classe | Página 1 | Página 2 | Alucinações | Modalidade |
 |---|---|---|---|---|---|---|
-| 1 | Power Automate + AI Builder | Workflow comercial M365 + OCR treinado | 100% | layout-sensível¹ | 0 | ✅ ponta a ponta |
-| 2 | ChatGPT 5.5 Thinking | LLM *frontier* | 100% | 100% | 0 | ✅ |
-| 3 | Claude Opus 4.7 | LLM *frontier* | 100% | 100% | 0 | ✅ |
-| 4 | NotebookLM (Gemini) | LLM ancorado em fontes | 100% | 100% | 0 | ✅ |
-| 5 | Azure Document Intelligence Layout | OCR comercial estruturado | 100% (16 células) | estrutura detectada² | 0 | ✅ |
-| 6 | Tabula (tabula-py 2.10) | OSS determinístico | 100% (16 células) | 0%³ | 0 | ✅ |
-| 7 | Microsoft Copilot | LLM em invólucro M365 | proxy de #2⁴ | — | — | ⏭️ dossiê |
-| 8 | Make (Integromat) | iPaaS comercial | dossiê | dossiê | — | — | dossiê |
-| 9 | n8n | Workflow OSS | dossiê | dossiê | — | — | dossiê |
+| 1 | Power Automate + AI Builder | Workflow comercial M365 + OCR treinado | 100% | layout-sensível¹ | 0 | ✅ *hands-on* ponta a ponta |
+| 2 | ChatGPT 5.5 Thinking | LLM *frontier* | 100% | 100% | 0 | ✅ *hands-on* |
+| 3 | Claude Opus 4.7 | LLM *frontier* | 100% | 100% | 0 | ✅ *hands-on* |
+| 4 | NotebookLM (Gemini) | LLM ancorado em fontes | 100% | 100% | 0 | ✅ *hands-on* |
+| 5 | Azure Document Intelligence Layout | OCR comercial estruturado | 100% (16 células) | estrutura detectada² | 0 | ✅ *hands-on* |
+| 6 | Tabula (tabula-py 2.10) | OSS determinístico | 100% (16 células) | 0%³ | 0 | ✅ *hands-on* |
+| 7 | Microsoft Copilot | LLM em invólucro M365 | proxy de #2⁴ | — | — | ⏭️ análise documental |
+| 8 | Make (Integromat) | iPaaS comercial (orquestrador) | — | — | — | 📋 análise documental |
+| 9 | n8n | Workflow OSS (orquestrador) | — | — | — | 📋 análise documental |
 
 Notas: ¹ falha de fora-da-distribuição detalhada em §3. ² Azure DI Layout retorna texto + tabelas + parágrafos da página 2 corretamente, mas não estrutura automaticamente os parágrafos em JSON chave-valor; serve como componente para uma camada LLM acima. ³ Tabula não possui OCR, e a página 2 dos dossiês é conteúdo imagem. ⁴ Copilot é proxy da família OpenAI; o resultado do ChatGPT captura o comportamento sem informação marginal.
 
@@ -69,9 +69,9 @@ Recomendamos uma **arquitetura híbrida em duas camadas** — não uma ferrament
 | Motor de extração e *cross-validation* (camada 1 + camada 2 + gate) | **Pipeline Python em `06_reference_script/`** | 100% em 4 PDFs (corpus de base + *holdout* OOD), 0 alucinações, US$ 0,00934/dossiê |
 | OCR + estrutura da página 2 (ambos caminhos) | **Azure DI Layout** | *Layout-tolerant* onde AI Builder falha; reconheceu parágrafos do PDF de exemplo sem treino |
 | Mapeamento campo-a-campo na página 2 | Claude API (Sonnet 4.6) | 100% no PDF de exemplo + *holdout* OOD; *prompt* Opção-B com extração literal |
-| *Cross-validator* | Regra de consistência de nome entre páginas (Titular do comprovante de endereço e Pagador do comprovante bancário devem corresponder ao nome da página 1) | Sem essa camada, página 1 correta permite página 2 *garbage* (Fase 1.5 finding #5). CPF é passado como contexto ao *prompt* mas não há CPF na página 2 para comparar |
+| *Cross-validator* | Regra de consistência de nome entre páginas (Titular do comprovante de endereço e Pagador do comprovante bancário devem corresponder ao nome da página 1) | Sem essa camada, página 1 correta permite página 2 *garbage* (Fase 1.5 finding #5). O nome do cliente é o único *anchor* compartilhado entre as duas páginas dos dossiês — o *cross-validator* opera exclusivamente sobre ele |
 | Extrator página 1 do caminho M365 (alternativo) | AI Builder Custom Extraction | 92,8% sintético com 0 alucinações no corpus F01–F06 |
-| Orquestrador do caminho principal (a escolher) | n8n auto-hospedado, *cron* + pasta monitorada, ou *trigger* HTTP de aplicação web | Qualquer opção viável; n8n foi avaliado em dossiê (`02_tool_universe/05_n8n.md`) mas não construído no PoC. O motor foi orquestrado via CLI em `extract_dossier.py` |
+| Orquestrador do caminho principal (a escolher) | n8n auto-hospedado, *cron* + pasta monitorada, ou *trigger* HTTP de aplicação web | Qualquer opção viável; n8n foi avaliado em análise documental (`02_tool_universe/05_n8n.md`) mas não construído no PoC. O motor foi orquestrado via CLI em `extract_dossier.py` |
 | Orquestrador caminho M365 alternativo | Power Automate | Trilha de auditoria nativa, manutenção por paralegal |
 
 A introdução do Azure DI Layout — ferramenta não listada no brief — é estrutural à recomendação: é o único componente testado que combina *layout-tolerance* com custo previsível (US$ 1,50 por 1.000 páginas, ~US$ 30 para o backlog inteiro). Sem ele, nenhum dos dois caminhos tem rota honesta para sair da falha *layout-sensitive* descrita em §3.
@@ -84,11 +84,11 @@ A síntese consolidada está em `04_experiments/SCOREBOARD.md` §3 e §6; os dia
 
 A arquitetura existe em duas implementações paralelas, escolhidas conforme o perfil tecnológico do escritório. O ciclo HITL é compartilhado.
 
-**Caminho principal — motor Python de referência (construído, validado e publicamente acessível).** O componente central é o pipeline em `06_reference_script/`, que implementa as duas camadas com *cross-validation* de nome entre páginas e trilha de auditoria, validado nos 4 PDFs descritos em §2. O motor é exposto via **interface web hospedada em `https://revelatio-demo.streamlit.app`** (Streamlit Community Cloud) que aceita upload de PDFs e oferece gravação automática em planilha Google compartilhada com o painel como destino opcional — código em `06_reference_script/app.py` + `06_reference_script/sheets_writer.py`, runbook de deploy em `DEPLOY.md` na raiz do repositório. O `extract_dossier.py` permanece como entrada CLI alternativa para uso *headless*. Para *batch* em produção sobre o backlog de 10k dossiês, a camada de orquestração fica a critério do escritório — opções viáveis incluem **n8n auto-hospedado** (escolha natural pelo perfil OSS + auditável, e a única dessas opções que avaliamos em dossiê), *cron* com pasta monitorada, ou *trigger* HTTP de uma aplicação web já existente; não construímos nenhuma delas no PoC. Referências: `02_tool_universe/05_n8n.md` e Diagrama 2 de `07_architecture/diagrams.md`.
+**Caminho principal — motor Python de referência (construído, validado e publicamente acessível).** O componente central é o pipeline em `06_reference_script/`, que implementa as duas camadas com *cross-validation* de nome entre páginas e trilha de auditoria, validado nos 4 PDFs descritos em §2. O motor é exposto via **interface web hospedada em `https://revelatio-demo.streamlit.app`** (Streamlit Community Cloud) que aceita upload de PDFs e oferece gravação automática em planilha Google compartilhada com o painel como destino opcional — código em `06_reference_script/app.py` + `06_reference_script/sheets_writer.py`, runbook de deploy em `DEPLOY.md` na raiz do repositório. O `extract_dossier.py` permanece como entrada CLI alternativa para uso *headless*. Para *batch* em produção sobre o backlog de 10k dossiês, a camada de orquestração fica a critério do escritório — opções viáveis incluem **n8n auto-hospedado** (escolha natural pelo perfil OSS + auditável, e a única dessas opções que avaliamos em análise documental), *cron* com pasta monitorada, ou *trigger* HTTP de uma aplicação web já existente; não construímos nenhuma delas no PoC. Referências: `02_tool_universe/05_n8n.md` e Diagrama 2 de `07_architecture/diagrams.md`.
 
 **Caminho alternativo — M365 com Power Automate (escritórios já residentes em Microsoft 365).** Fluxo disparado pela chegada do PDF no SharePoint: AI Builder na página 1, Azure DI Layout + Claude API sobre a página 2 em casos de baixa confiança, *cross-validation* de nome entre páginas (Titular e Pagador da página 2 batem com o cliente da página 1), gravação em `dossiers.xlsx` (ou fila HITL). A camada da página 1 está construída e validada em Epic 5.2 (92,8% sintético, 0 alucinações); a camada da página 2 é especificada arquiteturalmente, deve ser adicionada como *connector* HTTP ao fluxo PA antes do *cutover* de produção. Vantagem operacional: manutenção *no-code* por paralegal. *Reference*: Diagrama 1 em `07_architecture/diagrams.md`.
 
-**Ciclo HITL e *cross-validation*.** Quando uma linha falha na *cross-validation* (CPF da página 2 não bate com o da página 1, por exemplo), o sistema marca `needs_review = TRUE` e roteia a linha para uma fila. A paralegal abre a linha — apenas os campos sinalizados precisam de revisão, com os demais já pré-preenchidos — e aprova, corrige ou rejeita. Cada ação gera registro em `audit.csv` com carimbo de tempo e identificador da revisora. Esse desenho está em `07_architecture/diagrams.md` §4.
+**Ciclo HITL e *cross-validation*.** Quando uma linha falha na *cross-validation* (o Titular do comprovante de endereço ou o Pagador do comprovante bancário, por exemplo, não correspondem ao nome do cliente da página 1), o sistema marca `needs_review = TRUE` e roteia a linha para uma fila. A paralegal abre a linha — apenas os campos sinalizados precisam de revisão, com os demais já pré-preenchidos — e aprova, corrige ou rejeita. Cada ação gera registro em `audit.csv` com carimbo de tempo e identificador da revisora. Esse desenho está em `07_architecture/diagrams.md` §4.
 
 **Rubrica de escolha do caminho.** Três entradas binárias (tem licenças M365? tem capacidade de desenvolvimento? tem ≥30 dossiês reais para treino?) determinam o caminho recomendado. Detalhe em `07_architecture/diagrams.md` §5. Escritórios sem M365 e sem capacidade técnica interna precisam de parceiro externo de implementação — o relatório é explícito quanto a isso, não há versão honesta da arquitetura que se opere sozinha nesse cenário.
 

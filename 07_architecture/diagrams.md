@@ -136,7 +136,7 @@ The reference script is the **only tested configuration** that simultaneously: (
 
 ```mermaid
 flowchart TD
-    A[Page-1 extraction complete] --> B[Extract anchors:<br/>client_name, CPF]
+    A[Page-1 extraction complete] --> B[Extract anchor:<br/>client_name]
     C[Page-2 extraction complete] --> D[Candidate page-2 fields:<br/>proof_address_holder, payer,<br/>proof_reference, ...]
     B --> E[/Pass anchors as context<br/>to Option-B prompt/]
     D --> F{Page-2 fields match<br/>page-1 anchors?}
@@ -162,12 +162,12 @@ flowchart TD
 | Box / arrow | Empirical anchor |
 |---|---|
 | Motivation (single-field gating insufficient) | `04_experiments/02_power_automate/notes.md` Phase 1.5 — 4 page-2 fields catastrophically wrong on brief PDF despite CPF 0.99 |
-| Page-1 anchor selection (`client_name`, CPF) | `06_reference_script/claude_extractor.py` Option-B prompt block (passes anchors as context to LLM) |
+| Page-1 anchor selection (`client_name`) | `06_reference_script/claude_extractor.py` Option-B prompt block (passes the client name as the sole anchor to the LLM — there is no CPF on page 2 of the dossiers to cross-check) |
 | `cross_val_consistent` column | `06_reference_script/test_corpus/audit.csv` schema |
 | `needs_review` column | `06_reference_script/test_corpus/dossiers.csv` schema; corresponds to `dossier.needs_review=TRUE` rows |
 | Per-field confidence routing (vs. per-dossier) | Design extension from PA finding #5 — production should route only failing fields, not the whole dossier |
 
-**Behavior on the brief PDF**: with Option-B, the brief PDF page-2 garbage (footer text in `proof_reference`) **would** fail the cross-validation check (footer text does not match `client_name` or CPF anchor pattern) and route to HITL — preventing the exact production-blocking failure that the single-field gate allowed through.
+**Behavior on the brief PDF**: with Option-B, the brief PDF page-2 garbage (footer text in `proof_reference`) **would** fail the cross-validation check (footer text does not match the page-1 `client_name`) and route to HITL — preventing the exact production-blocking failure that the single-field gate allowed through.
 
 ---
 
